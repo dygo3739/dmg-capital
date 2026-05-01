@@ -2,14 +2,13 @@ name: DMG Capital — Executor
 
 on:
   workflow_run:
-    workflows: ["DMG Signal Engine"]   # triggers after signal engine completes
+    workflows: ["DMG Signal Engine"]
     types: [completed]
-  workflow_dispatch:                    # manual trigger any time
+  workflow_dispatch:
 
 jobs:
   execute:
     runs-on: ubuntu-latest
-    # Only run if signal engine succeeded (skip if it failed)
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     permissions:
       contents: write
@@ -18,7 +17,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Pull latest (get freshly committed portfolios.json)
+      - name: Pull latest
         run: git pull
 
       - name: Set up Python
@@ -56,6 +55,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase
           git add execution_log.jsonl
-          git add paper_state.json || true   # paper_state.json may not exist on first run
+          git add paper_state.json || true
           git diff --cached --quiet || git commit -m "chore: weekly execution + paper state [skip ci]"
           git push
