@@ -50,11 +50,12 @@ jobs:
         #   KRAKEN_API_KEY: ${{ secrets.KRAKEN_API_KEY }}
         #   KRAKEN_API_SECRET: ${{ secrets.KRAKEN_API_SECRET }}
 
-      - name: Commit execution log
+      - name: Commit execution log and paper state
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase
           git add execution_log.jsonl
-          git diff --cached --quiet || git commit -m "chore: weekly execution log [skip ci]"
+          git add paper_state.json || true   # paper_state.json may not exist on first run
+          git diff --cached --quiet || git commit -m "chore: weekly execution + paper state [skip ci]"
           git push
