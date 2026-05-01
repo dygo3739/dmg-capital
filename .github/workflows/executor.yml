@@ -1,0 +1,60 @@
+name: DMG Capital — Executor
+
+on:
+  workflow_run:
+    workflows: ["DMG Signal Engine"]   # triggers after signal engine completes
+    types: [completed]
+  workflow_dispatch:                    # manual trigger any time
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    # Only run if signal engine succeeded (skip if it failed)
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Pull latest (get freshly committed portfolios.json)
+        run: git pull
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Install Kraken CLI
+        run: |
+          curl --proto '=https' --tlsv1.2 -LsSf \
+            https://github.com/krakenfx/kraken-cli/releases/latest/download/kraken-cli-installer.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Verify Kraken CLI
+        run: kraken --version
+
+      - name: Run executor (paper mode)
+        run: python executor.py
+        # ── LIVE TRADING ──────────────────────────────────────────
+        # When ready to go live, comment out the line above and
+        # uncomment the block below. Add KRAKEN_API_KEY and
+        # KRAKEN_API_SECRET in repo Settings → Secrets → Actions.
+        # ---------------------------------------------------------
+        # run: python executor.py --live
+        # env:
+        #   KRAKEN_API_KEY: ${{ secrets.KRAKEN_API_KEY }}
+        #   KRAKEN_API_SECRET: ${{ secrets.KRAKEN_API_SECRET }}
+
+      - name: Commit execution log
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
+          git add execution_log.jsonl
+          git diff --cached --quiet || git commit -m "chore: weekly execution log [skip ci]"
+          git push
