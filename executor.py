@@ -26,15 +26,9 @@ DRIFT_THRESHOLD  = 0.03    # only rebalance if position drifts >3% of total port
 MIN_ORDER_USD    = 10.0    # skip orders below this value
 SLEEP_BETWEEN    = 1.5     # seconds between Kraken CLI calls
 
-# Paper state persistence — store db in repo so GitHub Actions survives between runs
-PAPER_STATE_REPO = Path("paper_state.db")
-PAPER_STATE_CANDIDATES = [
-    Path.home() / ".local/share/kraken-cli/paper.db",                # Linux (GitHub Actions)
-    Path.home() / ".local/share/kraken/paper.db",                    # Linux alt
-    Path.home() / "Library/Application Support/kraken-cli/paper.db", # macOS
-    Path.home() / ".config/kraken/paper.db",                         # Linux config
-    Path.home() / ".config/kraken-cli/paper.db",                     # Linux config alt
-]
+# Paper state persistence — save as JSON snapshot committed to repo
+# We export via `kraken paper status -o json` and restore by replaying positions
+PAPER_STATE_REPO = Path("paper_state.json")
 
 # Kraken CLI pair map — ticker → Kraken paper pair name (no slash)
 PAIR_MAP = {
@@ -192,6 +186,8 @@ def place_sell(ticker: str, amount_usd: float) -> dict:
     return kraken(["sell", pair, str(qty), "--type", "market"])
 
 
+TAKER_FEE = 0.0026  # Kraken Starter tier — 0.26% added on top of order value
+
 def place_buy(ticker: str, amount_usd: float) -> dict:
     pair  = PAIR_MAP.get(ticker)
     if not pair:
@@ -199,40 +195,19 @@ def place_buy(ticker: str, amount_usd: float) -> dict:
     price = get_price(ticker)
     if not price:
         raise ValueError(f"Could not get price for {ticker}")
-    qty = round(amount_usd / price, 8)
-    log.info(f"  BUY  {ticker}  qty={qty}  ~${amount_usd:,.2f}")
+    # Kraken adds fee ON TOP of the order value, so divide by (1 + fee) to stay within balance
+    spendable = amount_usd / (1 + TAKER_FEE)
+    qty = round(spendable / price, 8)
+    log.info(f"  BUY  {ticker}  qty={qty}  ~${spendable:,.2f} (fee-adjusted from ${amount_usd:,.2f})")
     return kraken(["buy", pair, str(qty), "--type", "market"])
 
 
 # ── Paper state ───────────────────────────────────────────────────────────────
-def _find_cli_state() -> Path | None:
-    # Check known candidate paths first
-    for candidate in PAPER_STATE_CANDIDATES:
-        if candidate.exists():
-            log.debug(f"Found paper state at: {candidate}")
-            return candidate
-    # Python glob across home directory
-    for match in Path.home().glob("**/paper.db"):
-        log.debug(f"Found paper state via glob: {match}")
-        return match
-    # Shell find as final fallback — catches any location the CLI chose
-    try:
-        result = subprocess.run(
-            ["find", str(Path.home()), "-name", "paper.db", "-type", "f"],
-            capture_output=True, text=True, timeout=10
-        )
-        for line in result.stdout.strip().splitlines():
-            p = Path(line.strip())
-            if p.exists():
-                log.info(f"Found paper state via find: {p}")
-                return p
-    except Exception as e:
-        log.debug(f"find command failed: {e}")
-    return None
-
-
 def restore_paper_state():
-    import shutil
+    """
+    Restore paper portfolio from JSON snapshot committed to repo.
+    Strategy: reset CLI state, then replay positions from snapshot.
+    """
     if not PAPER_STATE_REPO.exists():
         log.info("No saved paper state — initialising fresh paper account with $100,000...")
         result = subprocess.run(
@@ -243,30 +218,102 @@ def restore_paper_state():
             raise RuntimeError(f"kraken paper init failed: {result.stderr.strip()}")
         log.info("Paper account initialised ✓")
         return
-    restored = False
-    for dest in PAPER_STATE_CANDIDATES:
-        try:
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(PAPER_STATE_REPO, dest)
-            log.info(f"Restored paper state → {dest}")
-            restored = True
-        except Exception as e:
-            log.debug(f"Could not restore to {dest}: {e}")
-    if not restored:
-        log.warning("Could not restore paper state — initing fresh account")
+
+    with open(PAPER_STATE_REPO) as f:
+        snapshot = json.load(f)
+
+    total_value = snapshot.get("total_value", 100000)
+    positions   = snapshot.get("positions", {})  # {ticker: usd_value}
+
+    log.info(f"Restoring paper state: ${total_value:,.2f} total, {len(positions)} positions")
+
+    # Reset CLI to fresh state then init with total portfolio value
+    subprocess.run(["kraken", "paper", "reset"], capture_output=True, timeout=10)
+    result = subprocess.run(
+        ["kraken", "paper", "init", "--balance", str(round(total_value, 2)), "--output", "json"],
+        capture_output=True, text=True, timeout=30
+    )
+    if result.returncode != 0:
+        log.warning(f"Paper init failed: {result.stderr.strip()} — starting fresh")
         subprocess.run(["kraken", "paper", "init", "--balance", "100000"], capture_output=True)
+        return
+
+    # Replay positions — buy back each held asset
+    for ticker, usd_val in positions.items():
+        if ticker == "USD" or usd_val < MIN_ORDER_USD:
+            continue
+        pair = PAIR_MAP.get(ticker)
+        if not pair:
+            log.warning(f"No pair for {ticker} — skipping restore")
+            continue
+        price = get_price(ticker)
+        if not price:
+            log.warning(f"No price for {ticker} — skipping restore")
+            continue
+        spendable = usd_val / (1 + TAKER_FEE)
+        qty = round(spendable / price, 8)
+        r = subprocess.run(
+            ["kraken", "paper", "buy", pair, str(qty), "--type", "market", "--output", "json"],
+            capture_output=True, text=True, timeout=30
+        )
+        if r.returncode == 0:
+            log.info(f"  Restored {ticker}: {qty} units (~${usd_val:,.2f})")
+        else:
+            log.warning(f"  Could not restore {ticker}: {r.stderr.strip()[:100]}")
+
+    log.info("Paper state restored ✓")
 
 
 def backup_paper_state():
-    import shutil
-    src = _find_cli_state()
-    if not src:
-        log.warning("Paper state db not found. Searched:")
-        for c in PAPER_STATE_CANDIDATES:
-            log.warning(f"  {'✓' if c.exists() else '✗'} {c}")
+    """Export paper portfolio to JSON snapshot for repo commit."""
+    result = subprocess.run(
+        ["kraken", "paper", "balance", "--output", "json"],
+        capture_output=True, text=True, timeout=30
+    )
+    if result.returncode != 0:
+        log.warning(f"Could not read paper balance: {result.stderr.strip()}")
         return
-    shutil.copy2(src, PAPER_STATE_REPO)
-    log.info(f"Backed up paper state: {src} → {PAPER_STATE_REPO}")
+
+    try:
+        data = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        log.warning("Could not parse paper balance JSON")
+        return
+
+    # Build position snapshot
+    raw_balances = data.get("balances", {})
+    positions = {}
+    total_value = 0.0
+
+    if isinstance(raw_balances, dict):
+        for asset, info in raw_balances.items():
+            clean = asset.upper().replace("XBT", "BTC").replace("XXBT", "BTC")
+            try:
+                qty = float(info.get("total") or info.get("available") or 0)
+            except (ValueError, TypeError):
+                qty = 0
+            if qty <= 0:
+                continue
+            if clean == "USD":
+                positions["USD"] = qty
+                total_value += qty
+            else:
+                price = get_price(clean)
+                if price:
+                    usd_val = round(qty * price, 2)
+                    positions[clean] = usd_val
+                    total_value += usd_val
+
+    snapshot = {
+        "timestamp":   datetime.now(timezone.utc).isoformat(),
+        "total_value": round(total_value, 2),
+        "positions":   positions,
+    }
+
+    with open(PAPER_STATE_REPO, "w") as f:
+        json.dump(snapshot, f, indent=2)
+
+    log.info(f"Backed up paper state: ${total_value:,.2f} → {PAPER_STATE_REPO}")
 
 
 # ── Signal fetch ──────────────────────────────────────────────────────────────
