@@ -65,14 +65,8 @@ def kraken(args: list[str]) -> dict:
     full_cmd = ["kraken", CMD] + args + ["--output", "json"]
     log.debug(f"CMD: {' '.join(full_cmd)}")
 
-    # Pass API credentials from environment if available
+    # For live trading, credentials are passed via env by the workflow
     env = os.environ.copy()
-    api_key    = os.environ.get("KRAKEN_API_KEY")
-    api_secret = os.environ.get("KRAKEN_API_SECRET")
-    if api_key:
-        env["KRAKEN_API_KEY"]    = api_key
-    if api_secret:
-        env["KRAKEN_API_SECRET"] = api_secret
 
     result = subprocess.run(full_cmd, capture_output=True, text=True, timeout=30, env=env)
 
@@ -92,14 +86,23 @@ def kraken(args: list[str]) -> dict:
 
 
 def restore_paper_state():
-    """Copy paper_state.json from repo into Kraken CLI's expected location before trading."""
-    if not PAPER_STATE_REPO.exists():
-        log.info("No saved paper state found — Kraken CLI will init a fresh account")
-        return
+    """Copy paper_state.json from repo into Kraken CLI's expected location, or init fresh."""
     PAPER_STATE_CLI.parent.mkdir(parents=True, exist_ok=True)
-    import shutil
-    shutil.copy2(PAPER_STATE_REPO, PAPER_STATE_CLI)
-    log.info(f"Restored paper state from repo → {PAPER_STATE_CLI}")
+
+    if PAPER_STATE_REPO.exists():
+        import shutil
+        shutil.copy2(PAPER_STATE_REPO, PAPER_STATE_CLI)
+        log.info(f"Restored paper state from repo → {PAPER_STATE_CLI}")
+    else:
+        # First run — initialise a fresh paper account with $100,000
+        log.info("No saved paper state — initialising fresh paper account with $100,000...")
+        result = subprocess.run(
+            ["kraken", "paper", "init", "--balance", "100000", "--output", "json"],
+            capture_output=True, text=True, timeout=30
+        )
+        if result.returncode != 0:
+            raise RuntimeError(f"kraken paper init failed: {result.stderr.strip() or result.stdout.strip()}")
+        log.info("Paper account initialised ✓")
 
 
 def backup_paper_state():
