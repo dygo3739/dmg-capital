@@ -54,11 +54,11 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add execution_log.jsonl
-          git add paper_state.db || true
+          git add paper_state.json || true
           git stash || true
           git pull --rebase
           git stash pop || true
           git add execution_log.jsonl
-          git add paper_state.db || true
+          git add paper_state.json || true
           git diff --cached --quiet || git commit -m "chore: weekly execution + paper state [skip ci]"
           git push
