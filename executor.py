@@ -27,24 +27,26 @@ MIN_ORDER_USD   = 10.0   # skip positions below this value
 SLEEP_BETWEEN   = 1.5    # seconds between Kraken CLI calls
 
 # Paper state persistence — stored in repo so GitHub Actions survives between runs
-PAPER_STATE_REPO = Path("paper_state.json")                      # committed to repo
-PAPER_STATE_CLI  = Path.home() / ".config/kraken/paper/state.json"  # where CLI reads it
+PAPER_STATE_REPO = Path("paper_state.db")                                           # committed to repo
+PAPER_STATE_CLI  = Path.home() / ".local/share/kraken-cli/paper.db"                # Linux (GitHub Actions)
+PAPER_STATE_MAC  = Path.home() / "Library/Application Support/kraken-cli/paper.db" # macOS fallback
 
 # Kraken CLI pair map — ticker → Kraken pair name
+# Kraken CLI paper uses BTCUSD format (no slash)
 PAIR_MAP = {
-    "BTC":  "BTC/USD",
-    "ETH":  "ETH/USD",
-    "XRP":  "XRP/USD",
-    "SOL":  "SOL/USD",
-    "DOGE": "DOGE/USD",
-    "ADA":  "ADA/USD",
-    "TRX":  "TRX/USD",
-    "AVAX": "AVAX/USD",
-    "LINK": "LINK/USD",
-    "BCH":  "BCH/USD",
-    "PAXG": "PAXG/USD",
-    "LTC":  "LTC/USD",
-    "DOT":  "DOT/USD",
+    "BTC":  "BTCUSD",
+    "ETH":  "ETHUSD",
+    "XRP":  "XRPUSD",
+    "SOL":  "SOLUSD",
+    "DOGE": "DOGEUSD",
+    "ADA":  "ADAUSD",
+    "TRX":  "TRXUSD",
+    "AVAX": "AVAXUSD",
+    "LINK": "LINKUSD",
+    "BCH":  "BCHUSD",
+    "PAXG": "PAXGUSD",
+    "LTC":  "LTCUSD",
+    "DOT":  "DOTUSD",
 }
 
 # ── Logging ───────────────────────────────────────────────────────────────────
@@ -116,40 +118,45 @@ def backup_paper_state():
 
 
 def get_balances() -> dict[str, float]:
-    """Return {ticker: usd_value} for all non-zero balances."""
+    """Return {ticker: usd_value} for all paper balances using kraken paper balance."""
     data = kraken(["balance"])
     balances = {}
 
     log.debug(f"Balance response: {json.dumps(data)[:500]}")
 
-    # Handle various Kraken CLI response formats
-    items = (
-        data.get("balances")       # list format
-        or data.get("result")      # result dict
-        or data.get("assets")      # assets list
-        or []
-    )
+    # kraken paper balance returns:
+    # {"mode":"paper", "balances":[{"asset":"USD","balance":"100000.00"}, ...]}
+    items = data.get("balances") or []
 
     if isinstance(items, list):
+        # First pass: collect raw asset quantities
+        raw = {}
         for item in items:
-            if isinstance(item, dict):
-                ticker = (item.get("asset") or item.get("currency") or "").replace("XBT", "BTC").replace("XXBT","BTC").replace("ZUSD","USD")
-                # Try usd_value first, then balance (in USD for stablecoins)
-                usd = float(item.get("usd_value") or item.get("value") or item.get("balance") or 0)
-                if ticker and usd > 0.01:
-                    balances[ticker] = usd
-    elif isinstance(items, dict):
-        # Dict of {ticker: amount} format
-        for ticker, amount in items.items():
-            clean = ticker.replace("XBT","BTC").replace("XXBT","BTC").replace("ZUSD","USD").replace("Z","").replace("X","",1)
+            asset = (item.get("asset") or "").upper().replace("XBT","BTC")
             try:
-                usd = float(amount)
-                if usd > 0.01:
-                    balances[clean] = usd
+                qty = float(item.get("balance") or 0)
             except (ValueError, TypeError):
-                pass
+                qty = 0
+            if asset and qty > 0:
+                raw[asset] = qty
 
-    # If paper account has no positions yet, assume starting USD balance
+        # USD is already in USD value
+        if "USD" in raw:
+            balances["USD"] = raw["USD"]
+
+        # For crypto assets, convert to USD using live price
+        for asset, qty in raw.items():
+            if asset == "USD":
+                continue
+            price = get_price(asset)
+            if price and qty > 0:
+                usd_val = round(qty * price, 2)
+                if usd_val > 0.01:
+                    balances[asset] = usd_val
+            else:
+                log.warning(f"Could not price {asset} — skipping from balance")
+
+    # Fresh account fallback
     if not balances:
         log.warning("No balances found — assuming fresh paper account with $100,000 USD")
         balances["USD"] = 100000.0
@@ -162,13 +169,25 @@ def get_total_balance(balances: dict[str, float]) -> float:
 
 
 def get_price(ticker: str) -> float | None:
+    """Fetch live price via `kraken ticker PAIR` — public endpoint, no auth needed."""
     pair = PAIR_MAP.get(ticker)
     if not pair:
         log.warning(f"No pair mapping for {ticker}")
         return None
-    data = kraken(["price", pair])
-    price = data.get("price") or data.get("last")
-    return float(price) if price else None
+    # ticker is a top-level market command, NOT under paper
+    full_cmd = ["kraken", "ticker", pair, "--output", "json"]
+    result = subprocess.run(full_cmd, capture_output=True, text=True, timeout=30)
+    if result.returncode != 0:
+        log.warning(f"Price fetch failed for {ticker}: {result.stderr.strip()}")
+        return None
+    try:
+        data = json.loads(result.stdout)
+        # Response: {"pair": "BTCUSD", "ask": ..., "bid": ..., "last": ...}
+        price = data.get("last") or data.get("ask") or data.get("price")
+        return float(price) if price else None
+    except (json.JSONDecodeError, TypeError, ValueError):
+        log.warning(f"Could not parse price for {ticker}: {result.stdout[:200]}")
+        return None
 
 
 def place_sell(ticker: str, amount_usd: float) -> dict:
@@ -180,6 +199,7 @@ def place_sell(ticker: str, amount_usd: float) -> dict:
         raise ValueError(f"Could not get price for {ticker}")
     qty = round(amount_usd / price, 8)
     log.info(f"  SELL {ticker}  qty={qty}  ~${amount_usd:,.2f}")
+    # kraken paper sell BTCUSD <qty> --type market
     return kraken(["sell", pair, str(qty), "--type", "market"])
 
 
@@ -192,6 +212,7 @@ def place_buy(ticker: str, amount_usd: float) -> dict:
         raise ValueError(f"Could not get price for {ticker}")
     qty = round(amount_usd / price, 8)
     log.info(f"  BUY  {ticker}  qty={qty}  ~${amount_usd:,.2f}")
+    # kraken paper buy BTCUSD <qty> --type market
     return kraken(["buy", pair, str(qty), "--type", "market"])
 
 
