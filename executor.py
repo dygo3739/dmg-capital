@@ -124,27 +124,27 @@ def get_balances() -> dict[str, float]:
 
     log.debug(f"Balance response: {json.dumps(data)[:500]}")
 
-    # kraken paper balance returns:
-    # {"mode":"paper", "balances":[{"asset":"USD","balance":"100000.00"}, ...]}
-    items = data.get("balances") or []
+    # kraken paper balance returns dict-of-dicts:
+    # {"mode":"paper", "balances": {"USD": {"available": 100000.0, "total": 100000.0}, "BTC": {...}}}
+    raw_balances = data.get("balances") or {}
 
-    if isinstance(items, list):
-        # First pass: collect raw asset quantities
+    if isinstance(raw_balances, dict):
         raw = {}
-        for item in items:
-            asset = (item.get("asset") or "").upper().replace("XBT","BTC")
+        for asset, info in raw_balances.items():
+            asset_clean = asset.upper().replace("XBT", "BTC").replace("XXBT", "BTC")
             try:
-                qty = float(item.get("balance") or 0)
+                # Use "total" field (available + reserved)
+                qty = float(info.get("total") or info.get("available") or 0)
             except (ValueError, TypeError):
                 qty = 0
-            if asset and qty > 0:
-                raw[asset] = qty
+            if qty > 0:
+                raw[asset_clean] = qty
 
         # USD is already in USD value
         if "USD" in raw:
             balances["USD"] = raw["USD"]
 
-        # For crypto assets, convert to USD using live price
+        # For crypto assets, convert qty → USD using live price
         for asset, qty in raw.items():
             if asset == "USD":
                 continue
@@ -155,6 +155,28 @@ def get_balances() -> dict[str, float]:
                     balances[asset] = usd_val
             else:
                 log.warning(f"Could not price {asset} — skipping from balance")
+
+    elif isinstance(raw_balances, list):
+        # Fallback: list format [{"asset": "USD", "balance": "100000.00"}, ...]
+        raw = {}
+        for item in raw_balances:
+            asset = (item.get("asset") or "").upper().replace("XBT","BTC")
+            try:
+                qty = float(item.get("total") or item.get("balance") or 0)
+            except (ValueError, TypeError):
+                qty = 0
+            if asset and qty > 0:
+                raw[asset] = qty
+        if "USD" in raw:
+            balances["USD"] = raw["USD"]
+        for asset, qty in raw.items():
+            if asset == "USD":
+                continue
+            price = get_price(asset)
+            if price and qty > 0:
+                usd_val = round(qty * price, 2)
+                if usd_val > 0.01:
+                    balances[asset] = usd_val
 
     # Fresh account fallback
     if not balances:
@@ -177,49 +199,30 @@ def get_price(ticker: str) -> float | None:
     full_cmd = ["kraken", "ticker", pair, "--output", "json"]
     result = subprocess.run(full_cmd, capture_output=True, text=True, timeout=30)
     raw = result.stdout.strip()
-    log.debug(f"ticker {pair} raw: {raw[:300]}")
 
     if result.returncode != 0:
-        log.warning(f"Price fetch failed for {ticker}: {result.stderr.strip()} | stdout: {raw[:200]}")
+        log.warning(f"Price fetch failed for {ticker}: {result.stderr.strip()}")
         return None
 
-    # kraken ticker may return NDJSON (one JSON object per line) or a single object
-    # Try parsing each line until we find a price
-    for line in raw.splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        try:
-            data = json.loads(line)
-            # Try every common field name
-            for field in ("last", "ask", "bid", "price", "c", "close"):
-                val = data.get(field)
-                if val:
-                    # Sometimes it's a list ["price", "volume"]
-                    if isinstance(val, list):
-                        val = val[0]
-                    try:
-                        return float(val)
-                    except (TypeError, ValueError):
-                        continue
-            # If it's nested e.g. {"result": {"XBTUSD": {...}}}
-            result_data = data.get("result", {})
-            if isinstance(result_data, dict):
-                for pair_data in result_data.values():
-                    if isinstance(pair_data, dict):
-                        for field in ("c", "last", "ask", "b", "a"):
-                            val = pair_data.get(field)
-                            if val:
-                                if isinstance(val, list): val = val[0]
-                                try:
-                                    return float(val)
-                                except (TypeError, ValueError):
-                                    continue
-        except json.JSONDecodeError:
-            continue
-
-    log.warning(f"Could not parse price for {ticker} from: {raw[:300]}")
-    return None
+    try:
+        data = json.loads(raw)
+        # Response format: {"XXBTZUSD": {"c": ["76596.20", "0.001"], "a": [...], ...}}
+        # The key is Kraken's internal pair name — just grab the first (only) key's value
+        for key, val in data.items():
+            if isinstance(val, dict):
+                # c = last trade [price, volume] — most accurate
+                c = val.get("c")
+                if c and len(c) > 0:
+                    return float(c[0])
+                # fallback: ask price
+                a = val.get("a")
+                if a and len(a) > 0:
+                    return float(a[0])
+        log.warning(f"Could not parse price for {ticker} from: {raw[:200]}")
+        return None
+    except (json.JSONDecodeError, TypeError, ValueError) as e:
+        log.warning(f"Price parse error for {ticker}: {e} | raw: {raw[:200]}")
+        return None
 
 
 def place_sell(ticker: str, amount_usd: float) -> dict:
