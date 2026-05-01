@@ -206,13 +206,28 @@ def place_buy(ticker: str, amount_usd: float) -> dict:
 
 # ── Paper state ───────────────────────────────────────────────────────────────
 def _find_cli_state() -> Path | None:
+    # Check known candidate paths first
     for candidate in PAPER_STATE_CANDIDATES:
         if candidate.exists():
             log.debug(f"Found paper state at: {candidate}")
             return candidate
+    # Python glob across home directory
     for match in Path.home().glob("**/paper.db"):
         log.debug(f"Found paper state via glob: {match}")
         return match
+    # Shell find as final fallback — catches any location the CLI chose
+    try:
+        result = subprocess.run(
+            ["find", str(Path.home()), "-name", "paper.db", "-type", "f"],
+            capture_output=True, text=True, timeout=10
+        )
+        for line in result.stdout.strip().splitlines():
+            p = Path(line.strip())
+            if p.exists():
+                log.info(f"Found paper state via find: {p}")
+                return p
+    except Exception as e:
+        log.debug(f"find command failed: {e}")
     return None
 
 
@@ -463,11 +478,22 @@ def main():
     except Exception as e:
         log.warning(f"Could not refresh balance: {e}")
 
-    # 7. Execute buys using exact amounts from compute_rebalance
+    # 7. Execute buys — dynamically size each order from remaining available balance
+    # This absorbs fees from prior trades automatically without hardcoded buffers
     buy_results = []
-    for ticker, usd_amt in buys:
+    remaining_buys = [b for b in buys if b[1] >= MIN_ORDER_USD]
+    for idx, (ticker, _) in enumerate(remaining_buys):
+        # Refresh available USD before each buy
+        try:
+            fresh = get_balances()
+            avail_usd = fresh.get("USD", 0)
+        except Exception:
+            avail_usd = balances.get("USD", 0)
+        buys_left = len(remaining_buys) - idx
+        usd_amt   = avail_usd / buys_left
         if usd_amt < MIN_ORDER_USD:
             log.warning(f"  Skipping {ticker} — ${usd_amt:.2f} below minimum")
+            buy_results.append({"ticker": ticker, "usd": round(usd_amt, 2), "status": "skip"})
             continue
         try:
             result = place_buy(ticker, usd_amt)
