@@ -206,28 +206,41 @@ def place_buy(ticker: str, amount_usd: float) -> dict:
 def restore_paper_state():
     """
     Restore paper portfolio from JSON snapshot committed to repo.
-    Strategy: reset CLI state, then replay positions from snapshot.
+    First run: init at backtest ending balance so paper continues seamlessly.
+    Subsequent runs: reset + replay positions from paper_state.json snapshot.
     """
     if not PAPER_STATE_REPO.exists():
-        log.info("No saved paper state — initialising fresh paper account with $100,000...")
+        # First run — read backtest end value from portfolios.json
+        start_balance = 100000.0
+        try:
+            with open("portfolios.json") as pf:
+                pdata = json.load(pf)
+            p = next((x for x in pdata.get("portfolios",[]) if x["id"]==PORTFOLIO_ID), None)
+            if p:
+                curve = p.get("equity_curve", [])
+                if curve:
+                    start_balance = float(curve[-1]["value"])
+                    log.info(f"Using backtest end value as paper start: ${start_balance:,.2f}")
+        except Exception as e:
+            log.warning(f"Could not read backtest end value ({e}) — using $100,000")
+
         result = subprocess.run(
-            ["kraken", "paper", "init", "--balance", "100000", "--output", "json"],
+            ["kraken", "paper", "init", "--balance", str(round(start_balance, 2)), "--output", "json"],
             capture_output=True, text=True, timeout=30
         )
         if result.returncode != 0:
             raise RuntimeError(f"kraken paper init failed: {result.stderr.strip()}")
-        log.info("Paper account initialised ✓")
+        log.info(f"Paper account initialised at ${start_balance:,.2f} ✓")
         return
 
     with open(PAPER_STATE_REPO) as f:
         snapshot = json.load(f)
 
     total_value = snapshot.get("total_value", 100000)
-    positions   = snapshot.get("positions", {})  # {ticker: usd_value}
+    positions   = snapshot.get("positions", {})
 
     log.info(f"Restoring paper state: ${total_value:,.2f} total, {len(positions)} positions")
 
-    # Reset CLI to fresh state then init with total portfolio value
     subprocess.run(["kraken", "paper", "reset"], capture_output=True, timeout=10)
     result = subprocess.run(
         ["kraken", "paper", "init", "--balance", str(round(total_value, 2)), "--output", "json"],
@@ -238,7 +251,6 @@ def restore_paper_state():
         subprocess.run(["kraken", "paper", "init", "--balance", "100000"], capture_output=True)
         return
 
-    # Replay positions — buy back each held asset
     for ticker, usd_val in positions.items():
         if ticker == "USD" or usd_val < MIN_ORDER_USD:
             continue
