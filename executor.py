@@ -537,7 +537,8 @@ def main():
         except Exception:
             avail_usd = balances.get("USD", 0)
         buys_left = len(remaining_buys) - idx
-        usd_amt   = avail_usd / buys_left
+        # Reserve $10 safety margin to absorb price slippage between fetch and order
+        usd_amt   = (avail_usd - 10.0) / buys_left
         if usd_amt < MIN_ORDER_USD:
             log.warning(f"  Skipping {ticker} — ${usd_amt:.2f} below minimum")
             buy_results.append({"ticker": ticker, "usd": round(usd_amt, 2), "status": "skip"})
