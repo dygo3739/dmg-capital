@@ -10,6 +10,7 @@ Usage:
 """
 
 import json
+import os
 import subprocess
 import sys
 import time
@@ -24,6 +25,10 @@ LOG_FILE       = Path("execution_log.jsonl")
 DRIFT_THRESHOLD = 0.03   # rebalance if position weight drifts >3% from target
 MIN_ORDER_USD   = 10.0   # skip positions below this value
 SLEEP_BETWEEN   = 1.5    # seconds between Kraken CLI calls
+
+# Paper state persistence — stored in repo so GitHub Actions survives between runs
+PAPER_STATE_REPO = Path("paper_state.json")                      # committed to repo
+PAPER_STATE_CLI  = Path.home() / ".config/kraken/paper/state.json"  # where CLI reads it
 
 # Kraken CLI pair map — ticker → Kraken pair name
 PAIR_MAP = {
@@ -59,25 +64,93 @@ def kraken(args: list[str]) -> dict:
     """Run a kraken CLI command and return parsed JSON output."""
     full_cmd = ["kraken", CMD] + args + ["--output", "json"]
     log.debug(f"CMD: {' '.join(full_cmd)}")
-    result = subprocess.run(full_cmd, capture_output=True, text=True, timeout=30)
+
+    # Pass API credentials from environment if available
+    env = os.environ.copy()
+    api_key    = os.environ.get("KRAKEN_API_KEY")
+    api_secret = os.environ.get("KRAKEN_API_SECRET")
+    if api_key:
+        env["KRAKEN_API_KEY"]    = api_key
+    if api_secret:
+        env["KRAKEN_API_SECRET"] = api_secret
+
+    result = subprocess.run(full_cmd, capture_output=True, text=True, timeout=30, env=env)
+
+    stderr = result.stderr.strip()
+    stdout = result.stdout.strip()
+
     if result.returncode != 0:
-        raise RuntimeError(f"Kraken CLI error: {result.stderr.strip()}")
+        raise RuntimeError(f"Kraken CLI error: {stderr or stdout or 'no output'}")
+
+    if not stdout:
+        raise RuntimeError(f"Kraken CLI returned empty output. stderr: {stderr}")
+
     try:
-        return json.loads(result.stdout)
+        return json.loads(stdout)
     except json.JSONDecodeError:
-        return {"raw": result.stdout.strip()}
+        return {"raw": stdout}
+
+
+def restore_paper_state():
+    """Copy paper_state.json from repo into Kraken CLI's expected location before trading."""
+    if not PAPER_STATE_REPO.exists():
+        log.info("No saved paper state found — Kraken CLI will init a fresh account")
+        return
+    PAPER_STATE_CLI.parent.mkdir(parents=True, exist_ok=True)
+    import shutil
+    shutil.copy2(PAPER_STATE_REPO, PAPER_STATE_CLI)
+    log.info(f"Restored paper state from repo → {PAPER_STATE_CLI}")
+
+
+def backup_paper_state():
+    """Copy Kraken CLI's paper state back into the repo so it can be committed."""
+    if not PAPER_STATE_CLI.exists():
+        log.warning("No paper state file found to back up")
+        return
+    import shutil
+    shutil.copy2(PAPER_STATE_CLI, PAPER_STATE_REPO)
+    log.info(f"Backed up paper state → {PAPER_STATE_REPO}")
 
 
 def get_balances() -> dict[str, float]:
     """Return {ticker: usd_value} for all non-zero balances."""
     data = kraken(["balance"])
     balances = {}
-    # CLI returns list of {asset, balance, usd_value} or similar
-    for item in data.get("balances", []):
-        ticker = item.get("asset", "").replace("XBT", "BTC")
-        usd    = float(item.get("usd_value", 0))
-        if usd > 0.01:
-            balances[ticker] = usd
+
+    log.debug(f"Balance response: {json.dumps(data)[:500]}")
+
+    # Handle various Kraken CLI response formats
+    items = (
+        data.get("balances")       # list format
+        or data.get("result")      # result dict
+        or data.get("assets")      # assets list
+        or []
+    )
+
+    if isinstance(items, list):
+        for item in items:
+            if isinstance(item, dict):
+                ticker = (item.get("asset") or item.get("currency") or "").replace("XBT", "BTC").replace("XXBT","BTC").replace("ZUSD","USD")
+                # Try usd_value first, then balance (in USD for stablecoins)
+                usd = float(item.get("usd_value") or item.get("value") or item.get("balance") or 0)
+                if ticker and usd > 0.01:
+                    balances[ticker] = usd
+    elif isinstance(items, dict):
+        # Dict of {ticker: amount} format
+        for ticker, amount in items.items():
+            clean = ticker.replace("XBT","BTC").replace("XXBT","BTC").replace("ZUSD","USD").replace("Z","").replace("X","",1)
+            try:
+                usd = float(amount)
+                if usd > 0.01:
+                    balances[clean] = usd
+            except (ValueError, TypeError):
+                pass
+
+    # If paper account has no positions yet, assume starting USD balance
+    if not balances:
+        log.warning("No balances found — assuming fresh paper account with $100,000 USD")
+        balances["USD"] = 100000.0
+
     return balances
 
 
@@ -235,7 +308,10 @@ def main():
             defensive = "USDT"
             log.info("Gate CLOSED — defensive: USDT (cash)")
 
-    # 3. Get current balances
+    # 3. Restore paper state from repo, then get balances
+    if not LIVE:
+        restore_paper_state()
+
     try:
         balances = get_balances()
         total    = get_total_balance(balances)
@@ -261,6 +337,8 @@ def main():
 
     if not sells and not buys:
         log.info("✓ No rebalance needed — portfolio already matches target")
+        if not LIVE:
+            backup_paper_state()
         _log_execution(now, signals, target_tickers, defensive, [], [], total, "NO_CHANGE")
         return
 
@@ -307,7 +385,11 @@ def main():
                 log.error(f"  BUY {ticker} failed: {e}")
                 buy_results.append({"ticker": ticker, "usd": usd_per, "status": "error", "error": str(e)})
 
-    # 8. Summary
+    # 8. Back up paper state to repo so it survives next GitHub Actions run
+    if not LIVE:
+        backup_paper_state()
+
+    # 9. Summary
     log.info(f"{'='*52}")
     log.info(f"Execution complete")
     log.info(f"  Sells: {sum(1 for r in sell_results if r['status']=='ok')}/{len(sell_results)}")
