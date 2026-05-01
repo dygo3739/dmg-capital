@@ -51,7 +51,7 @@ PAIR_MAP = {
 
 # ── Logging ───────────────────────────────────────────────────────────────────
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,
     format="%(asctime)s  %(levelname)-8s  %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
 )
@@ -174,20 +174,52 @@ def get_price(ticker: str) -> float | None:
     if not pair:
         log.warning(f"No pair mapping for {ticker}")
         return None
-    # ticker is a top-level market command, NOT under paper
     full_cmd = ["kraken", "ticker", pair, "--output", "json"]
     result = subprocess.run(full_cmd, capture_output=True, text=True, timeout=30)
+    raw = result.stdout.strip()
+    log.debug(f"ticker {pair} raw: {raw[:300]}")
+
     if result.returncode != 0:
-        log.warning(f"Price fetch failed for {ticker}: {result.stderr.strip()}")
+        log.warning(f"Price fetch failed for {ticker}: {result.stderr.strip()} | stdout: {raw[:200]}")
         return None
-    try:
-        data = json.loads(result.stdout)
-        # Response: {"pair": "BTCUSD", "ask": ..., "bid": ..., "last": ...}
-        price = data.get("last") or data.get("ask") or data.get("price")
-        return float(price) if price else None
-    except (json.JSONDecodeError, TypeError, ValueError):
-        log.warning(f"Could not parse price for {ticker}: {result.stdout[:200]}")
-        return None
+
+    # kraken ticker may return NDJSON (one JSON object per line) or a single object
+    # Try parsing each line until we find a price
+    for line in raw.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            data = json.loads(line)
+            # Try every common field name
+            for field in ("last", "ask", "bid", "price", "c", "close"):
+                val = data.get(field)
+                if val:
+                    # Sometimes it's a list ["price", "volume"]
+                    if isinstance(val, list):
+                        val = val[0]
+                    try:
+                        return float(val)
+                    except (TypeError, ValueError):
+                        continue
+            # If it's nested e.g. {"result": {"XBTUSD": {...}}}
+            result_data = data.get("result", {})
+            if isinstance(result_data, dict):
+                for pair_data in result_data.values():
+                    if isinstance(pair_data, dict):
+                        for field in ("c", "last", "ask", "b", "a"):
+                            val = pair_data.get(field)
+                            if val:
+                                if isinstance(val, list): val = val[0]
+                                try:
+                                    return float(val)
+                                except (TypeError, ValueError):
+                                    continue
+        except json.JSONDecodeError:
+            continue
+
+    log.warning(f"Could not parse price for {ticker} from: {raw[:300]}")
+    return None
 
 
 def place_sell(ticker: str, amount_usd: float) -> dict:
