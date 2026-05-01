@@ -1,482 +1,468 @@
-#!/usr/bin/env python3
-"""
-DMG Capital — Top 10 Crypto + PAXG Defensive Rotation
-- Universe: Top 10 crypto by market cap (yearly snapshots, survivorship-bias-free)
-- Signal: Weekly 2-of-3 momentum (EMA20>EMA55, RSI14>EMA14, MACD>Signal)
-- BTC Gate: When BTC weekly SELL:
-    → PAXG weekly BUY → 100% PAXG (gold)
-    → PAXG weekly SELL → 100% USDT (cash)
-- Gate OPEN: equal weight all top-10 assets with BUY signal
-- Data: Kraken public OHLC API (weekly bars, no key required)
-"""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMG Capital — Trading Tracker</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green:     #168C67;
+  --green-bg:  rgba(22,140,103,0.10);
+  --orange:    #F7931A;
+  --orange-bg: rgba(247,147,26,0.10);
+  --red:       #e03d2f;
+  --red-bg:    rgba(224,61,47,0.10);
+  --ink:       #111;
+  --mid:       #555;
+  --muted:     #999;
+  --faint:     #ccc;
+  --border:    #e8e8e8;
+  --card:      #fff;
+}
+body { font-family: 'DM Sans', sans-serif; background: transparent; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.root { width: 100%; }
 
-import json, time
-from datetime import datetime, timezone
-import requests
-import pandas as pd
-import numpy as np
+.hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 8px; }
+.hdr-left { display: flex; align-items: center; gap: 10px; }
+.mode-badge { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.06em; background: var(--green-bg); color: var(--green); }
+.mode-badge.live { background: var(--red-bg); color: var(--red); }
+.hdr-title { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.hdr-meta  { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--faint); }
 
-STARTING_CAPITAL = 100_000.0
-KRAKEN_BASE      = "https://api.kraken.com/0/public"
+.stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 20px; }
+.stat { background: var(--card); padding: 18px 16px; }
+.stat-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); margin-bottom: 8px; }
+.stat-val { font-size: clamp(15px,2vw,22px); font-weight: 500; letter-spacing: -0.4px; line-height: 1; color: var(--ink); }
+.stat-val.g { color: var(--green); }
+.stat-val.r { color: var(--red); }
+.stat-sub { font-size: 11px; color: var(--muted); margin-top: 5px; }
 
-# ── Top 10 universe per year (survivorship-bias-free) ─────────────────────────
-# Excludes stablecoins (USDT/USDC/BUSD/DAI), exchange tokens (BNB/LEO/HT),
-# wrapped tokens (WBTC), and dead coins (LUNA/FTT)
-UNIVERSE_BY_YEAR = {
-    2018: ["BTC","ETH","XRP","BCH","ADA","LTC","XMR","ETC","ZEC","DASH"],
-    2019: ["BTC","ETH","XRP","LTC","BCH","XLM","ADA","TRX","XMR","DOGE"],
-    2020: ["BTC","ETH","XRP","BCH","LTC","XLM","ADA","LINK","TRX","XMR"],
-    2021: ["BTC","ETH","XRP","ADA","LTC","DOT","LINK","DOGE","BCH","UNI"],
-    2022: ["BTC","ETH","SOL","ADA","XRP","DOT","DOGE","AVAX","LTC","TRX"],
-    2023: ["BTC","ETH","XRP","DOGE","ADA","SOL","LTC","TRX","AVAX","LINK"],
-    2024: ["BTC","ETH","SOL","XRP","ADA","AVAX","DOGE","TRX","LINK","LTC"],
-    2025: ["BTC","ETH","XRP","SOL","DOGE","ADA","TRX","AVAX","LINK","BCH"],
+.card { background: var(--card); border: 1px solid var(--border); padding: 20px; margin-bottom: 16px; }
+.card-hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #f5f5f5; flex-wrap: wrap; gap: 8px; }
+.card-title { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+.card-sub { font-size: 11px; color: var(--faint); font-family: 'DM Mono', monospace; }
+
+.pos-row { display: grid; grid-template-columns: 52px 1fr 88px 56px; align-items: center; padding: 9px 0; border-bottom: 1px solid #fafafa; gap: 10px; }
+.pos-row:last-child { border-bottom: none; }
+.pos-tk { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; }
+.pos-bar-wrap { height: 3px; background: #f0f0f0; border-radius: 2px; overflow: hidden; }
+.pos-bar { height: 100%; border-radius: 2px; transition: width .5s; }
+.pos-usd { font-size: 12px; font-weight: 500; text-align: right; }
+.pos-wt  { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); text-align: right; }
+
+.sigs { display: flex; flex-wrap: wrap; gap: 6px; }
+.sig { font-family: 'DM Mono', monospace; font-size: 11px; padding: 4px 10px; border-radius: 20px; }
+.sig-gate-open  { background: var(--green); color: #fff; }
+.sig-gate-close { background: var(--red-bg); color: var(--red); border: 1px solid rgba(224,61,47,.2); }
+.sig-paxg  { background: var(--orange-bg); color: var(--orange); }
+.sig-buy   { background: var(--green-bg); color: var(--green); }
+.sig-sell  { background: #f5f5f5; color: var(--muted); }
+
+.tabs { display: flex; gap: 2px; margin-bottom: 14px; }
+.tab { font-size: 11px; font-weight: 500; padding: 4px 10px; border: none; background: transparent; color: var(--muted); cursor: pointer; border-radius: 6px; }
+.tab:hover { color: var(--mid); }
+.tab.on { background: #f0f0f0; color: var(--ink); }
+
+.tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+.tbl th { text-align: left; padding: 0 8px 10px 0; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--faint); border-bottom: 1px solid #f0f0f0; white-space: nowrap; }
+.tbl th.r { text-align: right; }
+.tbl td { padding: 9px 8px 9px 0; border-bottom: 1px solid #fafafa; vertical-align: middle; }
+.tbl tr:last-child td { border-bottom: none; }
+.tbl tr:hover td { background: #fdfdfd; }
+.td-date { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); white-space: nowrap; }
+.td-r { text-align: right; font-family: 'DM Mono', monospace; }
+.td-val { font-weight: 500; }
+.act { display: inline-block; font-family: 'DM Mono', monospace; font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 500; }
+.act-buy  { background: var(--green-bg); color: var(--green); }
+.act-sell { background: var(--red-bg);   color: var(--red); }
+.act-hold { background: #f5f5f5;         color: var(--muted); }
+.no-data { color: var(--muted); font-size: 13px; padding: 16px 0; }
+.loading { color: var(--muted); font-size: 13px; padding: 40px 0; text-align: center; }
+.pager { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
+.pg-btn { font-size: 11px; padding: 4px 10px; border: 1px solid var(--border); background: var(--card); border-radius: 6px; cursor: pointer; color: var(--mid); }
+.pg-btn:hover { background: #f5f5f5; }
+.pg-btn:disabled { opacity: .4; cursor: default; }
+.pg-info { font-size: 11px; color: var(--muted); font-family: 'DM Mono', monospace; }
+
+.chart-wrap { position: relative; }
+.chart-tip {
+  display: none; position: absolute; top: 4px; left: 50%; transform: translateX(-50%);
+  background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px;
+  pointer-events: none; white-space: nowrap; z-index: 10; box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  flex-direction: column; align-items: center; gap: 3px;
+}
+.tip-date { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; }
+.tip-val  { font-size:14px; font-weight:600; color:var(--ink); }
+.tip-ret  { font-size:11px; font-weight:500; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.two-col .card { margin-bottom: 0; }
+
+@media (max-width: 640px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .pos-row { grid-template-columns: 48px 1fr 80px; }
+  .pos-wt { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="root">
+  <div id="loading" class="loading">Loading trade history…</div>
+  <div id="content" style="display:none;">
+
+    <div class="hdr">
+      <div class="hdr-left">
+        <div class="hdr-title">DMG Capital</div>
+        <span class="mode-badge" id="mode-badge">PAPER</span>
+      </div>
+      <div class="hdr-meta" id="updated-at">—</div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Portfolio Value</div>
+        <div class="stat-val" id="s-val">—</div>
+        <div class="stat-sub">From $100,000 (2018)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Return</div>
+        <div class="stat-val g" id="s-ret">—</div>
+        <div class="stat-sub">Since Jan 2018</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Fees Paid</div>
+        <div class="stat-val" id="s-fees">—</div>
+        <div class="stat-sub">0.26% per trade</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Trades</div>
+        <div class="stat-val" id="s-ntrades">—</div>
+        <div class="stat-sub" id="s-ntrades-sub">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">BTC Gate</div>
+        <div class="stat-val" id="s-gate">—</div>
+        <div class="stat-sub" id="s-gate-sub">—</div>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-title">Portfolio Growth — Backtest (2018) + Live Paper</div>
+        <div class="tabs" style="margin-bottom:0;">
+          <button class="tab on" onclick="chartRange('all')">All</button>
+          <button class="tab" onclick="chartRange('1y')">1Y</button>
+          <button class="tab" onclick="chartRange('6m')">6M</button>
+          <button class="tab" onclick="chartRange('3m')">3M</button>
+        </div>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-tip" id="tip">
+          <div class="tip-date" id="tip-date">—</div>
+          <div class="tip-val"  id="tip-val">—</div>
+          <div class="tip-ret"  id="tip-ret">—</div>
+        </div>
+        <svg id="chart-svg" viewBox="0 0 900 220" style="width:100%;display:block;overflow:visible;"></svg>
+      </div>
+    </div>
+
+    <!-- Positions + Signals -->
+    <div class="two-col">
+      <div class="card">
+        <div class="card-hdr"><div class="card-title">Current Positions</div><div class="card-sub" id="pos-total">—</div></div>
+        <div id="pos-list"></div>
+      </div>
+      <div class="card">
+        <div class="card-hdr"><div class="card-title">Current Signals</div><div class="card-sub" id="sig-date">—</div></div>
+        <div class="sigs" id="sig-list"></div>
+      </div>
+    </div>
+
+    <!-- Trade history -->
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-title">Full Trade History — Backtest + Live</div>
+        <div class="card-sub" id="trade-count">—</div>
+      </div>
+      <div class="tabs">
+        <button class="tab on" onclick="filterLog('all')">All</button>
+        <button class="tab" onclick="filterLog('buy')">Buys</button>
+        <button class="tab" onclick="filterLog('sell')">Sells</button>
+        <button class="tab" onclick="filterLog('hold')">Holds</button>
+      </div>
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Action</th>
+            <th>Asset</th>
+            <th>Reason / Signal</th>
+            <th class="r">Value</th>
+            <th class="r">Fee</th>
+            <th class="r">Portfolio</th>
+          </tr>
+        </thead>
+        <tbody id="tbl-body"></tbody>
+      </table>
+      <div class="pager">
+        <button class="pg-btn" id="pg-prev" onclick="page(-1)">← Prev</button>
+        <span class="pg-info" id="pg-info">—</span>
+        <button class="pg-btn" id="pg-next" onclick="page(1)">Next →</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const REPO    = "https://raw.githubusercontent.com/dygo3739/dmg-capital/main";
+const SIGNALS = "https://raw.githubusercontent.com/callingmarkets/signals/main/portfolios.json";
+const PG_SIZE = 30;
+
+let allTrades=[], filtTrades=[], equity=[], pgIdx=0;
+
+const fmt$  = v => v==null?"—":"$"+Math.round(v).toLocaleString();
+const fmtP  = (v,d=1) => v==null?"—":(v>=0?"+":"")+v.toFixed(d)+"%";
+const fmtDt = iso => new Date(iso).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+
+// ── Chart ─────────────────────────────────────────────────────────────────────
+function spline(pts) {
+  if(pts.length<2)return"";
+  const t=0.35;let d=`M${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;
+  for(let i=0;i<pts.length-1;i++){
+    const p0=pts[Math.max(i-1,0)],p1=pts[i],p2=pts[i+1],p3=pts[Math.min(i+2,pts.length-1)];
+    const c1x=p1[0]+(p2[0]-p0[0])*t/3,c1y=p1[1]+(p2[1]-p0[1])*t/3;
+    const c2x=p2[0]-(p3[0]-p1[0])*t/3,c2y=p2[1]-(p3[1]-p1[1])*t/3;
+    d+=` C${c1x.toFixed(1)},${c1y.toFixed(1)} ${c2x.toFixed(1)},${c2y.toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
+  }return d;
 }
 
-KRAKEN_PAIRS = {
-    "BTC":"XBTUSD","ETH":"ETHUSD","XRP":"XRPUSD","LTC":"LTCUSD",
-    "BCH":"BCHUSD","ADA":"ADAUSD","DOT":"DOTUSD","LINK":"LINKUSD",
-    "XLM":"XLMUSD","DOGE":"XDGUSD","SOL":"SOLUSD","AVAX":"AVAXUSD",
-    "TRX":"TRXUSD","XMR":"XMRUSD","ZEC":"ZECUSD","ETC":"ETCUSD",
-    "ATOM":"ATOMUSD","UNI":"UNIUSD","DASH":"DASHUSD","PAXG":"PAXGUSD",
+function drawChart(range) {
+  document.querySelectorAll("#content .card:nth-child(3) .tab").forEach(b=>{
+    b.classList.toggle("on", b.textContent.toLowerCase()===range||(range==="all"&&b.textContent==="All"));
+  });
+  let data=equity;
+  if(range==="1y") data=equity.slice(-52);
+  else if(range==="6m") data=equity.slice(-26);
+  else if(range==="3m") data=equity.slice(-13);
+  if(data.length<2)return;
+
+  const W=900,H=220,pt=16,pb=30,iH=H-pt-pb;
+  const vals=data.map(e=>e.value);
+  const minV=Math.min(...vals)*0.97,maxV=Math.max(...vals)*1.02,rng=maxV-minV||1;
+  const xS=i=>(i/(data.length-1||1))*W;
+  const yS=v=>pt+iH-((v-minV)/rng)*iH;
+
+  const step=Math.max(1,Math.floor(data.length/250));
+  const samp=data.filter((_,i)=>i%step===0||i===data.length-1);
+  const pts=samp.map((_,i)=>[xS(Math.min(i*step,data.length-1)),yS(samp[i].value)]);
+  const line=spline(pts);
+  const area=line+` L${xS(data.length-1).toFixed(1)},${(pt+iH).toFixed(1)} L0,${(pt+iH).toFixed(1)} Z`;
+
+  let grids="",ylbls="",xlbls="";
+  [0.25,0.5,0.75].forEach(p=>{
+    const y=(pt+iH*(1-p)).toFixed(1),v=minV+rng*p;
+    const lbl=v>=1000000?`$${(v/1000000).toFixed(1)}M`:v>=1000?`$${Math.round(v/1000)}K`:`$${Math.round(v)}`;
+    grids+=`<line x1="0" y1="${y}" x2="${W}" y2="${y}" stroke="#f5f5f5" stroke-width="1"/>`;
+    ylbls+=`<text x="4" y="${(parseFloat(y)-4).toFixed(1)}" fill="#ddd" font-size="9" font-family="DM Mono,monospace">${lbl}</text>`;
+  });
+  [0,.25,.5,.75,1].forEach(p=>{
+    const i=Math.min(Math.round(p*(data.length-1)),data.length-1);
+    const x=parseFloat(xS(i).toFixed(1));
+    const a=p===0?"start":p===1?"end":"middle";
+    xlbls+=`<text x="${p===0?Math.max(x,30):p===1?Math.min(x,W-10):x}" y="${H-8}" fill="#ccc" font-size="10" font-family="DM Sans,sans-serif" text-anchor="${a}">${data[i].date.slice(0,7)}</text>`;
+  });
+
+  const hs=Math.max(1,Math.floor(data.length/180));
+  let hL="",hR="";
+  for(let i=0;i<data.length;i+=hs){
+    const x=xS(i).toFixed(1),y=yS(data[i].value).toFixed(1);
+    const rw=Math.max((W/data.length)*hs+2,8).toFixed(1);
+    const rx=Math.max(0,parseFloat(x)-parseFloat(rw)/2).toFixed(1);
+    hL+=`<g id="ch${i}" style="display:none;pointer-events:none;">
+      <line x1="${x}" y1="${pt}" x2="${x}" y2="${pt+iH}" stroke="#168C67" stroke-width="1" stroke-dasharray="3,2" opacity=".3"/>
+      <circle cx="${x}" cy="${y}" r="4" fill="#168C67" stroke="#fff" stroke-width="2.5"/>
+    </g>`;
+    hR+=`<rect x="${rx}" y="${pt}" width="${rw}" height="${iH}" fill="transparent" style="cursor:crosshair"
+      onmouseenter="chHov(${i},${Math.round(data[i].value)},'${data[i].date}')" onmouseleave="chOut()"/>`;
+  }
+
+  const lx=xS(data.length-1).toFixed(1),ly=yS(data[data.length-1].value).toFixed(1);
+  document.getElementById("chart-svg").innerHTML=`
+    <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#168C67" stop-opacity=".13"/>
+      <stop offset="100%" stop-color="#168C67" stop-opacity="0"/>
+    </linearGradient></defs>
+    ${grids}${ylbls}
+    <path d="${area}" fill="url(#cg)"/>
+    <path d="${line}" fill="none" stroke="#168C67" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="${lx}" cy="${ly}" r="3.5" fill="#168C67" stroke="#fff" stroke-width="2.5"/>
+    ${hL}${xlbls}${hR}`;
 }
 
-ALL_TICKERS = sorted(set(
-    t for yr in UNIVERSE_BY_YEAR.values() for t in yr
-) | {"PAXG"})
+window.chartRange=r=>drawChart(r);
+window.chHov=(i,val,date)=>{
+  document.querySelectorAll('[id^="ch"]').forEach(e=>e.style.display="none");
+  const el=document.getElementById("ch"+i);if(el)el.style.display="";
+  const tip=document.getElementById("tip");if(!tip)return;
+  const pct=((val/100000-1)*100).toFixed(1);
+  document.getElementById("tip-date").textContent=date;
+  document.getElementById("tip-val").textContent=fmt$(val);
+  const re=document.getElementById("tip-ret");
+  re.textContent=fmtP(parseFloat(pct));
+  re.style.color=parseFloat(pct)>=0?"var(--green)":"var(--red)";
+  tip.style.display="flex";
+};
+window.chOut=()=>{
+  document.querySelectorAll('[id^="ch"]').forEach(e=>e.style.display="none");
+  const t=document.getElementById("tip");if(t)t.style.display="none";
+};
 
-# ── Indicators ────────────────────────────────────────────────────────────────
-def calc_ema(s, n): return s.ewm(span=n, adjust=False).mean()
-def calc_rma(s, n): return s.ewm(alpha=1/n, adjust=False).mean()
+// ── Trade log ─────────────────────────────────────────────────────────────────
+window.filterLog=function(f){
+  pgIdx=0;
+  document.querySelectorAll(".tabs .tab").forEach(b=>{
+    const map={all:"All",buy:"Buys",sell:"Sells",hold:"Holds"};
+    b.classList.toggle("on",map[f]===b.textContent);
+  });
+  filtTrades=f==="all"?allTrades
+    :f==="buy" ?allTrades.filter(t=>t.action==="BUY")
+    :f==="sell"?allTrades.filter(t=>t.action==="SELL")
+    :allTrades.filter(t=>t.action==="HOLD");
+  renderPage();
+};
 
-def calc_rsi(s, n=14):
-    d  = s.diff()
-    ag = calc_rma(d.clip(lower=0), n)
-    al = calc_rma((-d).clip(lower=0), n)
-    return 100 - 100 / (1 + ag / al.replace(0, np.nan))
+function renderPage(){
+  const start=pgIdx*PG_SIZE,end=Math.min(start+PG_SIZE,filtTrades.length);
+  document.getElementById("pg-info").textContent=`${filtTrades.length?start+1:0}–${end} of ${filtTrades.length}`;
+  document.getElementById("pg-prev").disabled=pgIdx===0;
+  document.getElementById("pg-next").disabled=end>=filtTrades.length;
 
-def compute_signal(weekly_close):
-    """2-of-3 weekly momentum — matches Pine Script CallingMarkets Indicator 2."""
-    if len(weekly_close) < 60: return None
-    ema20 = calc_ema(weekly_close, 20)
-    ema55 = calc_ema(weekly_close, 55)
-    rsi   = calc_rsi(weekly_close, 14)
-    rma   = calc_ema(rsi, 14)          # ta.ema(rsi14, 14) in Pine
-    macd  = calc_ema(weekly_close, 12) - calc_ema(weekly_close, 26)
-    sig   = calc_ema(macd, 9)
-    score = ((ema20>ema55).astype(int) +
-             (rsi>rma).astype(int) +
-             (macd>sig).astype(int))
-    return score.apply(lambda s: "BUY" if s >= 2 else "SELL")
+  const rows=filtTrades.slice(start,end).map(t=>{
+    const ac=t.action==="BUY"?"act-buy":t.action==="SELL"?"act-sell":"act-hold";
+    const tc=t.action==="BUY"?"var(--green-bg)":t.action==="SELL"?"var(--red-bg)":"#f5f5f5";
+    const txc=t.action==="BUY"?"var(--green)":t.action==="SELL"?"var(--red)":"var(--muted)";
+    const tkCell=t.ticker
+      ?`<span style="display:inline-block;font-family:DM Mono,monospace;font-size:10px;padding:2px 6px;border-radius:4px;background:${tc};color:${txc};">${t.ticker}</span>`
+      :`<span style="color:var(--muted);font-size:11px;">${t.note||"—"}</span>`;
+    const reason=(t.reason||t.signal||"").replace("Signal → ","").slice(0,35);
+    const src=t.source==="paper"?`<span style="font-family:DM Mono,monospace;font-size:9px;color:var(--muted);margin-left:4px;">PAPER</span>`:"";
+    return `<tr>
+      <td class="td-date">${fmtDt(t.date)}</td>
+      <td><span class="act ${ac}">${t.action==="HOLD"?"—":t.action}</span>${src}</td>
+      <td>${tkCell}</td>
+      <td style="font-size:11px;color:var(--muted);max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${reason}</td>
+      <td class="td-r td-val">${t.value?fmt$(t.value):"—"}</td>
+      <td class="td-r" style="color:var(--muted);">${t.fee?fmt$(t.fee):"—"}</td>
+      <td class="td-r td-val">${t.portfolio_value?fmt$(t.portfolio_value):"—"}</td>
+    </tr>`;
+  }).join("");
+  document.getElementById("tbl-body").innerHTML=rows||`<tr><td colspan="7" class="no-data">No trades match this filter.</td></tr>`;
+}
+window.page=d=>{pgIdx=Math.max(0,pgIdx+d);renderPage();};
 
-# ── Fetch Kraken weekly OHLC ──────────────────────────────────────────────────
-def fetch_weekly(ticker):
-    pair = KRAKEN_PAIRS.get(ticker)
-    if not pair: return None
-    try:
-        r = requests.get(
-            f"{KRAKEN_BASE}/OHLC",
-            params={"pair": pair, "interval": 10080},
-            timeout=30
-        )
-        if r.status_code != 200: return None
-        data = r.json()
-        if data.get("error"): return None
-        result = data.get("result", {})
-        key = [k for k in result if k != "last"]
-        if not key: return None
-        bars = result[key[0]]
-        if not bars: return None
-        df = pd.DataFrame(bars, columns=["time","open","high","low","close","vwap","volume","count"])
-        df["date"]  = pd.to_datetime(df["time"].astype(int), unit="s", utc=True)
-        df["close"] = df["close"].astype(float)
-        df = df.drop_duplicates("date").set_index("date").sort_index()
-        weekly = df["close"].resample("W-FRI").last().dropna()
-        return weekly if len(weekly) >= 52 else None
-    except Exception as e:
-        print(f"  Error {ticker}: {e}")
-        return None
+// ── Positions ─────────────────────────────────────────────────────────────────
+function renderPositions(state){
+  const el=document.getElementById("pos-list");
+  if(!state?.positions){el.innerHTML='<div class="no-data">No position data</div>';return;}
+  const total=state.total_value||0;
+  const maxV=Math.max(...Object.values(state.positions).filter(v=>v>0));
+  document.getElementById("pos-total").textContent=fmt$(total);
+  el.innerHTML=Object.entries(state.positions).sort((a,b)=>b[1]-a[1]).map(([tk,v])=>{
+    if(v<0.01)return"";
+    const pct=total>0?(v/total*100):0,bw=maxV>0?(v/maxV*100):0;
+    const col=tk==="USD"?"#ddd":tk==="PAXG"?"var(--orange)":"var(--green)";
+    return `<div class="pos-row">
+      <div class="pos-tk">${tk}</div>
+      <div class="pos-bar-wrap"><div class="pos-bar" style="width:${bw}%;background:${col};"></div></div>
+      <div class="pos-usd">${fmt$(v)}</div>
+      <div class="pos-wt">${pct.toFixed(1)}%</div>
+    </div>`;
+  }).join("");
+}
 
-def fetch_all():
-    price_data = {}
-    print(f"\nFetching {len(ALL_TICKERS)} tickers from Kraken...")
-    for i, ticker in enumerate(ALL_TICKERS):
-        series = fetch_weekly(ticker)
-        if series is not None:
-            price_data[ticker] = series
-            print(f"  {ticker:6s}: {len(series):3d} weeks "
-                  f"({series.index[0].strftime('%Y-%m')} → {series.index[-1].strftime('%Y-%m')})")
-        else:
-            print(f"  {ticker:6s}: ✗ no data")
-        if (i+1) % 5 == 0: time.sleep(0.5)
-    return price_data
+// ── Signals ───────────────────────────────────────────────────────────────────
+function renderSignals(portfolio){
+  const el=document.getElementById("sig-list");
+  const gEl=document.getElementById("s-gate"),gSub=document.getElementById("s-gate-sub");
+  if(!portfolio?.current_signals){el.innerHTML='<span class="no-data">—</span>';return;}
+  const sigs=portfolio.current_signals;
+  const btc=sigs["BTC"]||"—",paxg=sigs["PAXG"]||"—";
+  gEl.textContent=btc; gEl.className="stat-val "+(btc==="BUY"?"g":"r");
+  gSub.textContent=btc==="BUY"?"Gate open":(paxg==="BUY"?"→ PAXG":"→ USDT");
+  const pills=[`<span class="sig ${btc==="BUY"?"sig-gate-open":"sig-gate-close"}">BTC Gate: ${btc}</span>`];
+  if(paxg) pills.push(`<span class="sig sig-paxg">PAXG: ${paxg}</span>`);
+  Object.entries(sigs).forEach(([t,s])=>{
+    if(t==="BTC"||t==="PAXG")return;
+    pills.push(`<span class="sig ${s==="BUY"?"sig-buy":"sig-sell"}">${s==="BUY"?"▲ ":""}${t}</span>`);
+  });
+  el.innerHTML=pills.join("");
+  if(portfolio.generated) document.getElementById("sig-date").textContent=fmtDt(portfolio.generated);
+}
 
-# ── Universe helper ───────────────────────────────────────────────────────────
-def get_universe(date):
-    year = date.year
-    available = [y for y in sorted(UNIVERSE_BY_YEAR.keys()) if y <= year]
-    return UNIVERSE_BY_YEAR[available[-1]] if available else []
+// ── Main ──────────────────────────────────────────────────────────────────────
+async function load(){
+  const [hR,sR,sigR]=await Promise.allSettled([
+    fetch(`${REPO}/trade_history.json?t=${Date.now()}`).then(r=>r.ok?r.json():null).catch(()=>null),
+    fetch(`${REPO}/paper_state.json?t=${Date.now()}`).then(r=>r.ok?r.json():null).catch(()=>null),
+    fetch(`${SIGNALS}?t=${Date.now()}`).then(r=>r.ok?r.json():null).catch(()=>null),
+  ]);
+  const hist=hR.value,state=sR.value;
+  const sigData=sigR.value;
+  const portfolio=sigData?(sigData.portfolios||[]).find(p=>p.id==="crypto-rotation"):null;
 
-# ── Backtest ──────────────────────────────────────────────────────────────────
-def run_backtest(price_data):
-    signals = {}
-    for ticker, prices in price_data.items():
-        sig = compute_signal(prices)
-        if sig is not None:
-            signals[ticker] = sig
+  // Equity curve — backtest + stitch live paper value
+  equity=hist?.equity_curve||portfolio?.equity_curve||[];
+  if(state?.total_value&&state?.timestamp){
+    const ld=state.timestamp.slice(0,10);
+    if(!equity.find(e=>e.date===ld)) equity=[...equity,{date:ld,value:state.total_value}];
+  }
 
-    start     = pd.Timestamp("2018-01-05", tz="UTC")
-    end       = pd.Timestamp.now(tz="UTC").normalize()
-    all_weeks = pd.date_range(start, end, freq="W-FRI")
+  // Stats
+  const finalVal=state?.total_value||hist?.final_value||portfolio?.final_value;
+  const totalRet=hist?.total_return_pct||portfolio?.total_return_pct;
+  if(finalVal) document.getElementById("s-val").textContent=fmt$(finalVal);
+  const rEl=document.getElementById("s-ret");
+  if(totalRet!=null){rEl.textContent=fmtP(totalRet,1);rEl.className="stat-val "+(totalRet>=0?"g":"r");}
+  if(hist?.total_fees!=null) document.getElementById("s-fees").textContent=fmt$(hist.total_fees);
 
-    holdings     = {}
-    cash         = STARTING_CAPITAL
-    equity_curve = []
-    trades       = []
-    weekly_rets  = []
-    prev_val     = STARTING_CAPITAL
+  // Build trade list
+  if(hist?.trades?.length){
+    const eqMap={};
+    (hist.equity_curve||[]).forEach(e=>{eqMap[e.date]=e.value;});
+    allTrades=[...hist.trades].reverse().map(t=>({...t,portfolio_value:eqMap[t.date]||null,source:"backtest"}));
+    const b=allTrades.filter(t=>t.action==="BUY").length;
+    const s=allTrades.filter(t=>t.action==="SELL").length;
+    const h=allTrades.filter(t=>t.action==="HOLD").length;
+    document.getElementById("s-ntrades").textContent=b+s;
+    document.getElementById("s-ntrades-sub").textContent=`${b} buys · ${s} sells · ${h} holds`;
+    document.getElementById("trade-count").textContent=`${allTrades.length} total records`;
+  } else {
+    document.getElementById("trade-count").textContent="Push crypto_portfolio.py to generate trade history";
+    document.getElementById("s-ntrades").textContent="—";
+  }
 
-    for date in all_weeks:
-        universe = get_universe(date)
+  filtTrades=allTrades;
+  renderPage();
+  renderPositions(state);
+  renderSignals(portfolio);
+  drawChart("all");
 
-        prices_now = {}
-        for t in list(universe) + ["PAXG"]:
-            if t in price_data:
-                mask = price_data[t].index <= date
-                if mask.any():
-                    prices_now[t] = float(price_data[t][mask].iloc[-1])
+  const ts=state?.timestamp||hist?.generated||portfolio?.generated;
+  if(ts) document.getElementById("updated-at").textContent="Updated "+fmtDt(ts);
 
-        stock_val = sum(holdings.get(t,0)*prices_now.get(t,0) for t in holdings)
-        port_val  = cash + stock_val
-        weekly_rets.append((port_val/prev_val)-1 if prev_val > 0 else 0)
-        prev_val  = port_val
+  document.getElementById("loading").style.display="none";
+  document.getElementById("content").style.display="block";
+}
 
-        # ── BTC gate ──────────────────────────────────────────────────────────
-        btc_signal = "SELL"
-        if "BTC" in signals:
-            mask = signals["BTC"].index <= date
-            if mask.any():
-                btc_signal = signals["BTC"][mask].iloc[-1]
-
-        # ── PAXG signal ───────────────────────────────────────────────────────
-        paxg_signal = "SELL"
-        if "PAXG" in signals:
-            mask = signals["PAXG"].index <= date
-            if mask.any():
-                paxg_signal = signals["PAXG"][mask].iloc[-1]
-
-        # ── Target allocation ─────────────────────────────────────────────────
-        buy_tickers = []
-        defensive   = None
-        sig_snap    = {}
-
-        if btc_signal == "BUY":
-            for ticker in universe:
-                if ticker not in signals or ticker not in prices_now:
-                    continue
-                mask = signals[ticker].index <= date
-                if mask.any():
-                    s = signals[ticker][mask].iloc[-1]
-                    sig_snap[ticker] = s
-                    if s == "BUY":
-                        buy_tickers.append(ticker)
-        else:
-            sig_snap["BTC"] = "SELL"
-            if paxg_signal == "BUY" and "PAXG" in prices_now:
-                defensive = "PAXG"
-
-        # ── Universe exits ────────────────────────────────────────────────────
-        for ticker in list(holdings.keys()):
-            if ticker not in universe and ticker != "PAXG":
-                p = prices_now.get(ticker, 0)
-                if p > 0:
-                    val = holdings[ticker] * p
-                    cash += val
-                    trades.append({"date": date.strftime("%Y-%m-%d"),
-                                   "action": "SELL", "ticker": ticker,
-                                   "price": round(p,4), "value": round(val,2),
-                                   "reason": "Exited top 10 universe"})
-                del holdings[ticker]
-
-        prev_buy_set = set(holdings.keys())
-        new_buy_set  = set(buy_tickers) | ({defensive} if defensive else set())
-        entered      = new_buy_set - prev_buy_set
-        exited       = prev_buy_set - new_buy_set
-
-        # ── Rebalance ─────────────────────────────────────────────────────────
-        proceeds = cash
-        for ticker, shares in holdings.items():
-            p = prices_now.get(ticker, 0)
-            proceeds += shares * p
-            if ticker in exited:
-                trades.append({"date": date.strftime("%Y-%m-%d"),
-                               "action": "SELL", "ticker": ticker,
-                               "price": round(p,4),
-                               "value": round(shares*p,2),
-                               "reason": "Signal → SELL"})
-
-        holdings = {}
-        cash     = proceeds
-
-        if defensive:
-            p = prices_now.get("PAXG", 0)
-            if p > 0:
-                holdings["PAXG"] = proceeds / p
-                cash = 0.0
-                if "PAXG" in entered:
-                    trades.append({"date": date.strftime("%Y-%m-%d"),
-                                   "action": "BUY", "ticker": "PAXG",
-                                   "price": round(p,4),
-                                   "shares": round(proceeds/p,6),
-                                   "value": round(proceeds,2), "weight": 100.0,
-                                   "reason": "BTC gate SELL, PAXG BUY"})
-        elif buy_tickers:
-            w = 1.0 / len(buy_tickers)
-            for ticker in buy_tickers:
-                alloc = proceeds * w
-                p = prices_now.get(ticker, 0)
-                if p > 0:
-                    shares = alloc / p
-                    holdings[ticker] = shares
-                    cash -= alloc
-                    if ticker in entered:
-                        trades.append({"date": date.strftime("%Y-%m-%d"),
-                                       "action": "BUY", "ticker": ticker,
-                                       "price": round(p,4),
-                                       "shares": round(shares,6),
-                                       "value": round(alloc,2),
-                                       "weight": round(w*100,2),
-                                       "signal": sig_snap.get(ticker,"—")})
-
-        if not entered and not exited:
-            state = "PAXG defensive" if defensive else (
-                    f"{len(buy_tickers)} assets" if buy_tickers else "100% USDT")
-            trades.append({"date": date.strftime("%Y-%m-%d"),
-                           "action": "HOLD", "note": f"No changes — {state}"})
-
-        stock_val = sum(holdings.get(t,0)*prices_now.get(t,0) for t in holdings)
-        port_val  = cash + stock_val
-
-        equity_curve.append({
-            "date":        date.strftime("%Y-%m-%d"),
-            "value":       round(port_val,2),
-            "btc_signal":  btc_signal,
-            "paxg_signal": paxg_signal,
-            "defensive":   defensive,
-            "buy_tickers": buy_tickers,
-            "n_universe":  len(universe),
-            "cash_pct":    round(cash/port_val*100,1) if port_val>0 else 100,
-        })
-
-    # ── Metrics ───────────────────────────────────────────────────────────────
-    eq_vals  = [e["value"] for e in equity_curve]
-    final    = eq_vals[-1] if eq_vals else STARTING_CAPITAL
-    total_r  = (final/STARTING_CAPITAL-1)*100
-    n_weeks  = len(eq_vals)
-    years    = n_weeks/52
-    cagr     = ((final/STARTING_CAPITAL)**(1/max(years,0.1))-1)*100
-
-    arr    = np.array(weekly_rets[1:])
-    sharpe = float(np.mean(arr)/np.std(arr)*np.sqrt(52)) if np.std(arr)>0 else 0
-
-    # Drawdown from post-rebalance equity curve values
-    peak = eq_vals[0] if eq_vals else STARTING_CAPITAL
-    max_dd = 0.0
-    for v in eq_vals:
-        if v > peak: peak = v
-        if peak > 0:
-            dd = (peak - v) / peak * 100
-            if dd > max_dd: max_dd = dd
-
-    # BTC B&H benchmark
-    btc_bah = None
-    btc_s   = None
-    if "BTC" in price_data:
-        btc = price_data["BTC"]
-        mask = btc.index >= pd.Timestamp("2018-01-05", tz="UTC")
-        if mask.any():
-            btc_s = btc[mask]
-            btc_bah = round((float(btc_s.iloc[-1])/float(btc_s.iloc[0])-1)*100, 2)
-
-    n_paxg   = sum(1 for e in equity_curve if e.get("defensive")=="PAXG")
-    n_usdt   = sum(1 for e in equity_curve if not e.get("buy_tickers") and not e.get("defensive"))
-    n_crypto = sum(1 for e in equity_curve if e.get("buy_tickers"))
-
-    print(f"\n{'─'*52}")
-    print(f"  Strategy: Top 10 Crypto + PAXG Defensive")
-    print(f"  Backtest: {equity_curve[0]['date']} → {equity_curve[-1]['date']}")
-    print(f"  Portfolio:     ${final:>12,.2f}")
-    print(f"  Total Return:  {total_r:>+.2f}%")
-    if btc_bah: print(f"  BTC B&H:       {btc_bah:>+.2f}%")
-    print(f"  CAGR:          {cagr:>+.2f}%")
-    print(f"  Sharpe:        {sharpe:.2f}")
-    print(f"  Max Drawdown:  -{max_dd:.2f}%")
-    print(f"  Weeks:         {n_weeks}")
-    print(f"\n  Time in crypto: {n_crypto/n_weeks*100:.1f}% ({n_crypto} weeks)")
-    print(f"  Time in PAXG:   {n_paxg/n_weeks*100:.1f}% ({n_paxg} weeks)")
-    print(f"  Time in USDT:   {n_usdt/n_weeks*100:.1f}% ({n_usdt} weeks)")
-
-    # Current signals
-    now = pd.Timestamp.now(tz="UTC")
-    universe_now = get_universe(now)
-    cur_sigs = {}
-    for t in universe_now + ["PAXG"]:
-        if t in signals and len(signals[t]) > 0:
-            cur_sigs[t] = signals[t].iloc[-1]
-
-    buy  = [t for t,s in cur_sigs.items() if s=="BUY" and t not in ("BTC","PAXG")]
-    sell = [t for t,s in cur_sigs.items() if s=="SELL" and t not in ("BTC","PAXG")]
-    print(f"\n  Current Signals (last completed weekly bar):")
-    print(f"    BTC gate: {cur_sigs.get('BTC','?')}")
-    print(f"    PAXG:     {cur_sigs.get('PAXG','?')}")
-    print(f"    BUY  ({len(buy)}): {', '.join(sorted(buy))}")
-    print(f"    SELL ({len(sell)}): {', '.join(sorted(sell))}")
-
-    # Period returns
-    def port_return_days(days):
-        cutoff = now - pd.Timedelta(days=days)
-        past = [e for e in equity_curve if pd.Timestamp(e["date"]).tz_localize("UTC") <= cutoff]
-        return round((final/past[-1]["value"]-1)*100, 2) if past else None
-
-    def btc_return_days(days):
-        if "BTC" not in price_data: return None
-        btc = price_data["BTC"]
-        cutoff = now - pd.Timedelta(days=days)
-        past = btc[btc.index <= cutoff]
-        return round((float(btc.iloc[-1])/float(past.iloc[-1])-1)*100, 2) if not past.empty else None
-
-    # Build real BTC B&H equity curve — $100K invested in BTC from start date
-    btc_eq_curve = []
-    if "BTC" in price_data and btc_s is not None:
-        btc_prices = price_data["BTC"]
-        btc_start_price = float(btc_s.iloc[0])
-        for e in equity_curve:
-            try:
-                ts   = pd.Timestamp(e["date"]).tz_localize("UTC")
-                mask = btc_prices.index <= ts
-                if mask.any():
-                    btc_price = float(btc_prices[mask].iloc[-1])
-                    btc_eq_curve.append({
-                        "date":  e["date"],
-                        "value": round(100000 * btc_price / btc_start_price, 2)
-                    })
-            except Exception:
-                pass
-
-    return holdings, {
-        "total_return_pct":   round(total_r, 2),
-        "cagr_pct":           round(cagr, 2),
-        "sharpe_ratio":       round(sharpe, 2),
-        "max_drawdown_pct":   round(max_dd, 2),
-        "final_value":        round(final, 2),
-        "current_value":      round(final, 2),
-        "total_return_dollar": round(final - STARTING_CAPITAL, 2),
-        "btc_bah_pct":        btc_bah,
-        # Real BTC weekly equity curve — $100K invested in BTC from start date
-        "btc_equity_curve":   btc_eq_curve,
-        "n_weeks":            n_weeks,
-        "n_buy_stocks":       len(buy),
-        "n_universe":         len(universe_now),
-        "n_weeks_crypto":     n_crypto,
-        "n_weeks_paxg":       n_paxg,
-        "n_weeks_usdt":       n_usdt,
-        "return_1y":          port_return_days(365),
-        "return_3y":          port_return_days(365*3),
-        "return_5y":          port_return_days(365*5),
-        "return_10y":         port_return_days(365*10),
-        "bah_return_1y":      btc_return_days(365),
-        "bah_return_3y":      btc_return_days(365*3),
-        "bah_return_5y":      btc_return_days(365*5),
-        "bah_return_10y":     btc_return_days(365*10),
-        "equity_curve":       equity_curve,
-        "trades":             trades,
-        "current_signals":    cur_sigs,
-    }
-
-# ── Main ──────────────────────────────────────────────────────────────────────
-def main():
-    print("DMG Capital — Top 10 Crypto + PAXG Defensive Backtest")
-    print(f"Universe: Top 10 by market cap (yearly snapshots, 2018-2025)")
-    print(f"Gate: BTC weekly signal — SELL → PAXG if BUY, else USDT")
-    print(f"Starting capital: ${STARTING_CAPITAL:,.0f}")
-
-    price_data = fetch_all()
-    print(f"\nGot data for {len(price_data)}/{len(ALL_TICKERS)} tickers")
-
-    if "PAXG" not in price_data:
-        print("WARNING: PAXG unavailable — defensive will be 100% USDT")
-
-    print("\nRunning backtest...")
-    holdings, result = run_backtest(price_data)
-
-    # Current holdings with weights
-    final = result["final_value"]
-    result["current_holdings"] = [
-        {"ticker": t, "name": t,
-         "shares": round(s, 6),
-         "price":  round(float(price_data[t].iloc[-1]), 4) if t in price_data else 0,
-         "value":  round(s * float(price_data[t].iloc[-1]), 2) if t in price_data else 0,
-         "weight": round(s * float(price_data[t].iloc[-1]) / final * 100, 2) if t in price_data and final > 0 else 0,
-         "signal": "BUY"}
-        for t, s in holdings.items() if s > 0
-    ]
-
-    # Write CSV export
-    import csv, io
-    all_tickers_csv = sorted(set(
-        t for e in result["equity_curve"] for t in e.get("buy_tickers", [])
-    ))
-    rows = [["TRADE HISTORY"],
-            ["Date","Action","Ticker","Name","Price","Shares","Value","Weight %"]]
-    for t in result["trades"]:
-        if t.get("action") in ("BUY","SELL"):
-            rows.append([t.get("date",""), t.get("action",""), t.get("ticker",""),
-                         t.get("ticker",""), t.get("price",""), t.get("shares",""),
-                         t.get("value",""), t.get("weight","")])
-    rows.append([])
-    rows.append(["WEEKLY PORTFOLIO VALUE & ALLOCATION"])
-    rows.append(["Date","Portfolio Value","Assets in BUY","Cash %"] + all_tickers_csv)
-    for e in result["equity_curve"]:
-        buy_set = set(e.get("buy_tickers", []))
-        n = len(buy_set); cp = e.get("cash_pct", 0)
-        eq_pct = round((100-cp)/n, 2) if n > 0 else 0
-        rows.append([e["date"], e["value"], n, cp] +
-                    [eq_pct if t in buy_set else 0 for t in all_tickers_csv])
-    buf = io.StringIO()
-    csv.writer(buf).writerows(rows)
-    with open("crypto-rotation-full-history.csv", "w") as f:
-        f.write(buf.getvalue())
-    print("✓ crypto-rotation-full-history.csv written")
-
-    # Pull latest portfolios.json before merging
-    import subprocess
-    subprocess.run(["git", "pull", "--rebase", "--quiet"], capture_output=True)
-
-    for attempt in range(3):
-        try:
-            with open("portfolios.json", "r") as f:
-                output = json.load(f)
-            if "portfolios" not in output:
-                raise ValueError("Invalid")
-            output["portfolios"] = [p for p in output["portfolios"] if p["id"] != "crypto-rotation"]
-            break
-        except (FileNotFoundError, json.JSONDecodeError, ValueError):
-            output = {"portfolios": []} if attempt == 2 else None
-            if output is None: time.sleep(2)
-
-    output["generated"] = datetime.now(timezone.utc).isoformat()
-    output["portfolios"].append({
-        "id":          "crypto-rotation",
-        "name":        "Crypto Rotation",
-        "description": "Top-10 crypto by market cap (yearly rebalanced universe). BTC gate: PAXG when BTC SELL + PAXG BUY, else USDT. Weekly 2-of-3 momentum signal.",
-        "timeframe":   "weekly",
-        "starting_capital": STARTING_CAPITAL,
-        **result,
-    })
-
-    with open("portfolios.json", "w") as f:
-        json.dump(output, f, indent=2, default=str)
-    print("✓ portfolios.json updated")
-
-if __name__ == "__main__":
-    main()
+load().catch(e=>{
+  document.getElementById("loading").textContent="⚠ Could not load — ensure repo is public.";
+  console.error(e);
+});
+</script>
+</body>
+</html>
