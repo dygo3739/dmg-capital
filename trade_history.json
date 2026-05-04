@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-01T14:46:57.479853+00:00",
+  "generated": "2026-05-04T07:49:34.654123+00:00",
   "start_date": "2018-01-05",
   "starting_capital": 100000.0,
-  "final_value": 2843165.76,
-  "total_return_pct": 2743.17,
-  "total_fees": 290402.04,
-  "n_buys": 265,
+  "final_value": 2914940.3,
+  "total_return_pct": 2814.94,
+  "total_fees": 290998.31,
+  "n_buys": 266,
   "n_sells": 253,
   "n_holds": 258,
   "equity_curve": [
@@ -6220,7 +6220,7 @@
     },
     {
       "date": "2026-05-01",
-      "value": 2843165.76,
+      "value": 2914940.3,
       "btc_signal": "BUY",
       "paxg_signal": "SELL",
       "defensive": null,
@@ -6232,10 +6232,11 @@
         "DOGE",
         "ADA",
         "TRX",
+        "AVAX",
         "LINK"
       ],
       "n_universe": 10,
-      "cash_pct": -0.0
+      "cash_pct": 0.0
     }
   ],
   "trades": [
@@ -12692,33 +12693,44 @@
       "date": "2026-05-01",
       "action": "BUY",
       "ticker": "XRP",
-      "price": 1.3928,
-      "shares": 255162.705474,
-      "value": 355395.72,
-      "fee": 924.03,
-      "weight": 12.5,
+      "price": 1.4131,
+      "shares": 229204.678641,
+      "value": 323882.26,
+      "fee": 842.09,
+      "weight": 11.11,
       "signal": "BUY"
     },
     {
       "date": "2026-05-01",
       "action": "BUY",
       "ticker": "SOL",
-      "price": 84.18,
-      "shares": 4221.854591,
-      "value": 355395.72,
-      "fee": 924.03,
-      "weight": 12.5,
+      "price": 84.95,
+      "shares": 3812.622192,
+      "value": 323882.26,
+      "fee": 842.09,
+      "weight": 11.11,
       "signal": "BUY"
     },
     {
       "date": "2026-05-01",
       "action": "BUY",
       "ticker": "ADA",
-      "price": 0.25,
-      "shares": 1421616.996562,
-      "value": 355395.72,
-      "fee": 924.03,
-      "weight": 12.5,
+      "price": 0.2522,
+      "shares": 1284400.970979,
+      "value": 323882.26,
+      "fee": 842.09,
+      "weight": 11.11,
+      "signal": "BUY"
+    },
+    {
+      "date": "2026-05-01",
+      "action": "BUY",
+      "ticker": "AVAX",
+      "price": 9.27,
+      "shares": 34938.754611,
+      "value": 323882.26,
+      "fee": 842.09,
+      "weight": 11.11,
       "signal": "BUY"
     }
   ]
