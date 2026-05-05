@@ -1,0 +1,59 @@
+name: DMG Daily Executor
+
+on:
+  workflow_run:
+    workflows: ["DMG Daily Signal Engine"]
+    types: [completed]
+  workflow_dispatch:
+
+jobs:
+  execute-daily:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Pull latest (get fresh signals)
+        run: git pull
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Install Kraken CLI
+        run: |
+          curl --proto '=https' --tlsv1.2 -LsSf \
+            https://github.com/krakenfx/kraken-cli/releases/latest/download/kraken-cli-installer.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Verify Kraken CLI
+        run: kraken --version
+
+      - name: Run daily executor (paper mode)
+        run: python executor_daily.py
+        # ── LIVE TRADING ───────────────────────────────────────────────────
+        # When ready to go live, comment out above and uncomment below.
+        # Add KRAKEN_API_KEY and KRAKEN_API_SECRET in repo Secrets.
+        # ------------------------------------------------------------------
+        # run: python executor_daily.py --live
+        # env:
+        #   KRAKEN_API_KEY: ${{ secrets.KRAKEN_API_KEY }}
+        #   KRAKEN_API_SECRET: ${{ secrets.KRAKEN_API_SECRET }}
+
+      - name: Commit daily state
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase || true
+          git add execution_log_daily.jsonl || true
+          git add paper_state_daily.json || true
+          git diff --cached --quiet || git commit -m "chore: daily execution [skip ci]"
+          git push
