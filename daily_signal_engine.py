@@ -81,25 +81,45 @@ def compute_signal_daily(daily_close):
     return score.apply(lambda s: "BUY" if s >= 2 else "SELL")
 
 # ── Fetch daily OHLC from Kraken ──────────────────────────────────────────────
-def fetch_daily(ticker, since_days=2400):
+def fetch_daily(ticker):
+    """Fetch daily OHLC with pagination — Kraken returns max ~720 bars per call."""
     pair = KRAKEN_PAIRS.get(ticker)
     if not pair: return None
-    since = int(time.time()) - since_days * 86400
+
+    # Start from 2018-01-01 to ensure enough warmup data
+    since = int(pd.Timestamp("2018-01-01", tz="UTC").timestamp())
+    all_bars = []
+
     try:
-        r = requests.get(
-            f"{KRAKEN_BASE}/OHLC",
-            params={"pair": pair, "interval": 1440, "since": since},
-            timeout=30
-        )
-        if r.status_code != 200: return None
-        data = r.json()
-        if data.get("error"): return None
-        result = data.get("result", {})
-        key = [k for k in result if k != "last"]
-        if not key: return None
-        bars = result[key[0]]
-        if not bars: return None
-        df = pd.DataFrame(bars, columns=["time","open","high","low","close","vwap","volume","count"])
+        while True:
+            r = requests.get(
+                f"{KRAKEN_BASE}/OHLC",
+                params={"pair": pair, "interval": 1440, "since": since},
+                timeout=30
+            )
+            if r.status_code != 200: break
+            data = r.json()
+            if data.get("error"): break
+            result = data.get("result", {})
+            key = [k for k in result if k != "last"]
+            if not key: break
+            bars = result[key[0]]
+            if not bars: break
+
+            all_bars.extend(bars)
+
+            # Kraken returns "last" cursor for pagination
+            last = result.get("last")
+            if not last or int(last) <= since: break
+
+            # If we got fewer than 700 bars, we've reached the end
+            if len(bars) < 700: break
+
+            since = int(last)
+            time.sleep(0.3)  # be polite
+
+        if not all_bars: return None
+        df = pd.DataFrame(all_bars, columns=["time","open","high","low","close","vwap","volume","count"])
         df["date"]  = pd.to_datetime(df["time"].astype(int), unit="s", utc=True)
         df["close"] = df["close"].astype(float)
         df = df.drop_duplicates("date").set_index("date").sort_index()
@@ -192,7 +212,8 @@ def run_backtest(price_data):
         if btc_signal == "BUY":
             target_assets = [
                 t for t in universe
-                if t in signals and signals[t].index[signals[t].index <= date].any()
+                if t in signals
+                and len(signals[t].index[signals[t].index <= date]) > 0
                 and signals[t][signals[t].index <= date].iloc[-1] == "BUY"
                 and t != "PAXG"
             ]
