@@ -1,0 +1,35 @@
+name: DMG Daily Signal Engine
+
+on:
+  schedule:
+    - cron: '0 1 * * *'   # Every day 1am UTC (after daily close)
+  workflow_dispatch:
+
+jobs:
+  update-daily:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests pandas numpy
+
+      - name: Run daily signal engine
+        run: python crypto_portfolio_daily.py
+
+      - name: Commit outputs
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add portfolios_daily.json trade_history_daily.json || true
+          git diff --cached --quiet || git commit -m "chore: daily signals [skip ci]"
+          git push
