@@ -24,7 +24,7 @@ jobs:
         run: pip install requests pandas numpy
 
       - name: Run daily signal engine
-        run: python crypto_portfolio_daily.py
+        run: python daily_signal_engine.py
 
       - name: Commit outputs
         run: |
