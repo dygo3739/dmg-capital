@@ -38,12 +38,12 @@ jobs:
         run: kraken --version
 
       - name: Run daily executor (paper mode)
-        run: python executor_daily.py
+        run: python daily_executor.py
         # ── LIVE TRADING ───────────────────────────────────────────────────
         # When ready to go live, comment out above and uncomment below.
         # Add KRAKEN_API_KEY and KRAKEN_API_SECRET in repo Secrets.
         # ------------------------------------------------------------------
-        # run: python executor_daily.py --live
+        # run: python daily_executor.py --live
         # env:
         #   KRAKEN_API_KEY: ${{ secrets.KRAKEN_API_KEY }}
         #   KRAKEN_API_SECRET: ${{ secrets.KRAKEN_API_SECRET }}
