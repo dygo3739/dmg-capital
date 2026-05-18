@@ -1,12 +1,12 @@
 {
-  "generated": "2026-05-11T08:27:23.610284+00:00",
+  "generated": "2026-05-18T08:48:51.935676+00:00",
   "start_date": "2018-01-05",
   "starting_capital": 100000.0,
-  "final_value": 3036997.65,
-  "total_return_pct": 2937.0,
-  "total_fees": 291067.75,
+  "final_value": 2823446.51,
+  "total_return_pct": 2723.45,
+  "total_fees": 291873.29,
   "n_buys": 266,
-  "n_sells": 253,
+  "n_sells": 254,
   "n_holds": 259,
   "equity_curve": [
     {
@@ -6240,13 +6240,32 @@
     },
     {
       "date": "2026-05-08",
-      "value": 3036997.65,
+      "value": 2973676.35,
       "btc_signal": "BUY",
       "paxg_signal": "SELL",
       "defensive": null,
       "buy_tickers": [
         "BTC",
         "ETH",
+        "XRP",
+        "SOL",
+        "DOGE",
+        "ADA",
+        "TRX",
+        "AVAX",
+        "LINK"
+      ],
+      "n_universe": 10,
+      "cash_pct": 0.0
+    },
+    {
+      "date": "2026-05-15",
+      "value": 2823446.51,
+      "btc_signal": "BUY",
+      "paxg_signal": "SELL",
+      "defensive": null,
+      "buy_tickers": [
+        "BTC",
         "XRP",
         "SOL",
         "DOGE",
@@ -12757,6 +12776,15 @@
       "date": "2026-05-08",
       "action": "HOLD",
       "note": "No changes \u2014 9 assets"
+    },
+    {
+      "date": "2026-05-15",
+      "action": "SELL",
+      "ticker": "ETH",
+      "price": 2117.12,
+      "value": 309822.62,
+      "fee": 805.54,
+      "reason": "Signal \u2192 SELL"
     }
   ]
 }
