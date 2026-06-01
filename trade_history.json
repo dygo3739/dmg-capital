@@ -1,13 +1,13 @@
 {
-  "generated": "2026-05-25T09:01:01.073215+00:00",
+  "generated": "2026-06-01T10:25:31.746076+00:00",
   "start_date": "2018-01-05",
   "starting_capital": 100000.0,
-  "final_value": 2840468.66,
-  "total_return_pct": 2740.47,
-  "total_fees": 292699.64,
+  "final_value": 2691728.22,
+  "total_return_pct": 2591.73,
+  "total_fees": 302739.47,
   "n_buys": 266,
-  "n_sells": 255,
-  "n_holds": 260,
+  "n_sells": 262,
+  "n_holds": 259,
   "equity_curve": [
     {
       "date": "2018-01-05",
@@ -6278,21 +6278,28 @@
     },
     {
       "date": "2026-05-22",
-      "value": 2840468.66,
+      "value": 2753938.95,
       "btc_signal": "BUY",
       "paxg_signal": "SELL",
       "defensive": null,
       "buy_tickers": [
         "BTC",
-        "SOL",
         "DOGE",
-        "ADA",
         "TRX",
-        "AVAX",
         "LINK"
       ],
       "n_universe": 10,
       "cash_pct": 0.0
+    },
+    {
+      "date": "2026-05-29",
+      "value": 2691728.22,
+      "btc_signal": "SELL",
+      "paxg_signal": "SELL",
+      "defensive": null,
+      "buy_tickers": [],
+      "n_universe": 10,
+      "cash_pct": 100.0
     }
   ],
   "trades": [
@@ -12814,8 +12821,66 @@
     },
     {
       "date": "2026-05-22",
-      "action": "HOLD",
-      "note": "No changes \u2014 7 assets"
+      "action": "SELL",
+      "ticker": "SOL",
+      "price": 82.31,
+      "value": 388400.66,
+      "fee": 1009.84,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-05-22",
+      "action": "SELL",
+      "ticker": "ADA",
+      "price": 0.2371,
+      "value": 386617.08,
+      "fee": 1005.2,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-05-22",
+      "action": "SELL",
+      "ticker": "AVAX",
+      "price": 9.03,
+      "value": 394730.55,
+      "fee": 1026.3,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-05-29",
+      "action": "SELL",
+      "ticker": "BTC",
+      "price": 72612.5,
+      "value": 672512.08,
+      "fee": 1748.53,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-05-29",
+      "action": "SELL",
+      "ticker": "DOGE",
+      "price": 0.0998,
+      "value": 684349.84,
+      "fee": 1779.31,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-05-29",
+      "action": "SELL",
+      "ticker": "TRX",
+      "price": 0.3506,
+      "value": 656756.87,
+      "fee": 1707.57,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-05-29",
+      "action": "SELL",
+      "ticker": "LINK",
+      "price": 8.9926,
+      "value": 678109.42,
+      "fee": 1763.08,
+      "reason": "Signal \u2192 SELL"
     }
   ]
 }

@@ -6,14 +6,14 @@
       "description": "Top-10 crypto by market cap (yearly rebalanced universe). BTC gate: PAXG when BTC SELL + PAXG BUY, else USDT. Weekly 2-of-3 momentum signal.",
       "timeframe": "weekly",
       "starting_capital": 100000.0,
-      "total_return_pct": 2740.47,
-      "cagr_pct": 48.78,
-      "sharpe_ratio": 0.92,
+      "total_return_pct": 2591.73,
+      "cagr_pct": 47.7,
+      "sharpe_ratio": 0.91,
       "max_drawdown_pct": 64.68,
-      "final_value": 2840468.66,
-      "current_value": 2840468.66,
-      "total_return_dollar": 2740468.66,
-      "btc_bah_pct": 418.15,
+      "final_value": 2691728.22,
+      "current_value": 2691728.22,
+      "total_return_dollar": 2591728.22,
+      "btc_bah_pct": 386.11,
       "btc_equity_curve": [
         {
           "date": "2018-01-05",
@@ -1765,23 +1765,27 @@
         },
         {
           "date": "2026-05-22",
-          "value": 518154.19
+          "value": 497650.89
+        },
+        {
+          "date": "2026-05-29",
+          "value": 486105.53
         }
       ],
-      "n_weeks": 438,
-      "n_buy_stocks": 6,
+      "n_weeks": 439,
+      "n_buy_stocks": 2,
       "n_universe": 10,
       "n_weeks_crypto": 230,
       "n_weeks_paxg": 90,
-      "n_weeks_usdt": 118,
-      "return_1y": 21.22,
-      "return_3y": 447.6,
-      "return_5y": 301.1,
+      "n_weeks_usdt": 119,
+      "return_1y": 25.19,
+      "return_3y": 418.93,
+      "return_5y": 279.21,
       "return_10y": null,
-      "bah_return_1y": -28.21,
-      "bah_return_3y": 184.39,
-      "bah_return_5y": 97.03,
-      "bah_return_10y": 14353.74,
+      "bah_return_1y": -30.68,
+      "bah_return_3y": 175.55,
+      "bah_return_5y": 93.3,
+      "bah_return_10y": 12378.52,
       "equity_curve": [
         {
           "date": "2018-01-05",
@@ -8052,21 +8056,28 @@
         },
         {
           "date": "2026-05-22",
-          "value": 2840468.66,
+          "value": 2753938.95,
           "btc_signal": "BUY",
           "paxg_signal": "SELL",
           "defensive": null,
           "buy_tickers": [
             "BTC",
-            "SOL",
             "DOGE",
-            "ADA",
             "TRX",
-            "AVAX",
             "LINK"
           ],
           "n_universe": 10,
           "cash_pct": 0.0
+        },
+        {
+          "date": "2026-05-29",
+          "value": 2691728.22,
+          "btc_signal": "SELL",
+          "paxg_signal": "SELL",
+          "defensive": null,
+          "buy_tickers": [],
+          "n_universe": 10,
+          "cash_pct": 100.0
         }
       ],
       "trades": [
@@ -14588,89 +14599,83 @@
         },
         {
           "date": "2026-05-22",
-          "action": "HOLD",
-          "note": "No changes \u2014 7 assets"
+          "action": "SELL",
+          "ticker": "SOL",
+          "price": 82.31,
+          "value": 388400.66,
+          "fee": 1009.84,
+          "reason": "Signal \u2192 SELL"
+        },
+        {
+          "date": "2026-05-22",
+          "action": "SELL",
+          "ticker": "ADA",
+          "price": 0.2371,
+          "value": 386617.08,
+          "fee": 1005.2,
+          "reason": "Signal \u2192 SELL"
+        },
+        {
+          "date": "2026-05-22",
+          "action": "SELL",
+          "ticker": "AVAX",
+          "price": 9.03,
+          "value": 394730.55,
+          "fee": 1026.3,
+          "reason": "Signal \u2192 SELL"
+        },
+        {
+          "date": "2026-05-29",
+          "action": "SELL",
+          "ticker": "BTC",
+          "price": 72612.5,
+          "value": 672512.08,
+          "fee": 1748.53,
+          "reason": "Signal \u2192 SELL"
+        },
+        {
+          "date": "2026-05-29",
+          "action": "SELL",
+          "ticker": "DOGE",
+          "price": 0.0998,
+          "value": 684349.84,
+          "fee": 1779.31,
+          "reason": "Signal \u2192 SELL"
+        },
+        {
+          "date": "2026-05-29",
+          "action": "SELL",
+          "ticker": "TRX",
+          "price": 0.3506,
+          "value": 656756.87,
+          "fee": 1707.57,
+          "reason": "Signal \u2192 SELL"
+        },
+        {
+          "date": "2026-05-29",
+          "action": "SELL",
+          "ticker": "LINK",
+          "price": 8.9926,
+          "value": 678109.42,
+          "fee": 1763.08,
+          "reason": "Signal \u2192 SELL"
         }
       ],
       "current_signals": {
-        "BTC": "BUY",
+        "BTC": "SELL",
         "ETH": "SELL",
         "XRP": "SELL",
-        "SOL": "BUY",
+        "SOL": "SELL",
         "DOGE": "BUY",
-        "ADA": "BUY",
+        "ADA": "SELL",
         "TRX": "BUY",
-        "AVAX": "BUY",
-        "LINK": "BUY",
+        "AVAX": "SELL",
+        "LINK": "SELL",
         "BCH": "SELL",
         "PAXG": "SELL"
       },
-      "current_holdings": [
-        {
-          "ticker": "BTC",
-          "name": "BTC",
-          "shares": 5.242665,
-          "price": 77399.8,
-          "value": 405781.24,
-          "weight": 14.29,
-          "signal": "BUY"
-        },
-        {
-          "ticker": "SOL",
-          "name": "SOL",
-          "shares": 4718.935196,
-          "price": 85.99,
-          "value": 405781.24,
-          "weight": 14.29,
-          "signal": "BUY"
-        },
-        {
-          "ticker": "DOGE",
-          "name": "DOGE",
-          "shares": 3951670.505352,
-          "price": 0.1027,
-          "value": 405781.24,
-          "weight": 14.29,
-          "signal": "BUY"
-        },
-        {
-          "ticker": "ADA",
-          "name": "ADA",
-          "shares": 1650987.006777,
-          "price": 0.2458,
-          "value": 405781.24,
-          "weight": 14.29,
-          "signal": "BUY"
-        },
-        {
-          "ticker": "TRX",
-          "name": "TRX",
-          "shares": 1105357.712018,
-          "price": 0.3671,
-          "value": 405781.24,
-          "weight": 14.29,
-          "signal": "BUY"
-        },
-        {
-          "ticker": "AVAX",
-          "name": "AVAX",
-          "shares": 43399.062836,
-          "price": 9.35,
-          "value": 405781.24,
-          "weight": 14.29,
-          "signal": "BUY"
-        },
-        {
-          "ticker": "LINK",
-          "name": "LINK",
-          "shares": 42619.334141,
-          "price": 9.5211,
-          "value": 405781.24,
-          "weight": 14.29,
-          "signal": "BUY"
-        }
-      ]
+      "current_holdings": []
     }
   ],
-  "generated": "2026-05-25T09:01:01.098991+00:00"
+  "generated": "2026-06-01T10:25:31.766135+00:00"
 }
