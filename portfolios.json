@@ -7,13 +7,13 @@
       "timeframe": "weekly",
       "starting_capital": 100000.0,
       "total_return_pct": 2370.38,
-      "cagr_pct": 45.83,
+      "cagr_pct": 45.71,
       "sharpe_ratio": 0.89,
       "max_drawdown_pct": 64.68,
       "final_value": 2470382.27,
       "current_value": 2470382.27,
       "total_return_dollar": 2370382.27,
-      "btc_bah_pct": 328.72,
+      "btc_bah_pct": 300.72,
       "btc_equity_curve": [
         {
           "date": "2018-01-05",
@@ -1781,23 +1781,27 @@
         },
         {
           "date": "2026-06-19",
-          "value": 428723.49
+          "value": 408236.93
+        },
+        {
+          "date": "2026-06-26",
+          "value": 400723.01
         }
       ],
-      "n_weeks": 442,
+      "n_weeks": 443,
       "n_buy_stocks": 1,
       "n_universe": 10,
       "n_weeks_crypto": 230,
       "n_weeks_paxg": 90,
-      "n_weeks_usdt": 122,
-      "return_1y": 16.82,
-      "return_3y": 376.26,
-      "return_5y": 273.86,
+      "n_weeks_usdt": 123,
+      "return_1y": 11.55,
+      "return_3y": 362.74,
+      "return_5y": 274.55,
       "return_10y": null,
-      "bah_return_1y": -40.35,
-      "bah_return_3y": 112.84,
-      "bah_return_5y": 90.13,
-      "bah_return_10y": 9858.17,
+      "bah_return_1y": -45.01,
+      "bah_return_3y": 96.24,
+      "bah_return_5y": 70.8,
+      "bah_return_10y": 8740.41,
       "equity_curve": [
         {
           "date": "2018-01-05",
@@ -8113,6 +8117,16 @@
         },
         {
           "date": "2026-06-19",
+          "value": 2470382.27,
+          "btc_signal": "SELL",
+          "paxg_signal": "SELL",
+          "defensive": null,
+          "buy_tickers": [],
+          "n_universe": 10,
+          "cash_pct": 100.0
+        },
+        {
+          "date": "2026-06-26",
           "value": 2470382.27,
           "btc_signal": "SELL",
           "paxg_signal": "SELL",
@@ -14716,6 +14730,11 @@
           "date": "2026-06-19",
           "action": "HOLD",
           "note": "No changes \u2014 100% USDT"
+        },
+        {
+          "date": "2026-06-26",
+          "action": "HOLD",
+          "note": "No changes \u2014 100% USDT"
         }
       ],
       "current_signals": {
@@ -14734,5 +14753,5 @@
       "current_holdings": []
     }
   ],
-  "generated": "2026-06-22T10:44:05.412290+00:00"
+  "generated": "2026-06-29T09:52:07.491248+00:00"
 }
