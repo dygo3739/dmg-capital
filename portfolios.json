@@ -7,13 +7,13 @@
       "timeframe": "weekly",
       "starting_capital": 100000.0,
       "total_return_pct": 2370.38,
-      "cagr_pct": 45.71,
+      "cagr_pct": 45.58,
       "sharpe_ratio": 0.89,
       "max_drawdown_pct": 64.68,
       "final_value": 2470382.27,
       "current_value": 2470382.27,
       "total_return_dollar": 2370382.27,
-      "btc_bah_pct": 300.72,
+      "btc_bah_pct": 320.7,
       "btc_equity_curve": [
         {
           "date": "2018-01-05",
@@ -1785,23 +1785,27 @@
         },
         {
           "date": "2026-06-26",
-          "value": 400723.01
+          "value": 401399.15
+        },
+        {
+          "date": "2026-07-03",
+          "value": 420697.43
         }
       ],
-      "n_weeks": 443,
-      "n_buy_stocks": 1,
+      "n_weeks": 444,
+      "n_buy_stocks": 4,
       "n_universe": 10,
       "n_weeks_crypto": 230,
       "n_weeks_paxg": 90,
-      "n_weeks_usdt": 123,
-      "return_1y": 11.55,
-      "return_3y": 362.74,
-      "return_5y": 274.55,
+      "n_weeks_usdt": 124,
+      "return_1y": 8.14,
+      "return_3y": 339.03,
+      "return_5y": 267.12,
       "return_10y": null,
-      "bah_return_1y": -45.01,
-      "bah_return_3y": 96.24,
-      "bah_return_5y": 70.8,
-      "bah_return_10y": 8740.41,
+      "bah_return_1y": -43.55,
+      "bah_return_3y": 106.75,
+      "bah_return_5y": 85.46,
+      "bah_return_10y": 9492.75,
       "equity_curve": [
         {
           "date": "2018-01-05",
@@ -8127,6 +8131,16 @@
         },
         {
           "date": "2026-06-26",
+          "value": 2470382.27,
+          "btc_signal": "SELL",
+          "paxg_signal": "SELL",
+          "defensive": null,
+          "buy_tickers": [],
+          "n_universe": 10,
+          "cash_pct": 100.0
+        },
+        {
+          "date": "2026-07-03",
           "value": 2470382.27,
           "btc_signal": "SELL",
           "paxg_signal": "SELL",
@@ -14735,23 +14749,28 @@
           "date": "2026-06-26",
           "action": "HOLD",
           "note": "No changes \u2014 100% USDT"
+        },
+        {
+          "date": "2026-07-03",
+          "action": "HOLD",
+          "note": "No changes \u2014 100% USDT"
         }
       ],
       "current_signals": {
         "BTC": "SELL",
         "ETH": "SELL",
-        "XRP": "SELL",
+        "XRP": "BUY",
         "SOL": "BUY",
         "DOGE": "SELL",
-        "ADA": "SELL",
+        "ADA": "BUY",
         "TRX": "SELL",
         "AVAX": "SELL",
-        "LINK": "SELL",
+        "LINK": "BUY",
         "BCH": "SELL",
         "PAXG": "SELL"
       },
       "current_holdings": []
     }
   ],
-  "generated": "2026-06-29T09:52:07.491248+00:00"
+  "generated": "2026-07-06T09:03:20.927092+00:00"
 }
