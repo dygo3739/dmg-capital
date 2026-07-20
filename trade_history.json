@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-13T08:19:39.144814+00:00",
+  "generated": "2026-07-20T08:09:10.452919+00:00",
   "start_date": "2018-01-05",
   "starting_capital": 100000.0,
   "final_value": 2470382.27,
   "total_return_pct": 2370.38,
-  "total_fees": 302163.97,
-  "n_buys": 266,
+  "total_fees": 308586.97,
+  "n_buys": 270,
   "n_sells": 262,
   "n_holds": 265,
   "equity_curve": [
@@ -6360,6 +6360,21 @@
       "buy_tickers": [],
       "n_universe": 10,
       "cash_pct": 100.0
+    },
+    {
+      "date": "2026-07-17",
+      "value": 2470382.27,
+      "btc_signal": "BUY",
+      "paxg_signal": "SELL",
+      "defensive": null,
+      "buy_tickers": [
+        "BTC",
+        "ETH",
+        "SOL",
+        "LINK"
+      ],
+      "n_universe": 10,
+      "cash_pct": 0.0
     }
   ],
   "trades": [
@@ -12971,6 +12986,50 @@
       "date": "2026-07-10",
       "action": "HOLD",
       "note": "No changes \u2014 100% USDT"
+    },
+    {
+      "date": "2026-07-17",
+      "action": "BUY",
+      "ticker": "BTC",
+      "price": 64180.4,
+      "shares": 9.622806,
+      "value": 617595.57,
+      "fee": 1605.75,
+      "weight": 25.0,
+      "signal": "BUY"
+    },
+    {
+      "date": "2026-07-17",
+      "action": "BUY",
+      "ticker": "ETH",
+      "price": 1860.15,
+      "shares": 332.013853,
+      "value": 617595.57,
+      "fee": 1605.75,
+      "weight": 25.0,
+      "signal": "BUY"
+    },
+    {
+      "date": "2026-07-17",
+      "action": "BUY",
+      "ticker": "SOL",
+      "price": 76.08,
+      "shares": 8117.712515,
+      "value": 617595.57,
+      "fee": 1605.75,
+      "weight": 25.0,
+      "signal": "BUY"
+    },
+    {
+      "date": "2026-07-17",
+      "action": "BUY",
+      "ticker": "LINK",
+      "price": 8.3569,
+      "shares": 73902.383553,
+      "value": 617595.57,
+      "fee": 1605.75,
+      "weight": 25.0,
+      "signal": "BUY"
     }
   ]
 }
