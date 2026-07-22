@@ -19,16 +19,16 @@ from datetime import datetime, timezone
 UNIVERSE = {
     "SPY":     "US Large Cap (S&P 500)",
     "QQQ":     "US Tech / Nasdaq 100",
+    "IWM":     "US Small Cap (Russell 2000)",
     "EEM":     "Emerging Markets",
     "TLT":     "Long-Term Treasuries (20yr+)",
+    "SHY":     "Short-Term Treasuries (1-3yr)",
     "GLD":     "Gold",
     "DJP":     "Broad Commodities",
-    "VNQ":     "US Real Estate (REIT)",
-    "BIL":     "Short-Term Bills (Cash proxy)",
     "BTC-USD": "Bitcoin",
 }
 
-CASH          = "BIL"
+# No cash proxy — when nothing is BUY the portfolio sits in real cash (0%)
 BTC_CAP       = 0.20      # Bitcoin capped at 20% regardless of signal
 COMMISSION    = 0.001     # 0.1% per trade (realistic for ETFs)
 START_CAPITAL = 100_000
@@ -173,7 +173,7 @@ def run_backtest(price_data):
             and date in sig_frames[t].index
             and bool(sig_frames[t].loc[date, "is_buy"])
         ]
-        target = buy_signals if buy_signals else [CASH]
+        target = buy_signals  # empty list = full cash, no positions
 
         # ── Rebalance when target changes ─────────────────────────────────────
         if set(target) != set(current_tickers):
@@ -194,44 +194,50 @@ def run_backtest(price_data):
             holdings = {}
 
             # Compute weights — equal weight, BTC capped at 20%
+            # target may be empty → full cash, no positions entered
             n       = len(target)
             weights = {}
-            if "BTC-USD" in target and n > 1:
-                btc_w   = min(1.0 / n, BTC_CAP)
-                other_w = (1.0 - btc_w) / (n - 1)
-                for t in target:
-                    weights[t] = btc_w if t == "BTC-USD" else other_w
-            else:
-                for t in target:
-                    weights[t] = 1.0 / n
+            if n > 0:
+                if "BTC-USD" in target and n > 1:
+                    btc_w   = min(1.0 / n, BTC_CAP)
+                    other_w = (1.0 - btc_w) / (n - 1)
+                    for t in target:
+                        weights[t] = btc_w if t == "BTC-USD" else other_w
+                else:
+                    for t in target:
+                        weights[t] = 1.0 / n
 
-            # Buy
-            for ticker in target:
-                if date not in sig_frames[ticker].index:
-                    continue
-                price            = float(sig_frames[ticker].loc[date, "close"])
-                alloc            = capital * weights[ticker]
-                shares           = (alloc * (1 - COMMISSION)) / price
-                holdings[ticker] = shares
-                trade_log.append({
-                    "date":       date.strftime("%Y-%m"),
-                    "action":     "BUY",
-                    "ticker":     ticker,
-                    "price":      round(price, 4),
-                    "weight_pct": round(weights[ticker] * 100, 1),
-                })
+                # Buy
+                for ticker in target:
+                    if date not in sig_frames[ticker].index:
+                        continue
+                    price            = float(sig_frames[ticker].loc[date, "close"])
+                    alloc            = capital * weights[ticker]
+                    shares           = (alloc * (1 - COMMISSION)) / price
+                    holdings[ticker] = shares
+                    trade_log.append({
+                        "date":       date.strftime("%Y-%m"),
+                        "action":     "BUY",
+                        "ticker":     ticker,
+                        "price":      round(price, 4),
+                        "weight_pct": round(weights[ticker] * 100, 1),
+                    })
             current_tickers = list(target)
 
         # ── Mark to market ────────────────────────────────────────────────────
-        port_value = sum(
-            holdings[t] * float(sig_frames[t].loc[date, "close"])
-            for t in holdings
-            if date in sig_frames[t].index
-        )
+        # When in cash (no holdings), port_value = capital unchanged
+        if holdings:
+            port_value = sum(
+                holdings[t] * float(sig_frames[t].loc[date, "close"])
+                for t in holdings
+                if date in sig_frames[t].index
+            )
+        else:
+            port_value = capital
         equity_curve.append({
             "date":     date.strftime("%Y-%m-%d"),
             "value":    round(port_value, 2),
-            "holdings": list(holdings.keys()),
+            "holdings": list(holdings.keys()) if holdings else ["CASH"],
         })
 
     # ── Performance metrics ───────────────────────────────────────────────────
@@ -285,10 +291,10 @@ def run_backtest(price_data):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
-    print("DMG Capital — ETF + Bitcoin Rotation Backtest")
+    print("DMG Capital — ETF + Bitcoin Rotation Backtest v2")
     print("Signal  : CallingMarkets 2-of-3 on monthly bars")
     print("Universe:", ", ".join(UNIVERSE.keys()))
-    print("BTC cap : 20%  |  Commission: 0.1%")
+    print("Cash    : real cash (0%) when no signals  |  BTC cap: 20%  |  Commission: 0.1%")
     print("=" * 65)
 
     tickers    = list(UNIVERSE.keys())
@@ -344,8 +350,8 @@ def main():
     md += f"| Asset | % Time | Description |\n|-------|--------|-------------|\n"
     for ticker, pct in sorted(results["time_in_asset"].items(), key=lambda x: -x[1]):
         md += f"| {ticker} | {pct}% | {UNIVERSE.get(ticker, '')} |\n"
-    md += (f"\n---\n*BTC-USD data from Sep 2014. "
-           f"Commission: {COMMISSION*100:.1f}% per trade. BTC capped at {int(BTC_CAP*100)}%.*\n")
+    md += (f"\n---\n*BTC-USD data from Sep 2014. Universe: SPY, QQQ, IWM, EEM, TLT, SHY, GLD, DJP, BTC-USD. "
+           f"Cash: real cash (0%) when no signals fire. Commission: {COMMISSION*100:.1f}% per trade. BTC capped at {int(BTC_CAP*100)}%.*\n")
 
     with open("etf_rotation_results.md", "w") as f:
         f.write(md)
