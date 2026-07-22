@@ -43,7 +43,7 @@ def calc_rsi(s, n=14):
     return 100 - 100 / (1 + gain / loss.replace(0, np.nan))
 
 def signals(close):
-    close = pd.Series(close, dtype=float)   # ensure proper Series with index intact
+    close = close.squeeze().astype(float)   # ensure 1D Series — handles DataFrame column input
     ema20     = calc_ema(close, 20)
     ema55     = calc_ema(close, 55)
     rsi14     = calc_rsi(close, 14)
@@ -83,7 +83,7 @@ def fetch_monthly(tickers, start="2003-01-01"):
     print(f"  ETFs: {len(closes)} months  ({closes.index[0].date()} → {closes.index[-1].date()})")
     for t in etf_tickers:
         if t in closes.columns:
-            result[t] = closes[t].dropna()
+            result[t] = closes[t].dropna().squeeze()
 
     # ── BTC-USD via daily → resample to monthly ───────────────────────────────
     if "BTC-USD" in tickers:
@@ -94,6 +94,9 @@ def fetch_monthly(tickers, start="2003-01-01"):
             col       = "Close" if "Close" in btc.columns else btc.columns[0]
             btc_m     = btc[col].resample("ME").last().dropna()
             btc_m     = btc_m.iloc[:-1]   # drop incomplete current month
+            # Squeeze to 1D Series if yfinance returned a DataFrame
+            if isinstance(btc_m, pd.DataFrame):
+                btc_m = btc_m.iloc[:, 0]
             btc_m.index = btc_m.index.tz_localize(None)  # strip UTC tz to match ETF index
             result["BTC-USD"] = btc_m
             print(f"  BTC-USD: {len(btc_m)} months  ({btc_m.index[0].date()} → {btc_m.index[-1].date()})")
