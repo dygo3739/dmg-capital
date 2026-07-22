@@ -107,8 +107,16 @@ def fetch_monthly(tickers, start="2003-01-01"):
 
 # ── Backtest ──────────────────────────────────────────────────────────────────
 def run_backtest(price_data):
-    # Build signal frames per ticker
-    sig_frames = {ticker: signals(prices) for ticker, prices in price_data.items()}
+    # Normalize all series to month-start frequency before computing signals
+    # ETFs arrive as month-start, BTC arrives as month-end — must align to same anchor
+    normalized = {}
+    for ticker, prices in price_data.items():
+        s = prices.copy()
+        s.index = s.index.to_period("M").to_timestamp("MS")   # snap to month-start
+        s = s[~s.index.duplicated(keep="last")]                # drop any dupes
+        normalized[ticker] = s
+
+    sig_frames = {ticker: signals(prices) for ticker, prices in normalized.items()}
 
     # Date range — intersection of all tickers that have data
     # BTC only has data from 2014-09, so intersection starts there
