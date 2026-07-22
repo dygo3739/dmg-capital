@@ -1,33 +1,34 @@
-# ETF Rotation Backtest — July 22, 2026
+# ETF + Bitcoin Rotation Backtest — July 22, 2026
 
-**Signal:** CallingMarkets 2-of-3 momentum on monthly bars
-**Universe:** SPY, QQQ, EEM, TLT, GLD, DJP, VNQ, BIL
-**Weighting:** Equal weight among BUY signals; BIL (cash) when none
+**Signal:** CallingMarkets 2-of-3 (EMA20/55, RSI14>EMA, MACD) on monthly bars  
+**Universe:** SPY, QQQ, EEM, TLT, GLD, DJP, VNQ, BIL, BTC-USD  
+**Weighting:** Equal weight among BUY signals; BTC capped at 20%; BIL when flat
 
 ## Results
 
-| Metric | Strategy | SPY B&H |
-|--------|----------|----------|
-| Period | 2007-05-01 → 2026-06-01 | — |
-| Total Return | +237.55% | +593.69% |
-| CAGR | +6.55% | +10.63% |
-| Sharpe | 0.653 | — |
-| Max Drawdown | -18.29% | — |
-| End Value ($100k start) | $337,554 | — |
-| Trades | 637 | — |
+| Metric | Strategy | SPY B&H | BTC B&H |
+|--------|----------|---------|---------|
+| Period | 2014-09-01 → 2026-06-01 | — | — |
+| Total Return | +311.98% | +361.40% | +15033.68% |
+| CAGR | +12.71% | +13.79% | +52.83% |
+| Sharpe | 0.867 | — | — |
+| Max Drawdown | -20.14% | — | — |
+| End Value ($100k start) | $411,980 | — | — |
+| Trades | 473 | — | — |
 
 ## Time Allocation
 
-| ETF | % Time | Description |
-|-----|--------|-------------|
-| QQQ | 73.5% | US Tech / Nasdaq 100 |
-| SPY | 70.9% | US Large Cap (S&P 500) |
-| GLD | 62.6% | Gold |
-| EEM | 60.9% | Emerging Markets |
-| VNQ | 60.4% | US Real Estate (REIT) |
-| BIL | 55.7% | Short-Term Bills (Cash proxy) |
-| TLT | 55.7% | Long-Term Treasuries (20yr+) |
-| DJP | 49.6% | Broad Commodities |
+| Asset | % Time | Description |
+|-------|--------|-------------|
+| QQQ | 73.9% | US Tech / Nasdaq 100 |
+| BIL | 73.2% | Short-Term Bills (Cash proxy) |
+| SPY | 71.1% | US Large Cap (S&P 500) |
+| GLD | 66.9% | Gold |
+| BTC-USD | 65.5% | Bitcoin |
+| VNQ | 62.7% | US Real Estate (REIT) |
+| EEM | 58.5% | Emerging Markets |
+| DJP | 52.8% | Broad Commodities |
+| TLT | 52.1% | Long-Term Treasuries (20yr+) |
 
 ---
-*Signal recomputed monthly. Commission: 0.1% per trade.*
+*BTC-USD data from Sep 2014. Commission: 0.1% per trade. BTC capped at 20%.*
