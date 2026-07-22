@@ -1,0 +1,35 @@
+name: ETF Rotation Backtest
+
+on:
+  workflow_dispatch:       # Manual trigger
+  schedule:
+    - cron: '0 7 1 * *'   # Re-run 1st of each month to update results
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install yfinance pandas numpy
+
+      - name: Run backtest
+        run: python etf_rotation_backtest.py
+
+      - name: Commit results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add etf_rotation_results.json etf_rotation_results.md || true
+          git diff --cached --quiet || git commit -m "chore: etf rotation backtest results [skip ci]"
+          git push
