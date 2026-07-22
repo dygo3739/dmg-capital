@@ -43,6 +43,7 @@ def calc_rsi(s, n=14):
     return 100 - 100 / (1 + gain / loss.replace(0, np.nan))
 
 def signals(close):
+    close = pd.Series(close, dtype=float)   # ensure proper Series with index intact
     ema20     = calc_ema(close, 20)
     ema55     = calc_ema(close, 55)
     rsi14     = calc_rsi(close, 14)
@@ -63,7 +64,7 @@ def signals(close):
         "bull3":  bull3,
         "score":  score,
         "is_buy": is_buy,
-    })
+    }, index=close.index)
 
 # ── Data fetch ────────────────────────────────────────────────────────────────
 def fetch_monthly(tickers, start="2003-01-01"):
@@ -93,6 +94,7 @@ def fetch_monthly(tickers, start="2003-01-01"):
             col       = "Close" if "Close" in btc.columns else btc.columns[0]
             btc_m     = btc[col].resample("ME").last().dropna()
             btc_m     = btc_m.iloc[:-1]   # drop incomplete current month
+            btc_m.index = btc_m.index.tz_localize(None)  # strip UTC tz to match ETF index
             result["BTC-USD"] = btc_m
             print(f"  BTC-USD: {len(btc_m)} months  ({btc_m.index[0].date()} → {btc_m.index[-1].date()})")
         else:
