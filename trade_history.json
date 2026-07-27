@@ -1,13 +1,13 @@
 {
-  "generated": "2026-07-20T08:09:10.452919+00:00",
+  "generated": "2026-07-27T08:35:05.584717+00:00",
   "start_date": "2018-01-05",
   "starting_capital": 100000.0,
-  "final_value": 2470382.27,
-  "total_return_pct": 2370.38,
+  "final_value": 2435748.09,
+  "total_return_pct": 2335.75,
   "total_fees": 308586.97,
-  "n_buys": 270,
+  "n_buys": 272,
   "n_sells": 262,
-  "n_holds": 265,
+  "n_holds": 266,
   "equity_curve": [
     {
       "date": "2018-01-05",
@@ -6370,11 +6370,30 @@
       "buy_tickers": [
         "BTC",
         "ETH",
+        "XRP",
         "SOL",
+        "ADA",
         "LINK"
       ],
       "n_universe": 10,
       "cash_pct": 0.0
+    },
+    {
+      "date": "2026-07-24",
+      "value": 2435748.09,
+      "btc_signal": "BUY",
+      "paxg_signal": "SELL",
+      "defensive": null,
+      "buy_tickers": [
+        "BTC",
+        "ETH",
+        "XRP",
+        "SOL",
+        "ADA",
+        "LINK"
+      ],
+      "n_universe": 10,
+      "cash_pct": -0.0
     }
   ],
   "trades": [
@@ -12991,45 +13010,72 @@
       "date": "2026-07-17",
       "action": "BUY",
       "ticker": "BTC",
-      "price": 64180.4,
-      "shares": 9.622806,
-      "value": 617595.57,
-      "fee": 1605.75,
-      "weight": 25.0,
+      "price": 66072.5,
+      "shares": 6.231494,
+      "value": 411730.38,
+      "fee": 1070.5,
+      "weight": 16.67,
       "signal": "BUY"
     },
     {
       "date": "2026-07-17",
       "action": "BUY",
       "ticker": "ETH",
-      "price": 1860.15,
-      "shares": 332.013853,
-      "value": 617595.57,
-      "fee": 1605.75,
-      "weight": 25.0,
+      "price": 1933.37,
+      "shares": 212.95995,
+      "value": 411730.38,
+      "fee": 1070.5,
+      "weight": 16.67,
+      "signal": "BUY"
+    },
+    {
+      "date": "2026-07-17",
+      "action": "BUY",
+      "ticker": "XRP",
+      "price": 1.1416,
+      "shares": 360648.171718,
+      "value": 411730.38,
+      "fee": 1070.5,
+      "weight": 16.67,
       "signal": "BUY"
     },
     {
       "date": "2026-07-17",
       "action": "BUY",
       "ticker": "SOL",
-      "price": 76.08,
-      "shares": 8117.712515,
-      "value": 617595.57,
-      "fee": 1605.75,
-      "weight": 25.0,
+      "price": 77.92,
+      "shares": 5284.014101,
+      "value": 411730.38,
+      "fee": 1070.5,
+      "weight": 16.67,
+      "signal": "BUY"
+    },
+    {
+      "date": "2026-07-17",
+      "action": "BUY",
+      "ticker": "ADA",
+      "price": 0.1744,
+      "shares": 2361231.963803,
+      "value": 411730.38,
+      "fee": 1070.5,
+      "weight": 16.67,
       "signal": "BUY"
     },
     {
       "date": "2026-07-17",
       "action": "BUY",
       "ticker": "LINK",
-      "price": 8.3569,
-      "shares": 73902.383553,
-      "value": 617595.57,
-      "fee": 1605.75,
-      "weight": 25.0,
+      "price": 8.6284,
+      "shares": 47717.93431,
+      "value": 411730.38,
+      "fee": 1070.5,
+      "weight": 16.67,
       "signal": "BUY"
+    },
+    {
+      "date": "2026-07-24",
+      "action": "HOLD",
+      "note": "No changes \u2014 6 assets"
     }
   ]
 }
