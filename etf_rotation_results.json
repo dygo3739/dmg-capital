@@ -4,7 +4,7 @@
     "end_date": "2026-06-01",
     "months": 142,
     "start_capital": 100000,
-    "end_value": 495562.02,
+    "end_value": 495562.04,
     "total_return": 395.56,
     "cagr": 14.48,
     "sharpe": 0.97,
@@ -40,7 +40,7 @@
     },
     {
       "date": "2014-10-01",
-      "value": 102002.21,
+      "value": 102002.19,
       "holdings": [
         "SPY",
         "QQQ",
@@ -62,7 +62,7 @@
     },
     {
       "date": "2014-12-01",
-      "value": 102892.27,
+      "value": 102892.28,
       "holdings": [
         "SPY",
         "QQQ",
@@ -71,7 +71,7 @@
     },
     {
       "date": "2015-01-01",
-      "value": 104319.5,
+      "value": 104319.51,
       "holdings": [
         "SPY",
         "QQQ",
@@ -82,7 +82,7 @@
     },
     {
       "date": "2015-02-01",
-      "value": 104425.19,
+      "value": 104425.2,
       "holdings": [
         "SPY",
         "QQQ",
@@ -93,7 +93,7 @@
     },
     {
       "date": "2015-03-01",
-      "value": 103187.93,
+      "value": 103187.92,
       "holdings": [
         "QQQ",
         "IWM",
@@ -103,7 +103,7 @@
     },
     {
       "date": "2015-04-01",
-      "value": 101942.58,
+      "value": 101942.62,
       "holdings": [
         "QQQ",
         "EEM",
@@ -113,7 +113,7 @@
     },
     {
       "date": "2015-05-01",
-      "value": 100673.8,
+      "value": 100673.82,
       "holdings": [
         "QQQ",
         "TLT",
@@ -122,7 +122,7 @@
     },
     {
       "date": "2015-06-01",
-      "value": 98287.48,
+      "value": 98287.51,
       "holdings": [
         "QQQ",
         "IWM",
@@ -132,7 +132,7 @@
     },
     {
       "date": "2015-07-01",
-      "value": 100063.77,
+      "value": 100063.81,
       "holdings": [
         "QQQ",
         "SHY"
@@ -140,21 +140,21 @@
     },
     {
       "date": "2015-08-01",
-      "value": 96431.45,
+      "value": 96431.49,
       "holdings": [
         "SHY"
       ]
     },
     {
       "date": "2015-09-01",
-      "value": 96715.94,
+      "value": 96715.99,
       "holdings": [
         "SHY"
       ]
     },
     {
       "date": "2015-10-01",
-      "value": 96386.28,
+      "value": 96386.29,
       "holdings": [
         "SHY",
         "GLD"
@@ -162,21 +162,21 @@
     },
     {
       "date": "2015-11-01",
-      "value": 92821.86,
+      "value": 92821.85,
       "holdings": [
         "BTC-USD"
       ]
     },
     {
       "date": "2015-12-01",
-      "value": 105920.5,
+      "value": 105920.48,
       "holdings": [
         "BTC-USD"
       ]
     },
     {
       "date": "2016-01-01",
-      "value": 90536.21,
+      "value": 90536.2,
       "holdings": [
         "TLT",
         "SHY",
@@ -185,7 +185,7 @@
     },
     {
       "date": "2016-02-01",
-      "value": 94888.86,
+      "value": 94888.82,
       "holdings": [
         "TLT",
         "SHY",
@@ -195,7 +195,7 @@
     },
     {
       "date": "2016-03-01",
-      "value": 93777.69,
+      "value": 93777.65,
       "holdings": [
         "TLT",
         "SHY",
@@ -205,7 +205,7 @@
     },
     {
       "date": "2016-04-01",
-      "value": 96252.19,
+      "value": 96252.17,
       "holdings": [
         "TLT",
         "SHY",
@@ -215,7 +215,7 @@
     },
     {
       "date": "2016-05-01",
-      "value": 98210.37,
+      "value": 98210.32,
       "holdings": [
         "SPY",
         "IWM",
@@ -228,7 +228,7 @@
     },
     {
       "date": "2016-06-01",
-      "value": 105061.02,
+      "value": 105060.98,
       "holdings": [
         "SPY",
         "IWM",
@@ -241,7 +241,7 @@
     },
     {
       "date": "2016-07-01",
-      "value": 104578.98,
+      "value": 104578.94,
       "holdings": [
         "SPY",
         "QQQ",
@@ -256,7 +256,7 @@
     },
     {
       "date": "2016-08-01",
-      "value": 103375.56,
+      "value": 103375.52,
       "holdings": [
         "SPY",
         "QQQ",
@@ -271,7 +271,7 @@
     },
     {
       "date": "2016-09-01",
-      "value": 104980.96,
+      "value": 104980.93,
       "holdings": [
         "SPY",
         "QQQ",
@@ -286,7 +286,7 @@
     },
     {
       "date": "2016-10-01",
-      "value": 104782.15,
+      "value": 104782.11,
       "holdings": [
         "SPY",
         "QQQ",
@@ -301,7 +301,7 @@
     },
     {
       "date": "2016-11-01",
-      "value": 104875.23,
+      "value": 104875.19,
       "holdings": [
         "SPY",
         "QQQ",
@@ -313,7 +313,7 @@
     },
     {
       "date": "2016-12-01",
-      "value": 111427.34,
+      "value": 111427.31,
       "holdings": [
         "SPY",
         "QQQ",
@@ -325,7 +325,7 @@
     },
     {
       "date": "2017-01-01",
-      "value": 114029.62,
+      "value": 114029.58,
       "holdings": [
         "SPY",
         "QQQ",
@@ -337,7 +337,7 @@
     },
     {
       "date": "2017-02-01",
-      "value": 120912.66,
+      "value": 120912.62,
       "holdings": [
         "SPY",
         "QQQ",
@@ -350,7 +350,7 @@
     },
     {
       "date": "2017-03-01",
-      "value": 119741.03,
+      "value": 119740.98,
       "holdings": [
         "SPY",
         "QQQ",
@@ -363,7 +363,7 @@
     },
     {
       "date": "2017-04-01",
-      "value": 124672.22,
+      "value": 124672.18,
       "holdings": [
         "SPY",
         "QQQ",
@@ -377,7 +377,7 @@
     },
     {
       "date": "2017-05-01",
-      "value": 135936.62,
+      "value": 135936.57,
       "holdings": [
         "SPY",
         "QQQ",
@@ -390,7 +390,7 @@
     },
     {
       "date": "2017-06-01",
-      "value": 137387.98,
+      "value": 137387.93,
       "holdings": [
         "SPY",
         "QQQ",
@@ -401,7 +401,7 @@
     },
     {
       "date": "2017-07-01",
-      "value": 144981.91,
+      "value": 144981.86,
       "holdings": [
         "SPY",
         "QQQ",
@@ -415,7 +415,7 @@
     },
     {
       "date": "2017-08-01",
-      "value": 157643.64,
+      "value": 157643.6,
       "holdings": [
         "SPY",
         "QQQ",
@@ -430,7 +430,7 @@
     },
     {
       "date": "2017-09-01",
-      "value": 156302.69,
+      "value": 156302.61,
       "holdings": [
         "SPY",
         "QQQ",
@@ -443,7 +443,7 @@
     },
     {
       "date": "2017-10-01",
-      "value": 170121.84,
+      "value": 170121.78,
       "holdings": [
         "SPY",
         "QQQ",
@@ -456,7 +456,7 @@
     },
     {
       "date": "2017-11-01",
-      "value": 190763.89,
+      "value": 190763.81,
       "holdings": [
         "SPY",
         "QQQ",
@@ -470,7 +470,7 @@
     },
     {
       "date": "2017-12-01",
-      "value": 202798.5,
+      "value": 202798.41,
       "holdings": [
         "SPY",
         "QQQ",
@@ -484,7 +484,7 @@
     },
     {
       "date": "2018-01-01",
-      "value": 199961.15,
+      "value": 199961.08,
       "holdings": [
         "SPY",
         "QQQ",
@@ -497,7 +497,7 @@
     },
     {
       "date": "2018-02-01",
-      "value": 195066.22,
+      "value": 195066.15,
       "holdings": [
         "SPY",
         "QQQ",
@@ -510,7 +510,7 @@
     },
     {
       "date": "2018-03-01",
-      "value": 184088.12,
+      "value": 184088.04,
       "holdings": [
         "SPY",
         "QQQ",
@@ -523,7 +523,7 @@
     },
     {
       "date": "2018-04-01",
-      "value": 190672.84,
+      "value": 190672.77,
       "holdings": [
         "SPY",
         "QQQ",
@@ -536,7 +536,7 @@
     },
     {
       "date": "2018-05-01",
-      "value": 189199.16,
+      "value": 189199.09,
       "holdings": [
         "SPY",
         "QQQ",
@@ -549,7 +549,7 @@
     },
     {
       "date": "2018-06-01",
-      "value": 183064.73,
+      "value": 183064.63,
       "holdings": [
         "SPY",
         "QQQ",
@@ -560,7 +560,7 @@
     },
     {
       "date": "2018-07-01",
-      "value": 192615.08,
+      "value": 192614.98,
       "holdings": [
         "SPY",
         "QQQ",
@@ -569,7 +569,7 @@
     },
     {
       "date": "2018-08-01",
-      "value": 200741.52,
+      "value": 200741.42,
       "holdings": [
         "SPY",
         "QQQ",
@@ -579,7 +579,7 @@
     },
     {
       "date": "2018-09-01",
-      "value": 199659.95,
+      "value": 199659.85,
       "holdings": [
         "SPY",
         "QQQ",
@@ -589,7 +589,7 @@
     },
     {
       "date": "2018-10-01",
-      "value": 186187.4,
+      "value": 186187.32,
       "holdings": [
         "SPY",
         "QQQ",
@@ -598,14 +598,14 @@
     },
     {
       "date": "2018-11-01",
-      "value": 187036.0,
+      "value": 187035.9,
       "holdings": [
         "SHY"
       ]
     },
     {
       "date": "2018-12-01",
-      "value": 188080.47,
+      "value": 188080.42,
       "holdings": [
         "TLT",
         "SHY"
@@ -613,7 +613,7 @@
     },
     {
       "date": "2019-01-01",
-      "value": 188672.6,
+      "value": 188672.57,
       "holdings": [
         "TLT",
         "SHY"
@@ -621,7 +621,7 @@
     },
     {
       "date": "2019-02-01",
-      "value": 187079.73,
+      "value": 187079.67,
       "holdings": [
         "TLT",
         "SHY",
@@ -630,7 +630,7 @@
     },
     {
       "date": "2019-03-01",
-      "value": 189949.28,
+      "value": 189949.25,
       "holdings": [
         "TLT",
         "SHY",
@@ -650,7 +650,7 @@
     },
     {
       "date": "2019-05-01",
-      "value": 185254.05,
+      "value": 185254.0,
       "holdings": [
         "TLT",
         "SHY",
@@ -660,7 +660,7 @@
     },
     {
       "date": "2019-06-01",
-      "value": 199595.25,
+      "value": 199595.22,
       "holdings": [
         "TLT",
         "SHY",
@@ -670,7 +670,7 @@
     },
     {
       "date": "2019-07-01",
-      "value": 196141.7,
+      "value": 196141.67,
       "holdings": [
         "SPY",
         "TLT",
@@ -681,7 +681,7 @@
     },
     {
       "date": "2019-08-01",
-      "value": 201460.25,
+      "value": 201460.18,
       "holdings": [
         "SPY",
         "TLT",
@@ -692,7 +692,7 @@
     },
     {
       "date": "2019-09-01",
-      "value": 194353.63,
+      "value": 194353.61,
       "holdings": [
         "SPY",
         "TLT",
@@ -703,7 +703,7 @@
     },
     {
       "date": "2019-10-01",
-      "value": 199046.94,
+      "value": 199046.88,
       "holdings": [
         "SPY",
         "QQQ",
@@ -716,7 +716,7 @@
     },
     {
       "date": "2019-11-01",
-      "value": 194736.98,
+      "value": 194736.94,
       "holdings": [
         "SPY",
         "QQQ",
@@ -730,7 +730,7 @@
     },
     {
       "date": "2019-12-01",
-      "value": 197494.81,
+      "value": 197494.77,
       "holdings": [
         "SPY",
         "QQQ",
@@ -744,7 +744,7 @@
     },
     {
       "date": "2020-01-01",
-      "value": 196590.69,
+      "value": 196590.65,
       "holdings": [
         "SPY",
         "QQQ",
@@ -758,7 +758,7 @@
     },
     {
       "date": "2020-02-01",
-      "value": 189389.54,
+      "value": 189389.5,
       "holdings": [
         "SPY",
         "QQQ",
@@ -770,7 +770,7 @@
     },
     {
       "date": "2020-03-01",
-      "value": 177197.02,
+      "value": 177196.97,
       "holdings": [
         "QQQ",
         "TLT",
@@ -780,7 +780,7 @@
     },
     {
       "date": "2020-04-01",
-      "value": 187707.62,
+      "value": 187707.59,
       "holdings": [
         "QQQ",
         "TLT",
@@ -790,7 +790,7 @@
     },
     {
       "date": "2020-05-01",
-      "value": 191091.8,
+      "value": 191091.79,
       "holdings": [
         "QQQ",
         "TLT",
@@ -801,7 +801,7 @@
     },
     {
       "date": "2020-06-01",
-      "value": 192986.64,
+      "value": 192986.65,
       "holdings": [
         "QQQ",
         "EEM",
@@ -813,7 +813,7 @@
     },
     {
       "date": "2020-07-01",
-      "value": 210202.69,
+      "value": 210202.7,
       "holdings": [
         "SPY",
         "QQQ",
@@ -827,7 +827,7 @@
     },
     {
       "date": "2020-08-01",
-      "value": 216522.17,
+      "value": 216522.16,
       "holdings": [
         "SPY",
         "QQQ",
@@ -841,7 +841,7 @@
     },
     {
       "date": "2020-09-01",
-      "value": 209209.39,
+      "value": 209209.36,
       "holdings": [
         "SPY",
         "QQQ",
@@ -856,7 +856,7 @@
     },
     {
       "date": "2020-10-01",
-      "value": 214742.93,
+      "value": 214742.92,
       "holdings": [
         "SPY",
         "QQQ",
@@ -871,7 +871,7 @@
     },
     {
       "date": "2020-11-01",
-      "value": 238921.06,
+      "value": 238921.04,
       "holdings": [
         "SPY",
         "QQQ",
@@ -886,7 +886,7 @@
     },
     {
       "date": "2020-12-01",
-      "value": 267722.0,
+      "value": 267721.94,
       "holdings": [
         "SPY",
         "QQQ",
@@ -900,7 +900,7 @@
     },
     {
       "date": "2021-01-01",
-      "value": 274789.35,
+      "value": 274789.3,
       "holdings": [
         "SPY",
         "QQQ",
@@ -914,7 +914,7 @@
     },
     {
       "date": "2021-02-01",
-      "value": 292000.73,
+      "value": 292000.7,
       "holdings": [
         "SPY",
         "QQQ",
@@ -926,7 +926,7 @@
     },
     {
       "date": "2021-03-01",
-      "value": 309026.22,
+      "value": 309026.17,
       "holdings": [
         "SPY",
         "QQQ",
@@ -938,7 +938,7 @@
     },
     {
       "date": "2021-04-01",
-      "value": 319479.43,
+      "value": 319479.4,
       "holdings": [
         "SPY",
         "QQQ",
@@ -950,7 +950,7 @@
     },
     {
       "date": "2021-05-01",
-      "value": 299735.0,
+      "value": 299734.97,
       "holdings": [
         "SPY",
         "QQQ",
@@ -962,7 +962,7 @@
     },
     {
       "date": "2021-06-01",
-      "value": 303992.99,
+      "value": 303992.92,
       "holdings": [
         "SPY",
         "QQQ",
@@ -974,7 +974,7 @@
     },
     {
       "date": "2021-07-01",
-      "value": 310207.06,
+      "value": 310207.02,
       "holdings": [
         "SPY",
         "QQQ",
@@ -986,7 +986,7 @@
     },
     {
       "date": "2021-08-01",
-      "value": 321594.62,
+      "value": 321594.56,
       "holdings": [
         "SPY",
         "QQQ",
@@ -998,7 +998,7 @@
     },
     {
       "date": "2021-09-01",
-      "value": 311898.86,
+      "value": 311898.81,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1010,7 +1010,7 @@
     },
     {
       "date": "2021-10-01",
-      "value": 342920.83,
+      "value": 342920.79,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1021,7 +1021,7 @@
     },
     {
       "date": "2021-11-01",
-      "value": 329339.6,
+      "value": 329339.53,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1033,7 +1033,7 @@
     },
     {
       "date": "2021-12-01",
-      "value": 323868.45,
+      "value": 323868.4,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1044,7 +1044,7 @@
     },
     {
       "date": "2022-01-01",
-      "value": 303649.13,
+      "value": 303649.11,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1053,7 +1053,7 @@
     },
     {
       "date": "2022-02-01",
-      "value": 302950.65,
+      "value": 302950.63,
       "holdings": [
         "SPY",
         "GLD",
@@ -1070,7 +1070,7 @@
     },
     {
       "date": "2022-04-01",
-      "value": 319561.29,
+      "value": 319561.28,
       "holdings": [
         "DJP"
       ]
@@ -1091,7 +1091,7 @@
     },
     {
       "date": "2022-07-01",
-      "value": 299857.79,
+      "value": 299857.78,
       "holdings": [
         "DJP"
       ]
@@ -1112,28 +1112,28 @@
     },
     {
       "date": "2022-10-01",
-      "value": 277227.55,
+      "value": 277227.54,
       "holdings": [
         "CASH"
       ]
     },
     {
       "date": "2022-11-01",
-      "value": 276950.32,
+      "value": 276950.31,
       "holdings": [
         "EEM"
       ]
     },
     {
       "date": "2022-12-01",
-      "value": 269106.74,
+      "value": 269106.71,
       "holdings": [
         "GLD"
       ]
     },
     {
       "date": "2023-01-01",
-      "value": 284036.37,
+      "value": 284036.33,
       "holdings": [
         "IWM",
         "SHY",
@@ -1142,7 +1142,7 @@
     },
     {
       "date": "2023-02-01",
-      "value": 276283.05,
+      "value": 276283.06,
       "holdings": [
         "CASH"
       ]
@@ -1159,7 +1159,7 @@
     },
     {
       "date": "2023-04-01",
-      "value": 278169.6,
+      "value": 278169.65,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1170,7 +1170,7 @@
     },
     {
       "date": "2023-05-01",
-      "value": 277961.21,
+      "value": 277961.24,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1181,7 +1181,7 @@
     },
     {
       "date": "2023-06-01",
-      "value": 289485.27,
+      "value": 289485.32,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1193,7 +1193,7 @@
     },
     {
       "date": "2023-07-01",
-      "value": 294561.01,
+      "value": 294561.04,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1206,7 +1206,7 @@
     },
     {
       "date": "2023-08-01",
-      "value": 283211.8,
+      "value": 283211.85,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1219,7 +1219,7 @@
     },
     {
       "date": "2023-09-01",
-      "value": 274511.69,
+      "value": 274511.74,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1230,7 +1230,7 @@
     },
     {
       "date": "2023-10-01",
-      "value": 292092.05,
+      "value": 292092.06,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1241,7 +1241,7 @@
     },
     {
       "date": "2023-11-01",
-      "value": 310464.18,
+      "value": 310464.21,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1253,7 +1253,7 @@
     },
     {
       "date": "2023-12-01",
-      "value": 324393.15,
+      "value": 324393.19,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1267,7 +1267,7 @@
     },
     {
       "date": "2024-01-01",
-      "value": 321305.1,
+      "value": 321305.14,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1281,7 +1281,7 @@
     },
     {
       "date": "2024-02-01",
-      "value": 346433.75,
+      "value": 346433.79,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1295,7 +1295,7 @@
     },
     {
       "date": "2024-03-01",
-      "value": 364586.85,
+      "value": 364586.89,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1309,7 +1309,7 @@
     },
     {
       "date": "2024-04-01",
-      "value": 345498.84,
+      "value": 345498.86,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1323,7 +1323,7 @@
     },
     {
       "date": "2024-05-01",
-      "value": 359461.68,
+      "value": 359461.75,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1338,7 +1338,7 @@
     },
     {
       "date": "2024-06-01",
-      "value": 361310.88,
+      "value": 361310.91,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1353,7 +1353,7 @@
     },
     {
       "date": "2024-07-01",
-      "value": 368402.94,
+      "value": 368403.0,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1367,7 +1367,7 @@
     },
     {
       "date": "2024-08-01",
-      "value": 367980.48,
+      "value": 367980.56,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1381,7 +1381,7 @@
     },
     {
       "date": "2024-09-01",
-      "value": 379221.53,
+      "value": 379221.56,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1396,7 +1396,7 @@
     },
     {
       "date": "2024-10-01",
-      "value": 379779.85,
+      "value": 379779.88,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1411,7 +1411,7 @@
     },
     {
       "date": "2024-11-01",
-      "value": 404981.94,
+      "value": 404981.98,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1426,7 +1426,7 @@
     },
     {
       "date": "2024-12-01",
-      "value": 394163.78,
+      "value": 394163.81,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1440,7 +1440,7 @@
     },
     {
       "date": "2025-01-01",
-      "value": 409410.27,
+      "value": 409410.32,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1454,7 +1454,7 @@
     },
     {
       "date": "2025-02-01",
-      "value": 396855.74,
+      "value": 396855.77,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1469,7 +1469,7 @@
     },
     {
       "date": "2025-03-01",
-      "value": 392441.09,
+      "value": 392441.14,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1483,7 +1483,7 @@
     },
     {
       "date": "2025-04-01",
-      "value": 398470.27,
+      "value": 398470.32,
       "holdings": [
         "EEM",
         "TLT",
@@ -1495,7 +1495,7 @@
     },
     {
       "date": "2025-05-01",
-      "value": 404945.82,
+      "value": 404945.85,
       "holdings": [
         "EEM",
         "SHY",
@@ -1536,7 +1536,7 @@
     },
     {
       "date": "2025-08-01",
-      "value": 427073.83,
+      "value": 427073.86,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1551,7 +1551,7 @@
     },
     {
       "date": "2025-09-01",
-      "value": 447487.64,
+      "value": 447487.67,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1566,7 +1566,7 @@
     },
     {
       "date": "2025-10-01",
-      "value": 456094.19,
+      "value": 456094.21,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1581,7 +1581,7 @@
     },
     {
       "date": "2025-11-01",
-      "value": 450875.77,
+      "value": 450875.78,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1595,7 +1595,7 @@
     },
     {
       "date": "2025-12-01",
-      "value": 450940.02,
+      "value": 450940.04,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1609,7 +1609,7 @@
     },
     {
       "date": "2026-01-01",
-      "value": 474539.0,
+      "value": 474539.03,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1623,7 +1623,7 @@
     },
     {
       "date": "2026-02-01",
-      "value": 485601.05,
+      "value": 485601.07,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1637,7 +1637,7 @@
     },
     {
       "date": "2026-03-01",
-      "value": 467803.82,
+      "value": 467803.84,
       "holdings": [
         "SPY",
         "IWM",
@@ -1650,7 +1650,7 @@
     },
     {
       "date": "2026-04-01",
-      "value": 492103.22,
+      "value": 492103.25,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1663,7 +1663,7 @@
     },
     {
       "date": "2026-05-01",
-      "value": 506558.56,
+      "value": 506558.58,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1677,7 +1677,7 @@
     },
     {
       "date": "2026-06-01",
-      "value": 495562.02,
+      "value": 495562.04,
       "holdings": [
         "SPY",
         "QQQ",
@@ -1716,14 +1716,14 @@
       "date": "2014-09",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 83.8339,
+      "price": 83.834,
       "weight_pct": 25.0
     },
     {
       "date": "2014-10",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 165.6595
+      "price": 165.6594
     },
     {
       "date": "2014-10",
@@ -1747,7 +1747,7 @@
       "date": "2014-10",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 165.6595,
+      "price": 165.6594,
       "weight_pct": 20.0
     },
     {
@@ -1806,7 +1806,7 @@
       "date": "2014-12",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 68.4186
+      "price": 68.4187
     },
     {
       "date": "2014-12",
@@ -1833,7 +1833,7 @@
       "date": "2015-01",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 164.7483
+      "price": 164.7484
     },
     {
       "date": "2015-01",
@@ -1845,13 +1845,13 @@
       "date": "2015-01",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 100.6357
+      "price": 100.6356
     },
     {
       "date": "2015-01",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 164.7483,
+      "price": 164.7484,
       "weight_pct": 20.0
     },
     {
@@ -1865,7 +1865,7 @@
       "date": "2015-01",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 100.6357,
+      "price": 100.6356,
       "weight_pct": 20.0
     },
     {
@@ -2087,7 +2087,7 @@
       "date": "2015-07",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 103.3114
+      "price": 103.3113
     },
     {
       "date": "2015-07",
@@ -2099,7 +2099,7 @@
       "date": "2015-07",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 90.2914
+      "price": 90.2915
     },
     {
       "date": "2015-07",
@@ -2111,7 +2111,7 @@
       "date": "2015-07",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 103.3114,
+      "price": 103.3113,
       "weight_pct": 50.0
     },
     {
@@ -2164,7 +2164,7 @@
       "date": "2015-11",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 68.8154
+      "price": 68.8153
     },
     {
       "date": "2015-11",
@@ -2210,13 +2210,13 @@
       "date": "2016-02",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 97.9484
+      "price": 97.9483
     },
     {
       "date": "2016-02",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 69.2381
+      "price": 69.2382
     },
     {
       "date": "2016-02",
@@ -2228,14 +2228,14 @@
       "date": "2016-02",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 97.9484,
+      "price": 97.9483,
       "weight_pct": 26.7
     },
     {
       "date": "2016-02",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 69.2381,
+      "price": 69.2382,
       "weight_pct": 26.7
     },
     {
@@ -2440,13 +2440,13 @@
       "date": "2016-11",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 109.9182
+      "price": 109.9183
     },
     {
       "date": "2016-11",
       "action": "SELL",
       "ticker": "IWM",
-      "price": 116.4317
+      "price": 116.4316
     },
     {
       "date": "2016-11",
@@ -2495,14 +2495,14 @@
       "date": "2016-11",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 109.9182,
+      "price": 109.9183,
       "weight_pct": 16.7
     },
     {
       "date": "2016-11",
       "action": "BUY",
       "ticker": "IWM",
-      "price": 116.4317,
+      "price": 116.4316,
       "weight_pct": 16.7
     },
     {
@@ -2816,7 +2816,7 @@
       "date": "2017-06",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 129.7606
+      "price": 129.7607
     },
     {
       "date": "2017-06",
@@ -2859,7 +2859,7 @@
       "date": "2017-06",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 129.7606,
+      "price": 129.7607,
       "weight_pct": 20.0
     },
     {
@@ -2991,7 +2991,7 @@
       "date": "2017-08",
       "action": "SELL",
       "ticker": "EEM",
-      "price": 36.5875
+      "price": 36.5874
     },
     {
       "date": "2017-08",
@@ -3042,7 +3042,7 @@
       "date": "2017-08",
       "action": "BUY",
       "ticker": "EEM",
-      "price": 36.5875,
+      "price": 36.5874,
       "weight_pct": 11.1
     },
     {
@@ -3096,7 +3096,7 @@
       "date": "2017-09",
       "action": "SELL",
       "ticker": "IWM",
-      "price": 132.9017
+      "price": 132.9016
     },
     {
       "date": "2017-09",
@@ -3152,7 +3152,7 @@
       "date": "2017-09",
       "action": "BUY",
       "ticker": "IWM",
-      "price": 132.9017,
+      "price": 132.9016,
       "weight_pct": 14.3
     },
     {
@@ -3187,13 +3187,13 @@
       "date": "2017-11",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 231.4702
+      "price": 231.4703
     },
     {
       "date": "2017-11",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 146.5884
+      "price": 146.5883
     },
     {
       "date": "2017-11",
@@ -3229,14 +3229,14 @@
       "date": "2017-11",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 231.4702,
+      "price": 231.4703,
       "weight_pct": 12.5
     },
     {
       "date": "2017-11",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 146.5884,
+      "price": 146.5883,
       "weight_pct": 12.5
     },
     {
@@ -3291,7 +3291,7 @@
       "date": "2018-01",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 160.3867
+      "price": 160.3868
     },
     {
       "date": "2018-01",
@@ -3309,7 +3309,7 @@
       "date": "2018-01",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 96.1796
+      "price": 96.1795
     },
     {
       "date": "2018-01",
@@ -3340,7 +3340,7 @@
       "date": "2018-01",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 160.3867,
+      "price": 160.3868,
       "weight_pct": 14.3
     },
     {
@@ -3459,13 +3459,13 @@
       "date": "2018-07",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 249.0835
+      "price": 249.0833
     },
     {
       "date": "2018-07",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 167.6908
+      "price": 167.6909
     },
     {
       "date": "2018-07",
@@ -3489,14 +3489,14 @@
       "date": "2018-07",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 249.0835,
+      "price": 249.0833,
       "weight_pct": 33.3
     },
     {
       "date": "2018-07",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 167.6908,
+      "price": 167.6909,
       "weight_pct": 33.3
     },
     {
@@ -3510,7 +3510,7 @@
       "date": "2018-08",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 257.0341
+      "price": 257.034
     },
     {
       "date": "2018-08",
@@ -3528,7 +3528,7 @@
       "date": "2018-08",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 257.0341,
+      "price": 257.034,
       "weight_pct": 25.0
     },
     {
@@ -3556,7 +3556,7 @@
       "date": "2018-10",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 240.6946
+      "price": 240.6945
     },
     {
       "date": "2018-10",
@@ -3568,7 +3568,7 @@
       "date": "2018-10",
       "action": "SELL",
       "ticker": "IWM",
-      "price": 136.2335
+      "price": 136.2334
     },
     {
       "date": "2018-10",
@@ -3580,7 +3580,7 @@
       "date": "2018-10",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 240.6946,
+      "price": 240.6945,
       "weight_pct": 33.3
     },
     {
@@ -3697,14 +3697,14 @@
       "date": "2019-04",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 181.3008,
+      "price": 181.3009,
       "weight_pct": 20.0
     },
     {
       "date": "2019-04",
       "action": "BUY",
       "ticker": "EEM",
-      "price": 37.1843,
+      "price": 37.1844,
       "weight_pct": 20.0
     },
     {
@@ -3750,7 +3750,7 @@
       "date": "2019-05",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 71.8024
+      "price": 71.8025
     },
     {
       "date": "2019-05",
@@ -3769,7 +3769,7 @@
       "date": "2019-05",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 71.8024,
+      "price": 71.8025,
       "weight_pct": 26.7
     },
     {
@@ -3814,7 +3814,7 @@
       "date": "2019-07",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 268.5466,
+      "price": 268.5467,
       "weight_pct": 20.0
     },
     {
@@ -3886,14 +3886,14 @@
       "date": "2019-10",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 189.3109,
+      "price": 189.3108,
       "weight_pct": 14.3
     },
     {
       "date": "2019-10",
       "action": "BUY",
       "ticker": "EEM",
-      "price": 36.3164,
+      "price": 36.3165,
       "weight_pct": 14.3
     },
     {
@@ -3928,7 +3928,7 @@
       "date": "2019-11",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 285.0979
+      "price": 285.098
     },
     {
       "date": "2019-11",
@@ -3970,7 +3970,7 @@
       "date": "2019-11",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 285.0979,
+      "price": 285.098,
       "weight_pct": 12.5
     },
     {
@@ -3984,7 +3984,7 @@
       "date": "2019-11",
       "action": "BUY",
       "ticker": "IWM",
-      "price": 148.8206,
+      "price": 148.8205,
       "weight_pct": 12.5
     },
     {
@@ -4026,7 +4026,7 @@
       "date": "2019-12",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 293.3817
+      "price": 293.3816
     },
     {
       "date": "2019-12",
@@ -4074,7 +4074,7 @@
       "date": "2019-12",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 293.3817,
+      "price": 293.3816,
       "weight_pct": 12.5
     },
     {
@@ -4130,13 +4130,13 @@
       "date": "2020-01",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 293.2632
+      "price": 293.2631
     },
     {
       "date": "2020-01",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 210.8902
+      "price": 210.8903
     },
     {
       "date": "2020-01",
@@ -4178,14 +4178,14 @@
       "date": "2020-01",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 293.2632,
+      "price": 293.2631,
       "weight_pct": 12.5
     },
     {
       "date": "2020-01",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 210.8902,
+      "price": 210.8903,
       "weight_pct": 12.5
     },
     {
@@ -4394,7 +4394,7 @@
       "date": "2020-05",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 135.5777
+      "price": 135.5778
     },
     {
       "date": "2020-05",
@@ -4419,7 +4419,7 @@
       "date": "2020-05",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 135.5777,
+      "price": 135.5778,
       "weight_pct": 20.0
     },
     {
@@ -4453,13 +4453,13 @@
       "date": "2020-06",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 136.0341
+      "price": 136.0342
     },
     {
       "date": "2020-06",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 75.0053
+      "price": 75.0054
     },
     {
       "date": "2020-06",
@@ -4491,14 +4491,14 @@
       "date": "2020-06",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 136.0341,
+      "price": 136.0342,
       "weight_pct": 16.7
     },
     {
       "date": "2020-06",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 75.0053,
+      "price": 75.0054,
       "weight_pct": 16.7
     },
     {
@@ -4531,7 +4531,7 @@
       "date": "2020-07",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 142.0674
+      "price": 142.0675
     },
     {
       "date": "2020-07",
@@ -4555,7 +4555,7 @@
       "date": "2020-07",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 300.6968,
+      "price": 300.6969,
       "weight_pct": 12.5
     },
     {
@@ -4583,7 +4583,7 @@
       "date": "2020-07",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 142.0674,
+      "price": 142.0675,
       "weight_pct": 12.5
     },
     {
@@ -4617,13 +4617,13 @@
       "date": "2020-09",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 268.502
+      "price": 268.5019
     },
     {
       "date": "2020-09",
       "action": "SELL",
       "ticker": "IWM",
-      "price": 139.8403
+      "price": 139.8404
     },
     {
       "date": "2020-09",
@@ -4666,14 +4666,14 @@
       "date": "2020-09",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 268.502,
+      "price": 268.5019,
       "weight_pct": 11.1
     },
     {
       "date": "2020-09",
       "action": "BUY",
       "ticker": "IWM",
-      "price": 139.8403,
+      "price": 139.8404,
       "weight_pct": 11.1
     },
     {
@@ -4728,7 +4728,7 @@
       "date": "2020-12",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 303.745
+      "price": 303.7449
     },
     {
       "date": "2020-12",
@@ -4783,7 +4783,7 @@
       "date": "2020-12",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 303.745,
+      "price": 303.7449,
       "weight_pct": 12.5
     },
     {
@@ -4832,13 +4832,13 @@
       "date": "2021-02",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 353.1801
+      "price": 353.1802
     },
     {
       "date": "2021-02",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 304.1321
+      "price": 304.1322
     },
     {
       "date": "2021-02",
@@ -4856,7 +4856,7 @@
       "date": "2021-02",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 75.0434
+      "price": 75.0435
     },
     {
       "date": "2021-02",
@@ -4880,14 +4880,14 @@
       "date": "2021-02",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 353.1801,
+      "price": 353.1802,
       "weight_pct": 16.7
     },
     {
       "date": "2021-02",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 304.1321,
+      "price": 304.1322,
       "weight_pct": 16.7
     },
     {
@@ -4928,7 +4928,7 @@
       "date": "2021-10",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 375.131
+      "price": 375.1311
     },
     {
       "date": "2021-10",
@@ -4965,7 +4965,7 @@
       "date": "2021-10",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 375.131,
+      "price": 375.1311,
       "weight_pct": 20.0
     },
     {
@@ -4993,19 +4993,19 @@
       "date": "2021-11",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 427.1444
+      "price": 427.1445
     },
     {
       "date": "2021-11",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 382.6219
+      "price": 382.6218
     },
     {
       "date": "2021-11",
       "action": "SELL",
       "ticker": "IWM",
-      "price": 205.6267
+      "price": 205.6266
     },
     {
       "date": "2021-11",
@@ -5023,21 +5023,21 @@
       "date": "2021-11",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 427.1444,
+      "price": 427.1445,
       "weight_pct": 16.7
     },
     {
       "date": "2021-11",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 382.6219,
+      "price": 382.6218,
       "weight_pct": 16.7
     },
     {
       "date": "2021-11",
       "action": "BUY",
       "ticker": "IWM",
-      "price": 205.6267,
+      "price": 205.6266,
       "weight_pct": 16.7
     },
     {
@@ -5065,7 +5065,7 @@
       "date": "2021-12",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 446.899
+      "price": 446.8989
     },
     {
       "date": "2021-12",
@@ -5083,7 +5083,7 @@
       "date": "2021-12",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 125.8199
+      "price": 125.82
     },
     {
       "date": "2021-12",
@@ -5101,7 +5101,7 @@
       "date": "2021-12",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 446.899,
+      "price": 446.8989,
       "weight_pct": 20.0
     },
     {
@@ -5142,7 +5142,7 @@
       "date": "2022-01",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 353.1772
+      "price": 353.1773
     },
     {
       "date": "2022-01",
@@ -5173,7 +5173,7 @@
       "date": "2022-01",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 353.1772,
+      "price": 353.1773,
       "weight_pct": 33.3
     },
     {
@@ -5193,7 +5193,7 @@
       "date": "2022-02",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 337.3691
+      "price": 337.3692
     },
     {
       "date": "2022-02",
@@ -5376,7 +5376,7 @@
       "date": "2023-04",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 316.5902
+      "price": 316.5903
     },
     {
       "date": "2023-04",
@@ -5407,7 +5407,7 @@
       "date": "2023-04",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 316.5902,
+      "price": 316.5903,
       "weight_pct": 20.0
     },
     {
@@ -5507,7 +5507,7 @@
       "date": "2023-07",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 441.0342
+      "price": 441.0343
     },
     {
       "date": "2023-07",
@@ -5543,7 +5543,7 @@
       "date": "2023-07",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 441.0342,
+      "price": 441.0343,
       "weight_pct": 14.3
     },
     {
@@ -5598,7 +5598,7 @@
       "date": "2023-09",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 352.6313
+      "price": 352.6314
     },
     {
       "date": "2023-09",
@@ -5641,7 +5641,7 @@
       "date": "2023-09",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 352.6313,
+      "price": 352.6314,
       "weight_pct": 20.0
     },
     {
@@ -5741,7 +5741,7 @@
       "date": "2023-12",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 461.3913
+      "price": 461.3914
     },
     {
       "date": "2023-12",
@@ -5753,7 +5753,7 @@
       "date": "2023-12",
       "action": "SELL",
       "ticker": "EEM",
-      "price": 38.1475
+      "price": 38.1474
     },
     {
       "date": "2023-12",
@@ -5777,7 +5777,7 @@
       "date": "2023-12",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 461.3913,
+      "price": 461.3914,
       "weight_pct": 12.5
     },
     {
@@ -5798,7 +5798,7 @@
       "date": "2023-12",
       "action": "BUY",
       "ticker": "EEM",
-      "price": 38.1475,
+      "price": 38.1474,
       "weight_pct": 12.5
     },
     {
@@ -5833,7 +5833,7 @@
       "date": "2024-04",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 488.7943
+      "price": 488.7944
     },
     {
       "date": "2024-04",
@@ -5863,7 +5863,7 @@
       "date": "2024-04",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 74.4955
+      "price": 74.4954
     },
     {
       "date": "2024-04",
@@ -5881,7 +5881,7 @@
       "date": "2024-04",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 488.7943,
+      "price": 488.7944,
       "weight_pct": 12.5
     },
     {
@@ -5909,7 +5909,7 @@
       "date": "2024-04",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 74.4955,
+      "price": 74.4954,
       "weight_pct": 12.5
     },
     {
@@ -5937,7 +5937,7 @@
       "date": "2024-05",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 513.5173
+      "price": 513.5175
     },
     {
       "date": "2024-05",
@@ -5961,7 +5961,7 @@
       "date": "2024-05",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 75.0314
+      "price": 75.0315
     },
     {
       "date": "2024-05",
@@ -5985,7 +5985,7 @@
       "date": "2024-05",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 513.5173,
+      "price": 513.5175,
       "weight_pct": 11.1
     },
     {
@@ -6020,7 +6020,7 @@
       "date": "2024-05",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 75.0314,
+      "price": 75.0315,
       "weight_pct": 11.1
     },
     {
@@ -6054,7 +6054,7 @@
       "date": "2024-07",
       "action": "SELL",
       "ticker": "QQQ",
-      "price": 466.1811
+      "price": 466.181
     },
     {
       "date": "2024-07",
@@ -6078,7 +6078,7 @@
       "date": "2024-07",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 76.3297
+      "price": 76.3298
     },
     {
       "date": "2024-07",
@@ -6109,7 +6109,7 @@
       "date": "2024-07",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 466.1811,
+      "price": 466.181,
       "weight_pct": 12.5
     },
     {
@@ -6137,7 +6137,7 @@
       "date": "2024-07",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 76.3297,
+      "price": 76.3298,
       "weight_pct": 12.5
     },
     {
@@ -6158,7 +6158,7 @@
       "date": "2024-09",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 562.2105
+      "price": 562.2104
     },
     {
       "date": "2024-09",
@@ -6206,7 +6206,7 @@
       "date": "2024-09",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 562.2105,
+      "price": 562.2104,
       "weight_pct": 11.1
     },
     {
@@ -6269,7 +6269,7 @@
       "date": "2024-12",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 576.2153
+      "price": 576.2152
     },
     {
       "date": "2024-12",
@@ -6323,7 +6323,7 @@
       "date": "2024-12",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 576.2153,
+      "price": 576.2152,
       "weight_pct": 12.5
     },
     {
@@ -6490,7 +6490,7 @@
       "date": "2025-03",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 551.6289
+      "price": 551.629
     },
     {
       "date": "2025-03",
@@ -6544,7 +6544,7 @@
       "date": "2025-03",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 551.6289,
+      "price": 551.629,
       "weight_pct": 12.5
     },
     {
@@ -6600,7 +6600,7 @@
       "date": "2025-04",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 546.8463
+      "price": 546.8462
     },
     {
       "date": "2025-04",
@@ -6798,14 +6798,14 @@
       "date": "2025-06",
       "action": "BUY",
       "ticker": "QQQ",
-      "price": 548.996,
+      "price": 548.9958,
       "weight_pct": 11.1
     },
     {
       "date": "2025-06",
       "action": "BUY",
       "ticker": "IWM",
-      "price": 213.5717,
+      "price": 213.5718,
       "weight_pct": 11.1
     },
     {

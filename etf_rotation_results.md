@@ -1,4 +1,4 @@
-# ETF + Bitcoin Rotation Backtest — July 22, 2026
+# ETF + Bitcoin Rotation Backtest — August 01, 2026
 
 **Signal:** CallingMarkets 2-of-3 (EMA20/55, RSI14>EMA, MACD) on monthly bars  
 **Universe:** SPY, QQQ, IWM, EEM, TLT, SHY, GLD, DJP, BTC-USD  
