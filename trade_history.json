@@ -1,13 +1,13 @@
 {
-  "generated": "2026-07-27T08:35:05.584717+00:00",
+  "generated": "2026-08-03T08:33:33.410570+00:00",
   "start_date": "2018-01-05",
   "starting_capital": 100000.0,
-  "final_value": 2435748.09,
-  "total_return_pct": 2335.75,
-  "total_fees": 308586.97,
+  "final_value": 2366355.79,
+  "total_return_pct": 2266.36,
+  "total_fees": 315745.1,
   "n_buys": 272,
-  "n_sells": 262,
-  "n_holds": 266,
+  "n_sells": 268,
+  "n_holds": 265,
   "equity_curve": [
     {
       "date": "2018-01-05",
@@ -6380,20 +6380,29 @@
     },
     {
       "date": "2026-07-24",
-      "value": 2435748.09,
+      "value": 2360011.19,
       "btc_signal": "BUY",
       "paxg_signal": "SELL",
       "defensive": null,
       "buy_tickers": [
         "BTC",
         "ETH",
-        "XRP",
         "SOL",
         "ADA",
         "LINK"
       ],
       "n_universe": 10,
-      "cash_pct": -0.0
+      "cash_pct": 0.0
+    },
+    {
+      "date": "2026-07-31",
+      "value": 2366355.79,
+      "btc_signal": "SELL",
+      "paxg_signal": "SELL",
+      "defensive": null,
+      "buy_tickers": [],
+      "n_universe": 10,
+      "cash_pct": 100.0
     }
   ],
   "trades": [
@@ -13074,8 +13083,57 @@
     },
     {
       "date": "2026-07-24",
-      "action": "HOLD",
-      "note": "No changes \u2014 6 assets"
+      "action": "SELL",
+      "ticker": "XRP",
+      "price": 1.0724,
+      "value": 386769.92,
+      "fee": 1005.6,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-07-31",
+      "action": "SELL",
+      "ticker": "BTC",
+      "price": 62240.4,
+      "value": 459736.28,
+      "fee": 1195.31,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-07-31",
+      "action": "SELL",
+      "ticker": "ETH",
+      "price": 1829.27,
+      "value": 452476.16,
+      "fee": 1176.44,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-07-31",
+      "action": "SELL",
+      "ticker": "SOL",
+      "price": 72.0,
+      "value": 461929.61,
+      "fee": 1201.02,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-07-31",
+      "action": "SELL",
+      "ticker": "ADA",
+      "price": 0.1818,
+      "value": 529611.3,
+      "fee": 1376.99,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-07-31",
+      "action": "SELL",
+      "ticker": "LINK",
+      "price": 8.1602,
+      "value": 462602.44,
+      "fee": 1202.77,
+      "reason": "Signal \u2192 SELL"
     }
   ]
 }
