@@ -1,13 +1,13 @@
 {
-  "generated": "2026-08-24T05:41:43.310765+00:00",
+  "generated": "2026-08-31T11:28:24.366893+00:00",
   "start_date": "2018-01-05",
   "starting_capital": 100000.0,
-  "final_value": 3075301.95,
-  "total_return_pct": 2975.3,
-  "total_fees": 315836.64,
+  "final_value": 2968103.44,
+  "total_return_pct": 2868.1,
+  "total_fees": 315833.47,
   "n_buys": 278,
   "n_sells": 264,
-  "n_holds": 265,
+  "n_holds": 266,
   "equity_curve": [
     {
       "date": "2018-01-05",
@@ -6450,7 +6450,7 @@
     },
     {
       "date": "2026-08-21",
-      "value": 3075301.95,
+      "value": 3063121.27,
       "btc_signal": "BUY",
       "paxg_signal": "BUY",
       "defensive": null,
@@ -6468,6 +6468,27 @@
       ],
       "n_universe": 10,
       "cash_pct": -0.0
+    },
+    {
+      "date": "2026-08-28",
+      "value": 2968103.44,
+      "btc_signal": "BUY",
+      "paxg_signal": "BUY",
+      "defensive": null,
+      "buy_tickers": [
+        "BTC",
+        "ETH",
+        "XRP",
+        "SOL",
+        "DOGE",
+        "ADA",
+        "TRX",
+        "AVAX",
+        "LINK",
+        "BCH"
+      ],
+      "n_universe": 10,
+      "cash_pct": 0.0
     }
   ],
   "trades": [
@@ -13223,12 +13244,17 @@
       "date": "2026-08-21",
       "action": "BUY",
       "ticker": "BCH",
-      "price": 269.44,
-      "shares": 1141.368004,
-      "value": 307530.19,
-      "fee": 799.58,
+      "price": 268.89,
+      "shares": 1139.172623,
+      "value": 306312.13,
+      "fee": 796.41,
       "weight": 10.0,
       "signal": "BUY"
+    },
+    {
+      "date": "2026-08-28",
+      "action": "HOLD",
+      "note": "No changes \u2014 10 assets"
     }
   ]
 }
