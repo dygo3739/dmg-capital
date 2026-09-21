@@ -1,13 +1,13 @@
 {
-  "generated": "2026-09-14T10:27:09.262681+00:00",
+  "generated": "2026-09-21T10:32:29.444849+00:00",
   "start_date": "2018-01-05",
   "starting_capital": 100000.0,
-  "final_value": 2978944.24,
-  "total_return_pct": 2878.94,
-  "total_fees": 317395.24,
-  "n_buys": 279,
-  "n_sells": 265,
-  "n_holds": 266,
+  "final_value": 3466831.74,
+  "total_return_pct": 3366.83,
+  "total_fees": 319079.7,
+  "n_buys": 280,
+  "n_sells": 266,
+  "n_holds": 265,
   "equity_curve": [
     {
       "date": "2018-01-05",
@@ -6512,7 +6512,27 @@
     },
     {
       "date": "2026-09-11",
-      "value": 2978944.24,
+      "value": 2885156.64,
+      "btc_signal": "BUY",
+      "paxg_signal": "BUY",
+      "defensive": null,
+      "buy_tickers": [
+        "BTC",
+        "ETH",
+        "XRP",
+        "SOL",
+        "DOGE",
+        "ADA",
+        "AVAX",
+        "LINK",
+        "BCH"
+      ],
+      "n_universe": 10,
+      "cash_pct": 0.0
+    },
+    {
+      "date": "2026-09-18",
+      "value": 3466831.74,
       "btc_signal": "BUY",
       "paxg_signal": "BUY",
       "defensive": null,
@@ -13314,8 +13334,23 @@
     },
     {
       "date": "2026-09-11",
-      "action": "HOLD",
-      "note": "No changes \u2014 10 assets"
+      "action": "SELL",
+      "ticker": "TRX",
+      "price": 0.3354,
+      "value": 301183.76,
+      "fee": 783.08,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-09-18",
+      "action": "BUY",
+      "ticker": "TRX",
+      "price": 0.3444,
+      "shares": 1006550.515777,
+      "value": 346683.17,
+      "fee": 901.38,
+      "weight": 10.0,
+      "signal": "BUY"
     }
   ]
 }
