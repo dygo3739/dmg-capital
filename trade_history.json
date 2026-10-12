@@ -1,13 +1,13 @@
 {
-  "generated": "2026-10-05T12:08:43.828354+00:00",
+  "generated": "2026-10-12T12:54:53.766721+00:00",
   "start_date": "2018-01-05",
   "starting_capital": 100000.0,
-  "final_value": 3656358.09,
-  "total_return_pct": 3556.36,
+  "final_value": 3385063.87,
+  "total_return_pct": 3285.06,
   "total_fees": 319986.28,
   "n_buys": 280,
   "n_sells": 267,
-  "n_holds": 266,
+  "n_holds": 267,
   "equity_curve": [
     {
       "date": "2018-01-05",
@@ -6573,7 +6573,7 @@
     },
     {
       "date": "2026-10-02",
-      "value": 3656358.09,
+      "value": 3485788.56,
       "btc_signal": "BUY",
       "paxg_signal": "SELL",
       "defensive": null,
@@ -6590,6 +6590,26 @@
       ],
       "n_universe": 10,
       "cash_pct": -0.0
+    },
+    {
+      "date": "2026-10-09",
+      "value": 3385063.87,
+      "btc_signal": "BUY",
+      "paxg_signal": "SELL",
+      "defensive": null,
+      "buy_tickers": [
+        "BTC",
+        "ETH",
+        "XRP",
+        "SOL",
+        "DOGE",
+        "ADA",
+        "AVAX",
+        "LINK",
+        "BCH"
+      ],
+      "n_universe": 10,
+      "cash_pct": 0.0
     }
   ],
   "trades": [
@@ -13403,6 +13423,11 @@
     },
     {
       "date": "2026-10-02",
+      "action": "HOLD",
+      "note": "No changes \u2014 9 assets"
+    },
+    {
+      "date": "2026-10-09",
       "action": "HOLD",
       "note": "No changes \u2014 9 assets"
     }
