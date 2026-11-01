@@ -4,12 +4,12 @@
     "end_date": "2026-09-01",
     "months": 145,
     "start_capital": 100000,
-    "end_value": 500733.13,
-    "total_return": 400.73,
-    "cagr": 14.26,
-    "sharpe": 0.963,
-    "max_drawdown": -21.53,
-    "n_trades": 437,
+    "end_value": 488571.4,
+    "total_return": 388.57,
+    "cagr": 14.03,
+    "sharpe": 0.926,
+    "max_drawdown": -20.96,
+    "n_trades": 369,
     "spy_return": 372.37,
     "spy_cagr": 13.71,
     "btc_return": 21493.27,
@@ -17,7 +17,6 @@
   },
   "time_in_asset": {
     "SPY": 71.7,
-    "QQQ": 74.5,
     "EEM": 59.3,
     "TLT": 51.0,
     "SHY": 68.3,
@@ -33,17 +32,15 @@
       "value": 99900.0,
       "holdings": [
         "SPY",
-        "QQQ",
         "EEM",
         "TLT"
       ]
     },
     {
       "date": "2014-10-01",
-      "value": 102002.17,
+      "value": 101891.52,
       "holdings": [
         "SPY",
-        "QQQ",
         "EEM",
         "TLT",
         "SHY"
@@ -51,10 +48,9 @@
     },
     {
       "date": "2014-11-01",
-      "value": 103802.31,
+      "value": 102981.11,
       "holdings": [
         "SPY",
-        "QQQ",
         "EEM",
         "TLT",
         "SHY"
@@ -62,19 +58,17 @@
     },
     {
       "date": "2014-12-01",
-      "value": 102892.26,
+      "value": 102493.57,
       "holdings": [
         "SPY",
-        "QQQ",
         "TLT"
       ]
     },
     {
       "date": "2015-01-01",
-      "value": 104319.49,
+      "value": 105793.51,
       "holdings": [
         "SPY",
-        "QQQ",
         "TLT",
         "SHY",
         "GLD"
@@ -82,10 +76,9 @@
     },
     {
       "date": "2015-02-01",
-      "value": 104425.18,
+      "value": 104017.77,
       "holdings": [
         "SPY",
-        "QQQ",
         "TLT",
         "SHY",
         "GLD"
@@ -93,9 +86,8 @@
     },
     {
       "date": "2015-03-01",
-      "value": 103187.88,
+      "value": 103173.64,
       "holdings": [
-        "QQQ",
         "IWM",
         "TLT",
         "SHY"
@@ -103,9 +95,8 @@
     },
     {
       "date": "2015-04-01",
-      "value": 101942.54,
+      "value": 100922.39,
       "holdings": [
-        "QQQ",
         "EEM",
         "TLT",
         "SHY"
@@ -113,18 +104,16 @@
     },
     {
       "date": "2015-05-01",
-      "value": 100673.77,
+      "value": 98559.95,
       "holdings": [
-        "QQQ",
         "TLT",
         "SHY"
       ]
     },
     {
       "date": "2015-06-01",
-      "value": 98287.49,
+      "value": 96375.94,
       "holdings": [
-        "QQQ",
         "IWM",
         "TLT",
         "SHY"
@@ -132,29 +121,28 @@
     },
     {
       "date": "2015-07-01",
-      "value": 100063.75,
+      "value": 97301.21,
       "holdings": [
-        "QQQ",
         "SHY"
       ]
     },
     {
       "date": "2015-08-01",
-      "value": 96431.43,
+      "value": 97253.01,
       "holdings": [
         "SHY"
       ]
     },
     {
       "date": "2015-09-01",
-      "value": 96715.93,
+      "value": 97539.94,
       "holdings": [
         "SHY"
       ]
     },
     {
       "date": "2015-10-01",
-      "value": 96386.23,
+      "value": 97207.47,
       "holdings": [
         "SHY",
         "GLD"
@@ -162,21 +150,21 @@
     },
     {
       "date": "2015-11-01",
-      "value": 92821.83,
+      "value": 93612.66,
       "holdings": [
         "BTC-USD"
       ]
     },
     {
       "date": "2015-12-01",
-      "value": 105920.46,
+      "value": 106822.89,
       "holdings": [
         "BTC-USD"
       ]
     },
     {
       "date": "2016-01-01",
-      "value": 90536.18,
+      "value": 91307.54,
       "holdings": [
         "TLT",
         "SHY",
@@ -185,7 +173,7 @@
     },
     {
       "date": "2016-02-01",
-      "value": 94888.8,
+      "value": 95697.29,
       "holdings": [
         "TLT",
         "SHY",
@@ -195,7 +183,7 @@
     },
     {
       "date": "2016-03-01",
-      "value": 93777.65,
+      "value": 94576.65,
       "holdings": [
         "TLT",
         "SHY",
@@ -205,7 +193,7 @@
     },
     {
       "date": "2016-04-01",
-      "value": 96252.15,
+      "value": 97072.24,
       "holdings": [
         "TLT",
         "SHY",
@@ -215,7 +203,7 @@
     },
     {
       "date": "2016-05-01",
-      "value": 98210.3,
+      "value": 99047.06,
       "holdings": [
         "SPY",
         "IWM",
@@ -228,7 +216,7 @@
     },
     {
       "date": "2016-06-01",
-      "value": 105060.98,
+      "value": 105956.1,
       "holdings": [
         "SPY",
         "IWM",
@@ -241,10 +229,9 @@
     },
     {
       "date": "2016-07-01",
-      "value": 104578.94,
+      "value": 105469.98,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -256,10 +243,9 @@
     },
     {
       "date": "2016-08-01",
-      "value": 103375.51,
+      "value": 103966.14,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -271,10 +257,9 @@
     },
     {
       "date": "2016-09-01",
-      "value": 104980.91,
+      "value": 105492.73,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -286,10 +271,9 @@
     },
     {
       "date": "2016-10-01",
-      "value": 104782.1,
+      "value": 105465.57,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -301,10 +285,9 @@
     },
     {
       "date": "2016-11-01",
-      "value": 104875.18,
+      "value": 105539.63,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "DJP",
@@ -313,10 +296,9 @@
     },
     {
       "date": "2016-12-01",
-      "value": 111427.29,
+      "value": 113212.99,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "DJP",
@@ -325,10 +307,9 @@
     },
     {
       "date": "2017-01-01",
-      "value": 114029.57,
+      "value": 115258.24,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "DJP",
@@ -337,10 +318,9 @@
     },
     {
       "date": "2017-02-01",
-      "value": 120912.61,
+      "value": 122635.12,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "GLD",
@@ -350,10 +330,9 @@
     },
     {
       "date": "2017-03-01",
-      "value": 119740.97,
+      "value": 120834.44,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "GLD",
@@ -363,10 +342,9 @@
     },
     {
       "date": "2017-04-01",
-      "value": 124672.17,
+      "value": 126143.61,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "SHY",
@@ -377,10 +355,9 @@
     },
     {
       "date": "2017-05-01",
-      "value": 135936.56,
+      "value": 138504.27,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "SHY",
@@ -390,10 +367,9 @@
     },
     {
       "date": "2017-06-01",
-      "value": 137387.89,
+      "value": 140809.63,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "BTC-USD"
@@ -401,10 +377,9 @@
     },
     {
       "date": "2017-07-01",
-      "value": 144981.83,
+      "value": 148269.19,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "SHY",
@@ -415,10 +390,9 @@
     },
     {
       "date": "2017-08-01",
-      "value": 157643.55,
+      "value": 162671.86,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -430,10 +404,9 @@
     },
     {
       "date": "2017-09-01",
-      "value": 156302.56,
+      "value": 161215.68,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "GLD",
@@ -443,10 +416,9 @@
     },
     {
       "date": "2017-10-01",
-      "value": 170121.71,
+      "value": 176607.1,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "GLD",
@@ -456,10 +428,9 @@
     },
     {
       "date": "2017-11-01",
-      "value": 190763.75,
+      "value": 200949.56,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -470,10 +441,9 @@
     },
     {
       "date": "2017-12-01",
-      "value": 202798.33,
+      "value": 215264.64,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -484,10 +454,9 @@
     },
     {
       "date": "2018-01-01",
-      "value": 199961.0,
+      "value": 209382.55,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "GLD",
@@ -497,10 +466,9 @@
     },
     {
       "date": "2018-02-01",
-      "value": 195066.07,
+      "value": 203853.89,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "GLD",
@@ -510,10 +478,9 @@
     },
     {
       "date": "2018-03-01",
-      "value": 184087.97,
+      "value": 191847.62,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "GLD",
@@ -523,10 +490,9 @@
     },
     {
       "date": "2018-04-01",
-      "value": 190672.69,
+      "value": 199724.6,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "GLD",
@@ -536,10 +502,9 @@
     },
     {
       "date": "2018-05-01",
-      "value": 189198.99,
+      "value": 196040.44,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "GLD",
@@ -549,10 +514,9 @@
     },
     {
       "date": "2018-06-01",
-      "value": 183064.57,
+      "value": 188215.52,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "DJP",
         "BTC-USD"
@@ -560,52 +524,48 @@
     },
     {
       "date": "2018-07-01",
-      "value": 192614.9,
+      "value": 197340.77,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM"
       ]
     },
     {
       "date": "2018-08-01",
-      "value": 200741.32,
+      "value": 204334.28,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "SHY"
       ]
     },
     {
       "date": "2018-09-01",
-      "value": 199659.83,
+      "value": 203058.26,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "SHY"
       ]
     },
     {
       "date": "2018-10-01",
-      "value": 186187.23,
+      "value": 190735.6,
       "holdings": [
         "SPY",
-        "QQQ",
         "SHY"
       ]
     },
     {
       "date": "2018-11-01",
-      "value": 187035.82,
+      "value": 192482.38,
       "holdings": [
         "SHY"
       ]
     },
     {
       "date": "2018-12-01",
-      "value": 188080.36,
+      "value": 193557.33,
       "holdings": [
         "TLT",
         "SHY"
@@ -613,7 +573,7 @@
     },
     {
       "date": "2019-01-01",
-      "value": 188672.57,
+      "value": 194166.73,
       "holdings": [
         "TLT",
         "SHY"
@@ -621,7 +581,7 @@
     },
     {
       "date": "2019-02-01",
-      "value": 187079.69,
+      "value": 192527.52,
       "holdings": [
         "TLT",
         "SHY",
@@ -630,7 +590,7 @@
     },
     {
       "date": "2019-03-01",
-      "value": 189949.24,
+      "value": 195480.6,
       "holdings": [
         "TLT",
         "SHY",
@@ -639,9 +599,8 @@
     },
     {
       "date": "2019-04-01",
-      "value": 187969.61,
+      "value": 193443.32,
       "holdings": [
-        "QQQ",
         "EEM",
         "TLT",
         "SHY",
@@ -650,7 +609,7 @@
     },
     {
       "date": "2019-05-01",
-      "value": 185254.0,
+      "value": 194016.45,
       "holdings": [
         "TLT",
         "SHY",
@@ -660,7 +619,7 @@
     },
     {
       "date": "2019-06-01",
-      "value": 199595.19,
+      "value": 209036.01,
       "holdings": [
         "TLT",
         "SHY",
@@ -670,7 +629,7 @@
     },
     {
       "date": "2019-07-01",
-      "value": 196141.67,
+      "value": 205419.08,
       "holdings": [
         "SPY",
         "TLT",
@@ -681,7 +640,7 @@
     },
     {
       "date": "2019-08-01",
-      "value": 201460.2,
+      "value": 210989.22,
       "holdings": [
         "SPY",
         "TLT",
@@ -692,7 +651,7 @@
     },
     {
       "date": "2019-09-01",
-      "value": 194353.61,
+      "value": 203546.49,
       "holdings": [
         "SPY",
         "TLT",
@@ -703,10 +662,9 @@
     },
     {
       "date": "2019-10-01",
-      "value": 199046.89,
+      "value": 208461.75,
       "holdings": [
         "SPY",
-        "QQQ",
         "EEM",
         "TLT",
         "SHY",
@@ -716,10 +674,9 @@
     },
     {
       "date": "2019-11-01",
-      "value": 194736.95,
+      "value": 201854.06,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -730,10 +687,9 @@
     },
     {
       "date": "2019-12-01",
-      "value": 197494.76,
+      "value": 204060.26,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -744,10 +700,9 @@
     },
     {
       "date": "2020-01-01",
-      "value": 196590.65,
+      "value": 202166.91,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -758,10 +713,9 @@
     },
     {
       "date": "2020-02-01",
-      "value": 189389.52,
+      "value": 195507.29,
       "holdings": [
         "SPY",
-        "QQQ",
         "TLT",
         "SHY",
         "GLD",
@@ -770,9 +724,8 @@
     },
     {
       "date": "2020-03-01",
-      "value": 177196.99,
+      "value": 183324.95,
       "holdings": [
-        "QQQ",
         "TLT",
         "SHY",
         "GLD"
@@ -780,9 +733,8 @@
     },
     {
       "date": "2020-04-01",
-      "value": 187707.61,
+      "value": 188673.53,
       "holdings": [
-        "QQQ",
         "TLT",
         "SHY",
         "GLD"
@@ -790,9 +742,8 @@
     },
     {
       "date": "2020-05-01",
-      "value": 191091.78,
+      "value": 188853.88,
       "holdings": [
-        "QQQ",
         "TLT",
         "SHY",
         "GLD",
@@ -801,9 +752,8 @@
     },
     {
       "date": "2020-06-01",
-      "value": 192986.63,
+      "value": 188745.92,
       "holdings": [
-        "QQQ",
         "EEM",
         "TLT",
         "SHY",
@@ -813,10 +763,9 @@
     },
     {
       "date": "2020-07-01",
-      "value": 210202.69,
+      "value": 206258.97,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -827,10 +776,9 @@
     },
     {
       "date": "2020-08-01",
-      "value": 216522.16,
+      "value": 210120.81,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -841,10 +789,9 @@
     },
     {
       "date": "2020-09-01",
-      "value": 209209.36,
+      "value": 203870.75,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -856,10 +803,9 @@
     },
     {
       "date": "2020-10-01",
-      "value": 214742.92,
+      "value": 210713.08,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -871,10 +817,9 @@
     },
     {
       "date": "2020-11-01",
-      "value": 238921.02,
+      "value": 234445.73,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -886,10 +831,9 @@
     },
     {
       "date": "2020-12-01",
-      "value": 267721.93,
+      "value": 264730.32,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "SHY",
@@ -900,10 +844,9 @@
     },
     {
       "date": "2021-01-01",
-      "value": 274789.29,
+      "value": 272618.22,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "SHY",
@@ -914,10 +857,9 @@
     },
     {
       "date": "2021-02-01",
-      "value": 292000.68,
+      "value": 292194.89,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "DJP",
@@ -926,10 +868,9 @@
     },
     {
       "date": "2021-03-01",
-      "value": 309026.16,
+      "value": 311635.78,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "DJP",
@@ -938,10 +879,9 @@
     },
     {
       "date": "2021-04-01",
-      "value": 319479.38,
+      "value": 320675.06,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "DJP",
@@ -950,10 +890,9 @@
     },
     {
       "date": "2021-05-01",
-      "value": 299734.94,
+      "value": 297722.2,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "DJP",
@@ -962,10 +901,9 @@
     },
     {
       "date": "2021-06-01",
-      "value": 303992.94,
+      "value": 298940.19,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "DJP",
@@ -974,10 +912,9 @@
     },
     {
       "date": "2021-07-01",
-      "value": 310206.98,
+      "value": 304511.12,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "DJP",
@@ -986,10 +923,9 @@
     },
     {
       "date": "2021-08-01",
-      "value": 321594.55,
+      "value": 315317.24,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "DJP",
@@ -998,10 +934,9 @@
     },
     {
       "date": "2021-09-01",
-      "value": 311898.81,
+      "value": 307701.3,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "DJP",
@@ -1010,10 +945,9 @@
     },
     {
       "date": "2021-10-01",
-      "value": 342920.77,
+      "value": 339841.29,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "DJP",
         "BTC-USD"
@@ -1021,10 +955,9 @@
     },
     {
       "date": "2021-11-01",
-      "value": 329339.51,
+      "value": 321906.6,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "TLT",
         "DJP",
@@ -1033,10 +966,9 @@
     },
     {
       "date": "2021-12-01",
-      "value": 323868.36,
+      "value": 314877.67,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "DJP",
         "BTC-USD"
@@ -1044,16 +976,15 @@
     },
     {
       "date": "2022-01-01",
-      "value": 303649.07,
+      "value": 299746.19,
       "holdings": [
         "SPY",
-        "QQQ",
         "DJP"
       ]
     },
     {
       "date": "2022-02-01",
-      "value": 302950.59,
+      "value": 305706.43,
       "holdings": [
         "SPY",
         "GLD",
@@ -1062,7 +993,7 @@
     },
     {
       "date": "2022-03-01",
-      "value": 316235.06,
+      "value": 319111.74,
       "holdings": [
         "GLD",
         "DJP"
@@ -1070,70 +1001,70 @@
     },
     {
       "date": "2022-04-01",
-      "value": 319561.21,
+      "value": 322468.14,
       "holdings": [
         "DJP"
       ]
     },
     {
       "date": "2022-05-01",
-      "value": 326680.97,
+      "value": 329652.67,
       "holdings": [
         "DJP"
       ]
     },
     {
       "date": "2022-06-01",
-      "value": 288101.82,
+      "value": 290722.58,
       "holdings": [
         "DJP"
       ]
     },
     {
       "date": "2022-07-01",
-      "value": 299857.71,
+      "value": 302585.41,
       "holdings": [
         "DJP"
       ]
     },
     {
       "date": "2022-08-01",
-      "value": 299360.98,
+      "value": 302084.15,
       "holdings": [
         "DJP"
       ]
     },
     {
       "date": "2022-09-01",
-      "value": 272454.91,
+      "value": 274933.34,
       "holdings": [
         "DJP"
       ]
     },
     {
       "date": "2022-10-01",
-      "value": 277227.47,
+      "value": 279749.31,
       "holdings": [
         "CASH"
       ]
     },
     {
       "date": "2022-11-01",
-      "value": 276950.25,
+      "value": 279469.56,
       "holdings": [
         "EEM"
       ]
     },
     {
       "date": "2022-12-01",
-      "value": 269106.65,
+      "value": 271554.64,
       "holdings": [
         "GLD"
       ]
     },
     {
       "date": "2023-01-01",
-      "value": 284036.26,
+      "value": 286620.07,
       "holdings": [
         "IWM",
         "SHY",
@@ -1142,16 +1073,15 @@
     },
     {
       "date": "2023-02-01",
-      "value": 276283.02,
+      "value": 278796.31,
       "holdings": [
         "CASH"
       ]
     },
     {
       "date": "2023-03-01",
-      "value": 276006.73,
+      "value": 278517.51,
       "holdings": [
-        "QQQ",
         "SHY",
         "GLD",
         "BTC-USD"
@@ -1159,10 +1089,9 @@
     },
     {
       "date": "2023-04-01",
-      "value": 278169.57,
+      "value": 280733.55,
       "holdings": [
         "SPY",
-        "QQQ",
         "SHY",
         "GLD",
         "BTC-USD"
@@ -1170,10 +1099,9 @@
     },
     {
       "date": "2023-05-01",
-      "value": 277961.19,
+      "value": 275861.43,
       "holdings": [
         "SPY",
-        "QQQ",
         "SHY",
         "GLD",
         "BTC-USD"
@@ -1181,10 +1109,9 @@
     },
     {
       "date": "2023-06-01",
-      "value": 289485.25,
+      "value": 284404.8,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "SHY",
         "GLD",
@@ -1193,10 +1120,9 @@
     },
     {
       "date": "2023-07-01",
-      "value": 294560.98,
+      "value": 288311.22,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "SHY",
@@ -1206,10 +1132,9 @@
     },
     {
       "date": "2023-08-01",
-      "value": 283211.8,
+      "value": 276064.02,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "SHY",
@@ -1219,10 +1144,9 @@
     },
     {
       "date": "2023-09-01",
-      "value": 274511.68,
+      "value": 268623.83,
       "holdings": [
         "SPY",
-        "QQQ",
         "SHY",
         "GLD",
         "BTC-USD"
@@ -1230,10 +1154,9 @@
     },
     {
       "date": "2023-10-01",
-      "value": 292092.0,
+      "value": 287927.94,
       "holdings": [
         "SPY",
-        "QQQ",
         "SHY",
         "GLD",
         "BTC-USD"
@@ -1241,10 +1164,9 @@
     },
     {
       "date": "2023-11-01",
-      "value": 310464.15,
+      "value": 302492.38,
       "holdings": [
         "SPY",
-        "QQQ",
         "EEM",
         "SHY",
         "GLD",
@@ -1253,10 +1175,9 @@
     },
     {
       "date": "2023-12-01",
-      "value": 324393.12,
+      "value": 315525.65,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1267,10 +1188,9 @@
     },
     {
       "date": "2024-01-01",
-      "value": 321305.08,
+      "value": 311272.91,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1281,10 +1201,9 @@
     },
     {
       "date": "2024-02-01",
-      "value": 346433.7,
+      "value": 336781.51,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1295,10 +1214,9 @@
     },
     {
       "date": "2024-03-01",
-      "value": 364586.83,
+      "value": 356344.71,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1309,10 +1227,9 @@
     },
     {
       "date": "2024-04-01",
-      "value": 345498.79,
+      "value": 337360.08,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "SHY",
@@ -1323,10 +1240,9 @@
     },
     {
       "date": "2024-05-01",
-      "value": 359461.65,
+      "value": 350079.15,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1338,10 +1254,9 @@
     },
     {
       "date": "2024-06-01",
-      "value": 361310.84,
+      "value": 349273.85,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1353,10 +1268,9 @@
     },
     {
       "date": "2024-07-01",
-      "value": 368402.92,
+      "value": 357917.61,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1367,10 +1281,9 @@
     },
     {
       "date": "2024-08-01",
-      "value": 367980.45,
+      "value": 356884.13,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1381,10 +1294,9 @@
     },
     {
       "date": "2024-09-01",
-      "value": 379221.47,
+      "value": 368116.22,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1396,10 +1308,9 @@
     },
     {
       "date": "2024-10-01",
-      "value": 379779.78,
+      "value": 369123.77,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1411,10 +1322,9 @@
     },
     {
       "date": "2024-11-01",
-      "value": 404981.88,
+      "value": 394204.98,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1426,10 +1336,9 @@
     },
     {
       "date": "2024-12-01",
-      "value": 394163.71,
+      "value": 382269.23,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "SHY",
@@ -1440,10 +1349,9 @@
     },
     {
       "date": "2025-01-01",
-      "value": 409410.22,
+      "value": 397986.56,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "SHY",
@@ -1454,10 +1362,9 @@
     },
     {
       "date": "2025-02-01",
-      "value": 396855.69,
+      "value": 385688.3,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1469,10 +1376,9 @@
     },
     {
       "date": "2025-03-01",
-      "value": 392441.03,
+      "value": 384608.05,
       "holdings": [
         "SPY",
-        "QQQ",
         "EEM",
         "TLT",
         "SHY",
@@ -1483,7 +1389,7 @@
     },
     {
       "date": "2025-04-01",
-      "value": 398470.22,
+      "value": 390704.9,
       "holdings": [
         "EEM",
         "TLT",
@@ -1495,7 +1401,7 @@
     },
     {
       "date": "2025-05-01",
-      "value": 404945.75,
+      "value": 397054.22,
       "holdings": [
         "EEM",
         "SHY",
@@ -1506,10 +1412,9 @@
     },
     {
       "date": "2025-06-01",
-      "value": 414724.23,
+      "value": 406642.16,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1521,10 +1426,9 @@
     },
     {
       "date": "2025-07-01",
-      "value": 420537.05,
+      "value": 411822.18,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1536,10 +1440,9 @@
     },
     {
       "date": "2025-08-01",
-      "value": 427073.78,
+      "value": 418536.02,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1551,10 +1454,9 @@
     },
     {
       "date": "2025-09-01",
-      "value": 447487.58,
+      "value": 438228.31,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1566,10 +1468,9 @@
     },
     {
       "date": "2025-10-01",
-      "value": 456094.11,
+      "value": 445074.4,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1581,10 +1482,9 @@
     },
     {
       "date": "2025-11-01",
-      "value": 450875.7,
+      "value": 440338.17,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1595,10 +1495,9 @@
     },
     {
       "date": "2025-12-01",
-      "value": 450939.94,
+      "value": 440831.31,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1609,10 +1508,9 @@
     },
     {
       "date": "2026-01-01",
-      "value": 474538.92,
+      "value": 466402.3,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1623,10 +1521,9 @@
     },
     {
       "date": "2026-02-01",
-      "value": 485600.94,
+      "value": 480232.16,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1637,7 +1534,7 @@
     },
     {
       "date": "2026-03-01",
-      "value": 467803.74,
+      "value": 464402.26,
       "holdings": [
         "SPY",
         "IWM",
@@ -1650,10 +1547,9 @@
     },
     {
       "date": "2026-04-01",
-      "value": 492103.14,
+      "value": 488163.63,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "SHY",
@@ -1663,10 +1559,9 @@
     },
     {
       "date": "2026-05-01",
-      "value": 506558.47,
+      "value": 496474.41,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1677,10 +1572,9 @@
     },
     {
       "date": "2026-06-01",
-      "value": 495561.94,
+      "value": 484262.85,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "TLT",
@@ -1691,10 +1585,9 @@
     },
     {
       "date": "2026-07-01",
-      "value": 486937.61,
+      "value": 479390.53,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "SHY",
@@ -1703,10 +1596,9 @@
     },
     {
       "date": "2026-08-01",
-      "value": 503917.46,
+      "value": 495441.16,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "SHY",
@@ -1715,10 +1607,9 @@
     },
     {
       "date": "2026-09-01",
-      "value": 500733.13,
+      "value": 488571.4,
       "holdings": [
         "SPY",
-        "QQQ",
         "IWM",
         "EEM",
         "DJP",
@@ -1732,28 +1623,21 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 161.4469,
-      "weight_pct": 25.0
-    },
-    {
-      "date": "2014-09",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 90.3179,
-      "weight_pct": 25.0
+      "weight_pct": 33.3
     },
     {
       "date": "2014-09",
       "action": "BUY",
       "ticker": "EEM",
       "price": 31.9122,
-      "weight_pct": 25.0
+      "weight_pct": 33.3
     },
     {
       "date": "2014-09",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 83.1789,
-      "weight_pct": 25.0
+      "price": 82.8452,
+      "weight_pct": 33.3
     },
     {
       "date": "2014-10",
@@ -1764,67 +1648,48 @@
     {
       "date": "2014-10",
       "action": "SELL",
-      "ticker": "QQQ",
-      "price": 92.7041
-    },
-    {
-      "date": "2014-10",
-      "action": "SELL",
       "ticker": "EEM",
-      "price": 32.3652
+      "price": 32.3653
     },
     {
       "date": "2014-10",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 85.5233
+      "price": 85.1803
     },
     {
       "date": "2014-10",
       "action": "BUY",
       "ticker": "SPY",
       "price": 165.2491,
-      "weight_pct": 20.0
-    },
-    {
-      "date": "2014-10",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 92.7041,
-      "weight_pct": 20.0
+      "weight_pct": 25.0
     },
     {
       "date": "2014-10",
       "action": "BUY",
       "ticker": "EEM",
-      "price": 32.3652,
-      "weight_pct": 20.0
+      "price": 32.3653,
+      "weight_pct": 25.0
     },
     {
       "date": "2014-10",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 85.5233,
-      "weight_pct": 20.0
+      "price": 85.1803,
+      "weight_pct": 25.0
     },
     {
       "date": "2014-10",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 68.134,
-      "weight_pct": 20.0
+      "price": 67.9317,
+      "weight_pct": 25.0
     },
     {
       "date": "2014-12",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 169.3582
-    },
-    {
-      "date": "2014-12",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 94.7472
+      "price": 169.3581
     },
     {
       "date": "2014-12",
@@ -1836,34 +1701,27 @@
       "date": "2014-12",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 90.9243
+      "price": 90.5596
     },
     {
       "date": "2014-12",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 68.006
+      "price": 67.8042
     },
     {
       "date": "2014-12",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 169.3582,
-      "weight_pct": 33.3
-    },
-    {
-      "date": "2014-12",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 94.7472,
-      "weight_pct": 33.3
+      "price": 169.3581,
+      "weight_pct": 50.0
     },
     {
       "date": "2014-12",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 90.9243,
-      "weight_pct": 33.3
+      "price": 90.5596,
+      "weight_pct": 50.0
     },
     {
       "date": "2015-01",
@@ -1874,49 +1732,36 @@
     {
       "date": "2015-01",
       "action": "SELL",
-      "ticker": "QQQ",
-      "price": 92.7742
-    },
-    {
-      "date": "2015-01",
-      "action": "SELL",
       "ticker": "TLT",
-      "price": 99.8493
+      "price": 99.4487
     },
     {
       "date": "2015-01",
       "action": "BUY",
       "ticker": "SPY",
       "price": 164.3402,
-      "weight_pct": 20.0
-    },
-    {
-      "date": "2015-01",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 92.7742,
-      "weight_pct": 20.0
+      "weight_pct": 25.0
     },
     {
       "date": "2015-01",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 99.8493,
-      "weight_pct": 20.0
+      "price": 99.4487,
+      "weight_pct": 25.0
     },
     {
       "date": "2015-01",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 68.4328,
-      "weight_pct": 20.0
+      "price": 68.2297,
+      "weight_pct": 25.0
     },
     {
       "date": "2015-01",
       "action": "BUY",
       "ticker": "GLD",
       "price": 123.45,
-      "weight_pct": 20.0
+      "weight_pct": 25.0
     },
     {
       "date": "2015-03",
@@ -1927,20 +1772,14 @@
     {
       "date": "2015-03",
       "action": "SELL",
-      "ticker": "QQQ",
-      "price": 97.1265
-    },
-    {
-      "date": "2015-03",
-      "action": "SELL",
       "ticker": "TLT",
-      "price": 94.7437
+      "price": 94.3637
     },
     {
       "date": "2015-03",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 68.4038
+      "price": 68.2008
     },
     {
       "date": "2015-03",
@@ -1951,88 +1790,62 @@
     {
       "date": "2015-03",
       "action": "BUY",
-      "ticker": "QQQ",
-      "price": 97.1265,
-      "weight_pct": 25.0
-    },
-    {
-      "date": "2015-03",
-      "action": "BUY",
       "ticker": "IWM",
       "price": 107.2807,
-      "weight_pct": 25.0
+      "weight_pct": 33.3
     },
     {
       "date": "2015-03",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 94.7437,
-      "weight_pct": 25.0
+      "price": 94.3637,
+      "weight_pct": 33.3
     },
     {
       "date": "2015-03",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 68.4038,
-      "weight_pct": 25.0
-    },
-    {
-      "date": "2015-04",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 98.9936
+      "price": 68.2008,
+      "weight_pct": 33.3
     },
     {
       "date": "2015-04",
       "action": "SELL",
       "ticker": "IWM",
-      "price": 104.529
+      "price": 104.5291
     },
     {
       "date": "2015-04",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 91.4986
+      "price": 91.1316
     },
     {
       "date": "2015-04",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 68.4256
-    },
-    {
-      "date": "2015-04",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 98.9936,
-      "weight_pct": 25.0
+      "price": 68.2225
     },
     {
       "date": "2015-04",
       "action": "BUY",
       "ticker": "EEM",
       "price": 33.3994,
-      "weight_pct": 25.0
+      "weight_pct": 33.3
     },
     {
       "date": "2015-04",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 91.4986,
-      "weight_pct": 25.0
+      "price": 91.1316,
+      "weight_pct": 33.3
     },
     {
       "date": "2015-04",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 68.4256,
-      "weight_pct": 25.0
-    },
-    {
-      "date": "2015-05",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 101.2195
+      "price": 68.2225,
+      "weight_pct": 33.3
     },
     {
       "date": "2015-05",
@@ -2044,86 +1857,60 @@
       "date": "2015-05",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 89.3279
+      "price": 88.9695
     },
     {
       "date": "2015-05",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 68.4539
-    },
-    {
-      "date": "2015-05",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 101.2195,
-      "weight_pct": 33.3
+      "price": 68.2507
     },
     {
       "date": "2015-05",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 89.3279,
-      "weight_pct": 33.3
+      "price": 88.9695,
+      "weight_pct": 50.0
     },
     {
       "date": "2015-05",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 68.4539,
-      "weight_pct": 33.3
-    },
-    {
-      "date": "2015-06",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 98.7051
+      "price": 68.2507,
+      "weight_pct": 50.0
     },
     {
       "date": "2015-06",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 85.6904
+      "price": 85.3467
     },
     {
       "date": "2015-06",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 68.4756
-    },
-    {
-      "date": "2015-06",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 98.7051,
-      "weight_pct": 25.0
+      "price": 68.2724
     },
     {
       "date": "2015-06",
       "action": "BUY",
       "ticker": "IWM",
       "price": 107.7034,
-      "weight_pct": 25.0
+      "weight_pct": 33.3
     },
     {
       "date": "2015-06",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 85.6904,
-      "weight_pct": 25.0
+      "price": 85.3467,
+      "weight_pct": 33.3
     },
     {
       "date": "2015-06",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 68.4756,
-      "weight_pct": 25.0
-    },
-    {
-      "date": "2015-07",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 103.2038
+      "price": 68.2724,
+      "weight_pct": 33.3
     },
     {
       "date": "2015-07",
@@ -2135,58 +1922,32 @@
       "date": "2015-07",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 89.5859
+      "price": 89.2265
     },
     {
       "date": "2015-07",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 68.5063
-    },
-    {
-      "date": "2015-07",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 103.2038,
-      "weight_pct": 50.0
+      "price": 68.303
     },
     {
       "date": "2015-07",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 68.5063,
-      "weight_pct": 50.0
-    },
-    {
-      "date": "2015-08",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 96.1607
-    },
-    {
-      "date": "2015-08",
-      "action": "SELL",
-      "ticker": "SHY",
-      "price": 68.4724
-    },
-    {
-      "date": "2015-08",
-      "action": "BUY",
-      "ticker": "SHY",
-      "price": 68.4724,
+      "price": 68.303,
       "weight_pct": 100.0
     },
     {
       "date": "2015-10",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 68.5774
+      "price": 68.3739
     },
     {
       "date": "2015-10",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 68.5774,
+      "price": 68.3739,
       "weight_pct": 50.0
     },
     {
@@ -2200,7 +1961,7 @@
       "date": "2015-11",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 68.4003
+      "price": 68.1973
     },
     {
       "date": "2015-11",
@@ -2225,14 +1986,14 @@
       "date": "2016-01",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 94.2738,
+      "price": 93.8956,
       "weight_pct": 40.0
     },
     {
       "date": "2016-01",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 68.7436,
+      "price": 68.5395,
       "weight_pct": 40.0
     },
     {
@@ -2246,13 +2007,13 @@
       "date": "2016-02",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 97.183
+      "price": 96.7932
     },
     {
       "date": "2016-02",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 68.8205
+      "price": 68.6163
     },
     {
       "date": "2016-02",
@@ -2264,14 +2025,14 @@
       "date": "2016-02",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 97.183,
+      "price": 96.7932,
       "weight_pct": 26.7
     },
     {
       "date": "2016-02",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 68.8205,
+      "price": 68.6163,
       "weight_pct": 26.7
     },
     {
@@ -2292,13 +2053,13 @@
       "date": "2016-05",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 97.1535
+      "price": 96.7637
     },
     {
       "date": "2016-05",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 68.8585
+      "price": 68.6541
     },
     {
       "date": "2016-05",
@@ -2330,14 +2091,14 @@
       "date": "2016-05",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 97.1535,
+      "price": 96.7637,
       "weight_pct": 14.3
     },
     {
       "date": "2016-05",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 68.8585,
+      "price": 68.6541,
       "weight_pct": 14.3
     },
     {
@@ -2365,25 +2126,25 @@
       "date": "2016-07",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 184.4875
+      "price": 184.4876
     },
     {
       "date": "2016-07",
       "action": "SELL",
       "ticker": "IWM",
-      "price": 106.5337
+      "price": 106.5338
     },
     {
       "date": "2016-07",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 106.0745
+      "price": 105.649
     },
     {
       "date": "2016-07",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 69.2409
+      "price": 69.0354
     },
     {
       "date": "2016-07",
@@ -2407,76 +2168,63 @@
       "date": "2016-07",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 184.4875,
-      "weight_pct": 11.1
-    },
-    {
-      "date": "2016-07",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 107.4134,
-      "weight_pct": 11.1
+      "price": 184.4876,
+      "weight_pct": 12.5
     },
     {
       "date": "2016-07",
       "action": "BUY",
       "ticker": "IWM",
-      "price": 106.5337,
-      "weight_pct": 11.1
+      "price": 106.5338,
+      "weight_pct": 12.5
     },
     {
       "date": "2016-07",
       "action": "BUY",
       "ticker": "EEM",
       "price": 29.0835,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2016-07",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 106.0745,
-      "weight_pct": 11.1
+      "price": 105.649,
+      "weight_pct": 12.5
     },
     {
       "date": "2016-07",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 69.2409,
-      "weight_pct": 11.1
+      "price": 69.0354,
+      "weight_pct": 12.5
     },
     {
       "date": "2016-07",
       "action": "BUY",
       "ticker": "GLD",
       "price": 128.98,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2016-07",
       "action": "BUY",
       "ticker": "DJP",
       "price": 23.16,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2016-07",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 624.681,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2016-11",
       "action": "SELL",
       "ticker": "SPY",
       "price": 188.2035
-    },
-    {
-      "date": "2016-11",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 109.8039
     },
     {
       "date": "2016-11",
@@ -2494,13 +2242,13 @@
       "date": "2016-11",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 90.7632
+      "price": 90.3992
     },
     {
       "date": "2016-11",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 68.8104
+      "price": 68.6062
     },
     {
       "date": "2016-11",
@@ -2525,54 +2273,41 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 188.2035,
-      "weight_pct": 16.7
-    },
-    {
-      "date": "2016-11",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 109.8039,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2016-11",
       "action": "BUY",
       "ticker": "IWM",
       "price": 116.1283,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2016-11",
       "action": "BUY",
       "ticker": "EEM",
       "price": 28.5132,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2016-11",
       "action": "BUY",
       "ticker": "DJP",
       "price": 23.65,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2016-11",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 745.691,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2017-02",
       "action": "SELL",
       "ticker": "SPY",
       "price": 203.1346
-    },
-    {
-      "date": "2017-02",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 121.8631
     },
     {
       "date": "2017-02",
@@ -2603,61 +2338,48 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 203.1346,
-      "weight_pct": 14.3
-    },
-    {
-      "date": "2017-02",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 121.8631,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-02",
       "action": "BUY",
       "ticker": "IWM",
       "price": 122.1272,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-02",
       "action": "BUY",
       "ticker": "EEM",
       "price": 30.8621,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-02",
       "action": "BUY",
       "ticker": "GLD",
       "price": 119.23,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-02",
       "action": "BUY",
       "ticker": "DJP",
       "price": 24.26,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-02",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 1179.97,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-04",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 205.4074
-    },
-    {
-      "date": "2017-04",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 127.7237
+      "price": 205.4073
     },
     {
       "date": "2017-04",
@@ -2693,69 +2415,56 @@
       "date": "2017-04",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 205.4074,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2017-04",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 127.7237,
-      "weight_pct": 12.5
+      "price": 205.4073,
+      "weight_pct": 14.3
     },
     {
       "date": "2017-04",
       "action": "BUY",
       "ticker": "IWM",
       "price": 123.5629,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-04",
       "action": "BUY",
       "ticker": "EEM",
       "price": 32.5437,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-04",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 69.132,
-      "weight_pct": 12.5
+      "price": 68.9268,
+      "weight_pct": 14.3
     },
     {
       "date": "2017-04",
       "action": "BUY",
       "ticker": "GLD",
       "price": 120.77,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-04",
       "action": "BUY",
       "ticker": "DJP",
       "price": 23.08,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-04",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 1347.89,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-05",
       "action": "SELL",
       "ticker": "SPY",
       "price": 208.3063
-    },
-    {
-      "date": "2017-05",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 132.7015
     },
     {
       "date": "2017-05",
@@ -2773,7 +2482,7 @@
       "date": "2017-05",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 69.1827
+      "price": 68.9773
     },
     {
       "date": "2017-05",
@@ -2798,61 +2507,48 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 208.3063,
-      "weight_pct": 14.3
-    },
-    {
-      "date": "2017-05",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 132.7015,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-05",
       "action": "BUY",
       "ticker": "IWM",
       "price": 121.1282,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-05",
       "action": "BUY",
       "ticker": "EEM",
       "price": 33.4698,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-05",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 69.1827,
-      "weight_pct": 14.3
+      "price": 68.9773,
+      "weight_pct": 16.7
     },
     {
       "date": "2017-05",
       "action": "BUY",
       "ticker": "GLD",
       "price": 120.62,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-05",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 2286.4099,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-06",
       "action": "SELL",
       "ticker": "SPY",
       "price": 209.6342
-    },
-    {
-      "date": "2017-06",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 129.6255
     },
     {
       "date": "2017-06",
@@ -2870,7 +2566,7 @@
       "date": "2017-06",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 69.1286
+      "price": 68.9235
     },
     {
       "date": "2017-06",
@@ -2889,28 +2585,21 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 209.6342,
-      "weight_pct": 20.0
-    },
-    {
-      "date": "2017-06",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 129.6255,
-      "weight_pct": 20.0
+      "weight_pct": 26.7
     },
     {
       "date": "2017-06",
       "action": "BUY",
       "ticker": "IWM",
       "price": 125.2156,
-      "weight_pct": 20.0
+      "weight_pct": 26.7
     },
     {
       "date": "2017-06",
       "action": "BUY",
       "ticker": "EEM",
       "price": 33.7799,
-      "weight_pct": 20.0
+      "weight_pct": 26.7
     },
     {
       "date": "2017-06",
@@ -2924,12 +2613,6 @@
       "action": "SELL",
       "ticker": "SPY",
       "price": 213.943
-    },
-    {
-      "date": "2017-07",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 134.8901
     },
     {
       "date": "2017-07",
@@ -2954,68 +2637,55 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 213.943,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2017-07",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 134.8901,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-07",
       "action": "BUY",
       "ticker": "IWM",
       "price": 126.283,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-07",
       "action": "BUY",
       "ticker": "EEM",
       "price": 35.7468,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-07",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 69.2573,
-      "weight_pct": 12.5
+      "price": 69.0517,
+      "weight_pct": 14.3
     },
     {
       "date": "2017-07",
       "action": "BUY",
       "ticker": "GLD",
       "price": 120.75,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-07",
       "action": "BUY",
       "ticker": "DJP",
       "price": 23.27,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-07",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 2875.3401,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-08",
       "action": "SELL",
       "ticker": "SPY",
       "price": 214.5673
-    },
-    {
-      "date": "2017-08",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 137.6871
     },
     {
       "date": "2017-08",
@@ -3027,13 +2697,13 @@
       "date": "2017-08",
       "action": "SELL",
       "ticker": "EEM",
-      "price": 36.5874
+      "price": 36.5875
     },
     {
       "date": "2017-08",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 69.3974
+      "price": 69.1914
     },
     {
       "date": "2017-08",
@@ -3058,63 +2728,56 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 214.5673,
-      "weight_pct": 11.1
-    },
-    {
-      "date": "2017-08",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 137.6871,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2017-08",
       "action": "BUY",
       "ticker": "IWM",
       "price": 124.6946,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2017-08",
       "action": "BUY",
       "ticker": "EEM",
-      "price": 36.5874,
-      "weight_pct": 11.1
+      "price": 36.5875,
+      "weight_pct": 12.5
     },
     {
       "date": "2017-08",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 98.4935,
-      "weight_pct": 11.1
+      "price": 98.0984,
+      "weight_pct": 12.5
     },
     {
       "date": "2017-08",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 69.3974,
-      "weight_pct": 11.1
+      "price": 69.1914,
+      "weight_pct": 12.5
     },
     {
       "date": "2017-08",
       "action": "BUY",
       "ticker": "GLD",
       "price": 125.82,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2017-08",
       "action": "BUY",
       "ticker": "DJP",
       "price": 23.31,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2017-08",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 4703.3901,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2017-09",
@@ -3125,14 +2788,8 @@
     {
       "date": "2017-09",
       "action": "SELL",
-      "ticker": "QQQ",
-      "price": 137.2806
-    },
-    {
-      "date": "2017-09",
-      "action": "SELL",
       "ticker": "IWM",
-      "price": 132.5554
+      "price": 132.5555
     },
     {
       "date": "2017-09",
@@ -3144,13 +2801,13 @@
       "date": "2017-09",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 96.2055
+      "price": 95.8196
     },
     {
       "date": "2017-09",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 69.2677
+      "price": 69.0622
     },
     {
       "date": "2017-09",
@@ -3175,61 +2832,48 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 218.8907,
-      "weight_pct": 14.3
-    },
-    {
-      "date": "2017-09",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 137.2806,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-09",
       "action": "BUY",
       "ticker": "IWM",
-      "price": 132.5554,
-      "weight_pct": 14.3
+      "price": 132.5555,
+      "weight_pct": 16.7
     },
     {
       "date": "2017-09",
       "action": "BUY",
       "ticker": "EEM",
       "price": 36.5711,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-09",
       "action": "BUY",
       "ticker": "GLD",
       "price": 121.58,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-09",
       "action": "BUY",
       "ticker": "DJP",
       "price": 23.26,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-09",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 4338.71,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2017-11",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 230.8969
-    },
-    {
-      "date": "2017-11",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 146.4358
+      "price": 230.8968
     },
     {
       "date": "2017-11",
@@ -3265,57 +2909,50 @@
       "date": "2017-11",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 230.8969,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2017-11",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 146.4358,
-      "weight_pct": 12.5
+      "price": 230.8968,
+      "weight_pct": 14.3
     },
     {
       "date": "2017-11",
       "action": "BUY",
       "ticker": "IWM",
       "price": 137.4487,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-11",
       "action": "BUY",
       "ticker": "EEM",
       "price": 37.6239,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-11",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 96.8832,
-      "weight_pct": 12.5
+      "price": 96.4945,
+      "weight_pct": 14.3
     },
     {
       "date": "2017-11",
       "action": "BUY",
       "ticker": "GLD",
       "price": 121.1,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-11",
       "action": "BUY",
       "ticker": "DJP",
       "price": 23.69,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2017-11",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 10233.5996,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2018-01",
@@ -3326,14 +2963,8 @@
     {
       "date": "2018-01",
       "action": "SELL",
-      "ticker": "QQQ",
-      "price": 160.2198
-    },
-    {
-      "date": "2018-01",
-      "action": "SELL",
       "ticker": "IWM",
-      "price": 140.4029
+      "price": 140.403
     },
     {
       "date": "2018-01",
@@ -3345,7 +2976,7 @@
       "date": "2018-01",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 95.428
+      "price": 95.0452
     },
     {
       "date": "2018-01",
@@ -3370,67 +3001,54 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 246.8682,
-      "weight_pct": 14.3
-    },
-    {
-      "date": "2018-01",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 160.2198,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2018-01",
       "action": "BUY",
       "ticker": "IWM",
-      "price": 140.4029,
-      "weight_pct": 14.3
+      "price": 140.403,
+      "weight_pct": 16.7
     },
     {
       "date": "2018-01",
       "action": "BUY",
       "ticker": "EEM",
       "price": 42.2786,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2018-01",
       "action": "BUY",
       "ticker": "GLD",
       "price": 127.65,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2018-01",
       "action": "BUY",
       "ticker": "DJP",
       "price": 25.02,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2018-01",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 10221.0996,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2018-06",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 239.5904
-    },
-    {
-      "date": "2018-06",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 162.9593
+      "price": 239.5905
     },
     {
       "date": "2018-06",
       "action": "SELL",
       "ticker": "IWM",
-      "price": 147.3962
+      "price": 147.3963
     },
     {
       "date": "2018-06",
@@ -3460,29 +3078,22 @@
       "date": "2018-06",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 239.5904,
-      "weight_pct": 20.0
-    },
-    {
-      "date": "2018-06",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 162.9593,
-      "weight_pct": 20.0
+      "price": 239.5905,
+      "weight_pct": 26.7
     },
     {
       "date": "2018-06",
       "action": "BUY",
       "ticker": "IWM",
-      "price": 147.3962,
-      "weight_pct": 20.0
+      "price": 147.3963,
+      "weight_pct": 26.7
     },
     {
       "date": "2018-06",
       "action": "BUY",
       "ticker": "DJP",
       "price": 24.35,
-      "weight_pct": 20.0
+      "weight_pct": 26.7
     },
     {
       "date": "2018-06",
@@ -3495,13 +3106,7 @@
       "date": "2018-07",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 248.4664
-    },
-    {
-      "date": "2018-07",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 167.5163
+      "price": 248.4665
     },
     {
       "date": "2018-07",
@@ -3525,34 +3130,21 @@
       "date": "2018-07",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 248.4664,
-      "weight_pct": 33.3
-    },
-    {
-      "date": "2018-07",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 167.5163,
-      "weight_pct": 33.3
+      "price": 248.4665,
+      "weight_pct": 50.0
     },
     {
       "date": "2018-07",
       "action": "BUY",
       "ticker": "IWM",
       "price": 149.8269,
-      "weight_pct": 33.3
+      "weight_pct": 50.0
     },
     {
       "date": "2018-08",
       "action": "SELL",
       "ticker": "SPY",
       "price": 256.3974
-    },
-    {
-      "date": "2018-08",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 177.1999
     },
     {
       "date": "2018-08",
@@ -3565,40 +3157,27 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 256.3974,
-      "weight_pct": 25.0
-    },
-    {
-      "date": "2018-08",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 177.1999,
-      "weight_pct": 25.0
+      "weight_pct": 33.3
     },
     {
       "date": "2018-08",
       "action": "BUY",
       "ticker": "IWM",
       "price": 156.2853,
-      "weight_pct": 25.0
+      "weight_pct": 33.3
     },
     {
       "date": "2018-08",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 69.2522,
-      "weight_pct": 25.0
+      "price": 69.0467,
+      "weight_pct": 33.3
     },
     {
       "date": "2018-10",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 240.0983
-    },
-    {
-      "date": "2018-10",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 161.5121
+      "price": 240.0984
     },
     {
       "date": "2018-10",
@@ -3610,28 +3189,21 @@
       "date": "2018-10",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 69.2591
+      "price": 69.0535
     },
     {
       "date": "2018-10",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 240.0983,
-      "weight_pct": 33.3
-    },
-    {
-      "date": "2018-10",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 161.5121,
-      "weight_pct": 33.3
+      "price": 240.0984,
+      "weight_pct": 50.0
     },
     {
       "date": "2018-10",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 69.2591,
-      "weight_pct": 33.3
+      "price": 69.0535,
+      "weight_pct": 50.0
     },
     {
       "date": "2018-11",
@@ -3642,66 +3214,60 @@
     {
       "date": "2018-11",
       "action": "SELL",
-      "ticker": "QQQ",
-      "price": 161.0841
-    },
-    {
-      "date": "2018-11",
-      "action": "SELL",
       "ticker": "SHY",
-      "price": 69.5229
+      "price": 69.3166
     },
     {
       "date": "2018-11",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 69.5229,
+      "price": 69.3166,
       "weight_pct": 100.0
     },
     {
       "date": "2018-12",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 70.0512
+      "price": 69.8433
     },
     {
       "date": "2018-12",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 97.0492,
+      "price": 96.66,
       "weight_pct": 50.0
     },
     {
       "date": "2018-12",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 70.0512,
+      "price": 69.8433,
       "weight_pct": 50.0
     },
     {
       "date": "2019-02",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 96.0758
+      "price": 95.6905
     },
     {
       "date": "2019-02",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 70.2876
+      "price": 70.079
     },
     {
       "date": "2019-02",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 96.0758,
+      "price": 95.6905,
       "weight_pct": 33.3
     },
     {
       "date": "2019-02",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 70.2876,
+      "price": 70.079,
       "weight_pct": 33.3
     },
     {
@@ -3715,13 +3281,13 @@
       "date": "2019-04",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 99.4093
+      "price": 99.0105
     },
     {
       "date": "2019-04",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 70.8579
+      "price": 70.6476
     },
     {
       "date": "2019-04",
@@ -3732,43 +3298,30 @@
     {
       "date": "2019-04",
       "action": "BUY",
-      "ticker": "QQQ",
-      "price": 181.1121,
-      "weight_pct": 20.0
-    },
-    {
-      "date": "2019-04",
-      "action": "BUY",
       "ticker": "EEM",
-      "price": 37.1844,
-      "weight_pct": 20.0
+      "price": 37.1843,
+      "weight_pct": 25.0
     },
     {
       "date": "2019-04",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 99.4093,
-      "weight_pct": 20.0
+      "price": 99.0105,
+      "weight_pct": 25.0
     },
     {
       "date": "2019-04",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 70.8579,
-      "weight_pct": 20.0
+      "price": 70.6476,
+      "weight_pct": 25.0
     },
     {
       "date": "2019-04",
       "action": "BUY",
       "ticker": "GLD",
       "price": 121.2,
-      "weight_pct": 20.0
-    },
-    {
-      "date": "2019-05",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 166.2153
+      "weight_pct": 25.0
     },
     {
       "date": "2019-05",
@@ -3780,13 +3333,13 @@
       "date": "2019-05",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 106.2082
+      "price": 105.7821
     },
     {
       "date": "2019-05",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 71.3694
+      "price": 71.1576
     },
     {
       "date": "2019-05",
@@ -3798,14 +3351,14 @@
       "date": "2019-05",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 106.2082,
+      "price": 105.7821,
       "weight_pct": 26.7
     },
     {
       "date": "2019-05",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 71.3694,
+      "price": 71.1576,
       "weight_pct": 26.7
     },
     {
@@ -3826,13 +3379,13 @@
       "date": "2019-07",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 107.4923
+      "price": 107.0611
     },
     {
       "date": "2019-07",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 71.6526
+      "price": 71.4399
     },
     {
       "date": "2019-07",
@@ -3857,14 +3410,14 @@
       "date": "2019-07",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 107.4923,
+      "price": 107.0611,
       "weight_pct": 20.0
     },
     {
       "date": "2019-07",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 71.6526,
+      "price": 71.4399,
       "weight_pct": 20.0
     },
     {
@@ -3891,13 +3444,13 @@
       "date": "2019-10",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 114.877
+      "price": 114.4162
     },
     {
       "date": "2019-10",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 72.3415
+      "price": 72.1268
     },
     {
       "date": "2019-10",
@@ -3916,61 +3469,48 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 274.4569,
-      "weight_pct": 14.3
-    },
-    {
-      "date": "2019-10",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 189.1138,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2019-10",
       "action": "BUY",
       "ticker": "EEM",
       "price": 36.3165,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2019-10",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 114.877,
-      "weight_pct": 14.3
+      "price": 114.4162,
+      "weight_pct": 16.7
     },
     {
       "date": "2019-10",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 72.3415,
-      "weight_pct": 14.3
+      "price": 72.1268,
+      "weight_pct": 16.7
     },
     {
       "date": "2019-10",
       "action": "BUY",
       "ticker": "GLD",
       "price": 142.43,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2019-10",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 9199.585,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2019-11",
       "action": "SELL",
       "ticker": "SPY",
       "price": 284.3918
-    },
-    {
-      "date": "2019-11",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 196.8096
     },
     {
       "date": "2019-11",
@@ -3982,13 +3522,13 @@
       "date": "2019-11",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 114.4093
+      "price": 113.9504
     },
     {
       "date": "2019-11",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 72.3074
+      "price": 72.0928
     },
     {
       "date": "2019-11",
@@ -4007,68 +3547,55 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 284.3918,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2019-11",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 196.8096,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2019-11",
       "action": "BUY",
       "ticker": "IWM",
       "price": 148.4329,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2019-11",
       "action": "BUY",
       "ticker": "EEM",
       "price": 36.2823,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2019-11",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 114.4093,
-      "weight_pct": 12.5
+      "price": 113.9504,
+      "weight_pct": 14.3
     },
     {
       "date": "2019-11",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 72.3074,
-      "weight_pct": 12.5
+      "price": 72.0928,
+      "weight_pct": 14.3
     },
     {
       "date": "2019-11",
       "action": "BUY",
       "ticker": "GLD",
       "price": 137.86,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2019-11",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 7569.6299,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2019-12",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 292.6549
-    },
-    {
-      "date": "2019-12",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 204.4584
+      "price": 292.655
     },
     {
       "date": "2019-12",
@@ -4086,13 +3613,13 @@
       "date": "2019-12",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 110.7511
+      "price": 110.3069
     },
     {
       "date": "2019-12",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 72.4195
+      "price": 72.2045
     },
     {
       "date": "2019-12",
@@ -4110,69 +3637,56 @@
       "date": "2019-12",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 292.6549,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2019-12",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 204.4584,
-      "weight_pct": 12.5
+      "price": 292.655,
+      "weight_pct": 14.3
     },
     {
       "date": "2019-12",
       "action": "BUY",
       "ticker": "IWM",
       "price": 152.569,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2019-12",
       "action": "BUY",
       "ticker": "EEM",
       "price": 39.0871,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2019-12",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 110.7511,
-      "weight_pct": 12.5
+      "price": 110.3069,
+      "weight_pct": 14.3
     },
     {
       "date": "2019-12",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 72.4195,
-      "weight_pct": 12.5
+      "price": 72.2045,
+      "weight_pct": 14.3
     },
     {
       "date": "2019-12",
       "action": "BUY",
       "ticker": "GLD",
       "price": 142.9,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2019-12",
       "action": "BUY",
       "ticker": "DJP",
       "price": 22.84,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-01",
       "action": "SELL",
       "ticker": "SPY",
       "price": 292.5367
-    },
-    {
-      "date": "2020-01",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 210.6707
     },
     {
       "date": "2020-01",
@@ -4190,13 +3704,13 @@
       "date": "2020-01",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 119.2691
+      "price": 118.7907
     },
     {
       "date": "2020-01",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 72.8388
+      "price": 72.6226
     },
     {
       "date": "2020-01",
@@ -4215,68 +3729,55 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 292.5367,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2020-01",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 210.6707,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-01",
       "action": "BUY",
       "ticker": "IWM",
       "price": 147.8355,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-01",
       "action": "BUY",
       "ticker": "EEM",
       "price": 36.6828,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-01",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 119.2691,
-      "weight_pct": 12.5
+      "price": 118.7907,
+      "weight_pct": 14.3
     },
     {
       "date": "2020-01",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 72.8388,
-      "weight_pct": 12.5
+      "price": 72.6226,
+      "weight_pct": 14.3
     },
     {
       "date": "2020-01",
       "action": "BUY",
       "ticker": "GLD",
       "price": 149.33,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-01",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 9350.5293,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-02",
       "action": "SELL",
       "ticker": "SPY",
       "price": 269.3778
-    },
-    {
-      "date": "2020-02",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 197.9095
     },
     {
       "date": "2020-02",
@@ -4294,13 +3795,13 @@
       "date": "2020-02",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 127.1725
+      "price": 126.6624
     },
     {
       "date": "2020-02",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 73.4773
+      "price": 73.2593
     },
     {
       "date": "2020-02",
@@ -4319,42 +3820,35 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 269.3778,
-      "weight_pct": 16.7
-    },
-    {
-      "date": "2020-02",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 197.9095,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2020-02",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 127.1725,
-      "weight_pct": 16.7
+      "price": 126.6624,
+      "weight_pct": 20.0
     },
     {
       "date": "2020-02",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 73.4773,
-      "weight_pct": 16.7
+      "price": 73.2593,
+      "weight_pct": 20.0
     },
     {
       "date": "2020-02",
       "action": "BUY",
       "ticker": "GLD",
       "price": 148.38,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2020-02",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 8599.5088,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2020-03",
@@ -4365,20 +3859,14 @@
     {
       "date": "2020-03",
       "action": "SELL",
-      "ticker": "QQQ",
-      "price": 183.4901
-    },
-    {
-      "date": "2020-03",
-      "action": "SELL",
       "ticker": "TLT",
-      "price": 135.2819
+      "price": 134.7393
     },
     {
       "date": "2020-03",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 74.3914
+      "price": 74.1706
     },
     {
       "date": "2020-03",
@@ -4395,48 +3883,35 @@
     {
       "date": "2020-03",
       "action": "BUY",
-      "ticker": "QQQ",
-      "price": 183.4901,
-      "weight_pct": 25.0
-    },
-    {
-      "date": "2020-03",
-      "action": "BUY",
       "ticker": "TLT",
-      "price": 135.2819,
-      "weight_pct": 25.0
+      "price": 134.7393,
+      "weight_pct": 33.3
     },
     {
       "date": "2020-03",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 74.3914,
-      "weight_pct": 25.0
+      "price": 74.1706,
+      "weight_pct": 33.3
     },
     {
       "date": "2020-03",
       "action": "BUY",
       "ticker": "GLD",
       "price": 148.05,
-      "weight_pct": 25.0
-    },
-    {
-      "date": "2020-05",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 224.8911
+      "weight_pct": 33.3
     },
     {
       "date": "2020-05",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 134.5183
+      "price": 133.9787
     },
     {
       "date": "2020-05",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 74.5358
+      "price": 74.3146
     },
     {
       "date": "2020-05",
@@ -4447,30 +3922,23 @@
     {
       "date": "2020-05",
       "action": "BUY",
-      "ticker": "QQQ",
-      "price": 224.8911,
-      "weight_pct": 20.0
-    },
-    {
-      "date": "2020-05",
-      "action": "BUY",
       "ticker": "TLT",
-      "price": 134.5183,
-      "weight_pct": 20.0
+      "price": 133.9787,
+      "weight_pct": 26.7
     },
     {
       "date": "2020-05",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 74.5358,
-      "weight_pct": 20.0
+      "price": 74.3146,
+      "weight_pct": 26.7
     },
     {
       "date": "2020-05",
       "action": "BUY",
       "ticker": "GLD",
       "price": 162.91,
-      "weight_pct": 20.0
+      "weight_pct": 26.7
     },
     {
       "date": "2020-05",
@@ -4482,20 +3950,14 @@
     {
       "date": "2020-06",
       "action": "SELL",
-      "ticker": "QQQ",
-      "price": 239.0292
-    },
-    {
-      "date": "2020-06",
-      "action": "SELL",
       "ticker": "TLT",
-      "price": 134.9711
+      "price": 134.4297
     },
     {
       "date": "2020-06",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 74.553
+      "price": 74.3317
     },
     {
       "date": "2020-06",
@@ -4512,50 +3974,37 @@
     {
       "date": "2020-06",
       "action": "BUY",
-      "ticker": "QQQ",
-      "price": 239.0292,
-      "weight_pct": 16.7
-    },
-    {
-      "date": "2020-06",
-      "action": "BUY",
       "ticker": "EEM",
       "price": 35.0381,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2020-06",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 134.9711,
-      "weight_pct": 16.7
+      "price": 134.4297,
+      "weight_pct": 20.0
     },
     {
       "date": "2020-06",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 74.553,
-      "weight_pct": 16.7
+      "price": 74.3317,
+      "weight_pct": 20.0
     },
     {
       "date": "2020-06",
       "action": "BUY",
       "ticker": "GLD",
       "price": 167.37,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2020-06",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 9137.9932,
-      "weight_pct": 16.7
-    },
-    {
-      "date": "2020-07",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 256.5895
+      "weight_pct": 20.0
     },
     {
       "date": "2020-07",
@@ -4567,13 +4016,13 @@
       "date": "2020-07",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 140.9573
+      "price": 140.3918
     },
     {
       "date": "2020-07",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 74.6228
+      "price": 74.4013
     },
     {
       "date": "2020-07",
@@ -4591,57 +4040,50 @@
       "date": "2020-07",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 299.952,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2020-07",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 256.5895,
-      "weight_pct": 12.5
+      "price": 299.9521,
+      "weight_pct": 14.3
     },
     {
       "date": "2020-07",
       "action": "BUY",
       "ticker": "IWM",
       "price": 136.6924,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-07",
       "action": "BUY",
       "ticker": "EEM",
       "price": 37.9295,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-07",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 140.9573,
-      "weight_pct": 12.5
+      "price": 140.3918,
+      "weight_pct": 14.3
     },
     {
       "date": "2020-07",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 74.6228,
-      "weight_pct": 12.5
+      "price": 74.4013,
+      "weight_pct": 14.3
     },
     {
       "date": "2020-07",
       "action": "BUY",
       "ticker": "GLD",
       "price": 185.43,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-07",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 11323.4668,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-09",
@@ -4652,14 +4094,8 @@
     {
       "date": "2020-09",
       "action": "SELL",
-      "ticker": "QQQ",
-      "price": 268.2224
-    },
-    {
-      "date": "2020-09",
-      "action": "SELL",
       "ticker": "IWM",
-      "price": 139.4761
+      "price": 139.476
     },
     {
       "date": "2020-09",
@@ -4671,13 +4107,13 @@
       "date": "2020-09",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 134.879
+      "price": 134.338
     },
     {
       "date": "2020-09",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 74.6047
+      "price": 74.3832
     },
     {
       "date": "2020-09",
@@ -4696,75 +4132,62 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 308.8724,
-      "weight_pct": 11.1
-    },
-    {
-      "date": "2020-09",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 268.2224,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2020-09",
       "action": "BUY",
       "ticker": "IWM",
-      "price": 139.4761,
-      "weight_pct": 11.1
+      "price": 139.476,
+      "weight_pct": 12.5
     },
     {
       "date": "2020-09",
       "action": "BUY",
       "ticker": "EEM",
       "price": 38.6304,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2020-09",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 134.879,
-      "weight_pct": 11.1
+      "price": 134.338,
+      "weight_pct": 12.5
     },
     {
       "date": "2020-09",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 74.6047,
-      "weight_pct": 11.1
+      "price": 74.3832,
+      "weight_pct": 12.5
     },
     {
       "date": "2020-09",
       "action": "BUY",
       "ticker": "GLD",
       "price": 177.12,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2020-09",
       "action": "BUY",
       "ticker": "DJP",
       "price": 19.48,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2020-09",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 10784.4912,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2020-12",
       "action": "SELL",
       "ticker": "SPY",
       "price": 346.3033
-    },
-    {
-      "date": "2020-12",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 303.4287
     },
     {
       "date": "2020-12",
@@ -4782,13 +4205,13 @@
       "date": "2020-12",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 130.8549
+      "price": 130.33
     },
     {
       "date": "2020-12",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 74.6167
+      "price": 74.3953
     },
     {
       "date": "2020-12",
@@ -4813,68 +4236,55 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 346.3033,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2020-12",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 303.4287,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-12",
       "action": "BUY",
       "ticker": "IWM",
       "price": 183.1298,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-12",
       "action": "BUY",
       "ticker": "EEM",
       "price": 45.7399,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-12",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 74.6167,
-      "weight_pct": 12.5
+      "price": 74.3953,
+      "weight_pct": 14.3
     },
     {
       "date": "2020-12",
       "action": "BUY",
       "ticker": "GLD",
       "price": 178.36,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-12",
       "action": "BUY",
       "ticker": "DJP",
       "price": 21.9,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2020-12",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 29001.7207,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2021-02",
       "action": "SELL",
       "ticker": "SPY",
       "price": 352.3053
-    },
-    {
-      "date": "2021-02",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 303.8156
     },
     {
       "date": "2021-02",
@@ -4892,7 +4302,7 @@
       "date": "2021-02",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 74.5908
+      "price": 74.3695
     },
     {
       "date": "2021-02",
@@ -4917,54 +4327,41 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 352.3053,
-      "weight_pct": 16.7
-    },
-    {
-      "date": "2021-02",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 303.8156,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2021-02",
       "action": "BUY",
       "ticker": "IWM",
       "price": 203.9124,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2021-02",
       "action": "BUY",
       "ticker": "EEM",
       "price": 47.5634,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2021-02",
       "action": "BUY",
       "ticker": "DJP",
       "price": 24.26,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2021-02",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 45137.7695,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2021-10",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 429.5377
-    },
-    {
-      "date": "2021-10",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 374.7406
+      "price": 429.5376
     },
     {
       "date": "2021-10",
@@ -4994,29 +4391,22 @@
       "date": "2021-10",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 429.5377,
-      "weight_pct": 20.0
-    },
-    {
-      "date": "2021-10",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 374.7406,
-      "weight_pct": 20.0
+      "price": 429.5376,
+      "weight_pct": 26.7
     },
     {
       "date": "2021-10",
       "action": "BUY",
       "ticker": "IWM",
       "price": 214.3787,
-      "weight_pct": 20.0
+      "weight_pct": 26.7
     },
     {
       "date": "2021-10",
       "action": "BUY",
       "ticker": "DJP",
       "price": 30.23,
-      "weight_pct": 20.0
+      "weight_pct": 26.7
     },
     {
       "date": "2021-10",
@@ -5029,13 +4419,7 @@
       "date": "2021-11",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 426.0864
-    },
-    {
-      "date": "2021-11",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 382.2236
+      "price": 426.0865
     },
     {
       "date": "2021-11",
@@ -5059,55 +4443,42 @@
       "date": "2021-11",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 426.0864,
-      "weight_pct": 16.7
-    },
-    {
-      "date": "2021-11",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 382.2236,
-      "weight_pct": 16.7
+      "price": 426.0865,
+      "weight_pct": 20.0
     },
     {
       "date": "2021-11",
       "action": "BUY",
       "ticker": "IWM",
       "price": 205.091,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2021-11",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 127.4024,
-      "weight_pct": 16.7
+      "price": 126.8913,
+      "weight_pct": 20.0
     },
     {
       "date": "2021-11",
       "action": "BUY",
       "ticker": "DJP",
       "price": 27.61,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2021-11",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 57005.4258,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2021-12",
       "action": "SELL",
       "ticker": "SPY",
       "price": 445.7919
-    },
-    {
-      "date": "2021-12",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 386.6281
     },
     {
       "date": "2021-12",
@@ -5119,7 +4490,7 @@
       "date": "2021-12",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 124.8368
+      "price": 124.336
     },
     {
       "date": "2021-12",
@@ -5138,28 +4509,21 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 445.7919,
-      "weight_pct": 20.0
-    },
-    {
-      "date": "2021-12",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 386.6281,
-      "weight_pct": 20.0
+      "weight_pct": 26.7
     },
     {
       "date": "2021-12",
       "action": "BUY",
       "ticker": "IWM",
       "price": 209.7497,
-      "weight_pct": 20.0
+      "weight_pct": 26.7
     },
     {
       "date": "2021-12",
       "action": "BUY",
       "ticker": "DJP",
       "price": 28.7,
-      "weight_pct": 20.0
+      "weight_pct": 26.7
     },
     {
       "date": "2021-12",
@@ -5177,14 +4541,8 @@
     {
       "date": "2022-01",
       "action": "SELL",
-      "ticker": "QQQ",
-      "price": 352.8096
-    },
-    {
-      "date": "2022-01",
-      "action": "SELL",
       "ticker": "IWM",
-      "price": 189.7507
+      "price": 189.7506
     },
     {
       "date": "2022-01",
@@ -5203,33 +4561,20 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 422.2803,
-      "weight_pct": 33.3
-    },
-    {
-      "date": "2022-01",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 352.8096,
-      "weight_pct": 33.3
+      "weight_pct": 50.0
     },
     {
       "date": "2022-01",
       "action": "BUY",
       "ticker": "DJP",
       "price": 31.62,
-      "weight_pct": 33.3
+      "weight_pct": 50.0
     },
     {
       "date": "2022-02",
       "action": "SELL",
       "ticker": "SPY",
       "price": 409.8158
-    },
-    {
-      "date": "2022-02",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 337.0179
     },
     {
       "date": "2022-02",
@@ -5262,7 +4607,7 @@
       "date": "2022-03",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 425.221
+      "price": 425.2209
     },
     {
       "date": "2022-03",
@@ -5352,7 +4697,7 @@
       "date": "2023-01",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 71.761,
+      "price": 71.548,
       "weight_pct": 33.3
     },
     {
@@ -5372,7 +4717,7 @@
       "date": "2023-02",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 71.1827
+      "price": 70.9714
     },
     {
       "date": "2023-02",
@@ -5383,23 +4728,16 @@
     {
       "date": "2023-03",
       "action": "BUY",
-      "ticker": "QQQ",
-      "price": 314.6625,
-      "weight_pct": 26.7
-    },
-    {
-      "date": "2023-03",
-      "action": "BUY",
       "ticker": "SHY",
-      "price": 72.3557,
-      "weight_pct": 26.7
+      "price": 72.141,
+      "weight_pct": 40.0
     },
     {
       "date": "2023-03",
       "action": "BUY",
       "ticker": "GLD",
       "price": 183.22,
-      "weight_pct": 26.7
+      "weight_pct": 40.0
     },
     {
       "date": "2023-03",
@@ -5411,14 +4749,8 @@
     {
       "date": "2023-04",
       "action": "SELL",
-      "ticker": "QQQ",
-      "price": 316.2607
-    },
-    {
-      "date": "2023-04",
-      "action": "SELL",
       "ticker": "SHY",
-      "price": 72.5323
+      "price": 72.317
     },
     {
       "date": "2023-04",
@@ -5437,28 +4769,21 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 398.2345,
-      "weight_pct": 20.0
-    },
-    {
-      "date": "2023-04",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 316.2607,
-      "weight_pct": 20.0
+      "weight_pct": 26.7
     },
     {
       "date": "2023-04",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 72.5323,
-      "weight_pct": 20.0
+      "price": 72.317,
+      "weight_pct": 26.7
     },
     {
       "date": "2023-04",
       "action": "BUY",
       "ticker": "GLD",
       "price": 184.8,
-      "weight_pct": 20.0
+      "weight_pct": 26.7
     },
     {
       "date": "2023-04",
@@ -5476,14 +4801,8 @@
     {
       "date": "2023-06",
       "action": "SELL",
-      "ticker": "QQQ",
-      "price": 362.7024
-    },
-    {
-      "date": "2023-06",
-      "action": "SELL",
       "ticker": "SHY",
-      "price": 71.9015
+      "price": 71.6881
     },
     {
       "date": "2023-06",
@@ -5502,54 +4821,41 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 425.9975,
-      "weight_pct": 16.7
-    },
-    {
-      "date": "2023-06",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 362.7024,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2023-06",
       "action": "BUY",
       "ticker": "IWM",
       "price": 180.2907,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2023-06",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 71.9015,
-      "weight_pct": 16.7
+      "price": 71.6881,
+      "weight_pct": 20.0
     },
     {
       "date": "2023-06",
       "action": "BUY",
       "ticker": "GLD",
       "price": 178.27,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2023-06",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 30477.252,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2023-07",
       "action": "SELL",
       "ticker": "SPY",
       "price": 439.9418
-    },
-    {
-      "date": "2023-07",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 376.7031
     },
     {
       "date": "2023-07",
@@ -5561,7 +4867,7 @@
       "date": "2023-07",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 72.1202
+      "price": 71.9062
     },
     {
       "date": "2023-07",
@@ -5580,61 +4886,48 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 439.9418,
-      "weight_pct": 14.3
-    },
-    {
-      "date": "2023-07",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 376.7031,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2023-07",
       "action": "BUY",
       "ticker": "IWM",
       "price": 191.3044,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2023-07",
       "action": "BUY",
       "ticker": "EEM",
       "price": 39.0595,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2023-07",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 72.1202,
-      "weight_pct": 14.3
+      "price": 71.9062,
+      "weight_pct": 16.7
     },
     {
       "date": "2023-07",
       "action": "BUY",
       "ticker": "GLD",
       "price": 182.35,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2023-07",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 29230.1113,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2023-09",
       "action": "SELL",
       "ticker": "SPY",
       "price": 412.2626
-    },
-    {
-      "date": "2023-09",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 352.2643
     },
     {
       "date": "2023-09",
@@ -5652,7 +4945,7 @@
       "date": "2023-09",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 72.359
+      "price": 72.1442
     },
     {
       "date": "2023-09",
@@ -5671,28 +4964,21 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 412.2626,
-      "weight_pct": 20.0
-    },
-    {
-      "date": "2023-09",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 352.2643,
-      "weight_pct": 20.0
+      "weight_pct": 26.7
     },
     {
       "date": "2023-09",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 72.359,
-      "weight_pct": 20.0
+      "price": 72.1442,
+      "weight_pct": 26.7
     },
     {
       "date": "2023-09",
       "action": "BUY",
       "ticker": "GLD",
       "price": 171.45,
-      "weight_pct": 20.0
+      "weight_pct": 26.7
     },
     {
       "date": "2023-09",
@@ -5710,14 +4996,8 @@
     {
       "date": "2023-11",
       "action": "SELL",
-      "ticker": "QQQ",
-      "price": 382.312
-    },
-    {
-      "date": "2023-11",
-      "action": "SELL",
       "ticker": "SHY",
-      "price": 73.3637
+      "price": 73.146
     },
     {
       "date": "2023-11",
@@ -5736,54 +5016,41 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 440.1531,
-      "weight_pct": 16.7
-    },
-    {
-      "date": "2023-11",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 382.312,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2023-11",
       "action": "BUY",
       "ticker": "EEM",
       "price": 36.8342,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2023-11",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 73.3637,
-      "weight_pct": 16.7
+      "price": 73.146,
+      "weight_pct": 20.0
     },
     {
       "date": "2023-11",
       "action": "BUY",
       "ticker": "GLD",
       "price": 188.75,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2023-11",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 37712.7461,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2023-12",
       "action": "SELL",
       "ticker": "SPY",
       "price": 460.2484
-    },
-    {
-      "date": "2023-12",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 403.6718
     },
     {
       "date": "2023-12",
@@ -5795,7 +5062,7 @@
       "date": "2023-12",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 74.1732
+      "price": 73.9531
     },
     {
       "date": "2023-12",
@@ -5814,68 +5081,55 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 460.2484,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2023-12",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 403.6718,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2023-12",
       "action": "BUY",
       "ticker": "IWM",
       "price": 194.8485,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2023-12",
       "action": "BUY",
       "ticker": "EEM",
       "price": 38.1475,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2023-12",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 88.2207,
-      "weight_pct": 12.5
+      "price": 87.8668,
+      "weight_pct": 14.3
     },
     {
       "date": "2023-12",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 74.1732,
-      "weight_pct": 12.5
+      "price": 73.9531,
+      "weight_pct": 14.3
     },
     {
       "date": "2023-12",
       "action": "BUY",
       "ticker": "GLD",
       "price": 191.17,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2023-12",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 42265.1875,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-04",
       "action": "SELL",
       "ticker": "SPY",
       "price": 487.5836
-    },
-    {
-      "date": "2024-04",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 419.0799
     },
     {
       "date": "2024-04",
@@ -5893,13 +5147,13 @@
       "date": "2024-04",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 79.4733
+      "price": 79.1545
     },
     {
       "date": "2024-04",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 74.0461
+      "price": 73.8264
     },
     {
       "date": "2024-04",
@@ -5918,68 +5172,55 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 487.5836,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2024-04",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 419.0799,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-04",
       "action": "BUY",
       "ticker": "IWM",
       "price": 190.6619,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-04",
       "action": "BUY",
       "ticker": "EEM",
       "price": 38.8874,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-04",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 74.0461,
-      "weight_pct": 12.5
+      "price": 73.8264,
+      "weight_pct": 14.3
     },
     {
       "date": "2024-04",
       "action": "BUY",
       "ticker": "GLD",
       "price": 211.87,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-04",
       "action": "BUY",
       "ticker": "DJP",
       "price": 32.01,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-04",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 60636.8555,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-05",
       "action": "SELL",
       "ticker": "SPY",
       "price": 512.2454
-    },
-    {
-      "date": "2024-05",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 444.8609
     },
     {
       "date": "2024-05",
@@ -5997,7 +5238,7 @@
       "date": "2024-05",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 74.5789
+      "price": 74.3575
     },
     {
       "date": "2024-05",
@@ -6022,75 +5263,62 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 512.2454,
-      "weight_pct": 11.1
-    },
-    {
-      "date": "2024-05",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 444.8609,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2024-05",
       "action": "BUY",
       "ticker": "IWM",
       "price": 200.268,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2024-05",
       "action": "BUY",
       "ticker": "EEM",
       "price": 39.6464,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2024-05",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 81.7676,
-      "weight_pct": 11.1
+      "price": 81.4396,
+      "weight_pct": 12.5
     },
     {
       "date": "2024-05",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 74.5789,
-      "weight_pct": 11.1
+      "price": 74.3575,
+      "weight_pct": 12.5
     },
     {
       "date": "2024-05",
       "action": "BUY",
       "ticker": "GLD",
       "price": 215.3,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2024-05",
       "action": "BUY",
       "ticker": "DJP",
       "price": 32.7,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2024-05",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 67491.4141,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2024-07",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 536.7393
-    },
-    {
-      "date": "2024-07",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 465.6957
+      "price": 536.7391
     },
     {
       "date": "2024-07",
@@ -6108,13 +5336,13 @@
       "date": "2024-07",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 86.2755
+      "price": 85.9294
     },
     {
       "date": "2024-07",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 75.8694
+      "price": 75.6442
     },
     {
       "date": "2024-07",
@@ -6138,69 +5366,56 @@
       "date": "2024-07",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 536.7393,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2024-07",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 465.6957,
-      "weight_pct": 12.5
+      "price": 536.7391,
+      "weight_pct": 14.3
     },
     {
       "date": "2024-07",
       "action": "BUY",
       "ticker": "IWM",
       "price": 218.4825,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-07",
       "action": "BUY",
       "ticker": "EEM",
       "price": 41.0283,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-07",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 86.2755,
-      "weight_pct": 12.5
+      "price": 85.9294,
+      "weight_pct": 14.3
     },
     {
       "date": "2024-07",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 75.8694,
-      "weight_pct": 12.5
+      "price": 75.6442,
+      "weight_pct": 14.3
     },
     {
       "date": "2024-07",
       "action": "BUY",
       "ticker": "GLD",
       "price": 226.55,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-07",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 64619.25,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-09",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 560.8178
-    },
-    {
-      "date": "2024-09",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 483.1798
+      "price": 560.8179
     },
     {
       "date": "2024-09",
@@ -6218,13 +5433,13 @@
       "date": "2024-09",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 89.8584
+      "price": 89.498
     },
     {
       "date": "2024-09",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 77.1379
+      "price": 76.909
     },
     {
       "date": "2024-09",
@@ -6242,76 +5457,63 @@
       "date": "2024-09",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 560.8178,
-      "weight_pct": 11.1
-    },
-    {
-      "date": "2024-09",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 483.1798,
-      "weight_pct": 11.1
+      "price": 560.8179,
+      "weight_pct": 12.5
     },
     {
       "date": "2024-09",
       "action": "BUY",
       "ticker": "IWM",
       "price": 216.3195,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2024-09",
       "action": "BUY",
       "ticker": "EEM",
       "price": 43.808,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2024-09",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 89.8584,
-      "weight_pct": 11.1
+      "price": 89.498,
+      "weight_pct": 12.5
     },
     {
       "date": "2024-09",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 77.1379,
-      "weight_pct": 11.1
+      "price": 76.909,
+      "weight_pct": 12.5
     },
     {
       "date": "2024-09",
       "action": "BUY",
       "ticker": "GLD",
       "price": 243.06,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2024-09",
       "action": "BUY",
       "ticker": "DJP",
       "price": 32.24,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2024-09",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 63329.5,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2024-12",
       "action": "SELL",
       "ticker": "SPY",
       "price": 574.788
-    },
-    {
-      "date": "2024-12",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 506.9239
     },
     {
       "date": "2024-12",
@@ -6329,13 +5531,13 @@
       "date": "2024-12",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 81.1162
+      "price": 80.7908
     },
     {
       "date": "2024-12",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 77.0762
+      "price": 76.8475
     },
     {
       "date": "2024-12",
@@ -6360,68 +5562,55 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 574.788,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2024-12",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 506.9239,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-12",
       "action": "BUY",
       "ticker": "IWM",
       "price": 217.0305,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-12",
       "action": "BUY",
       "ticker": "EEM",
       "price": 40.6232,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-12",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 77.0762,
-      "weight_pct": 12.5
+      "price": 76.8475,
+      "weight_pct": 14.3
     },
     {
       "date": "2024-12",
       "action": "BUY",
       "ticker": "GLD",
       "price": 242.13,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-12",
       "action": "BUY",
       "ticker": "DJP",
       "price": 32.09,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2024-12",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 93429.2031,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2025-02",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 582.732
-    },
-    {
-      "date": "2025-02",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 503.8897
+      "price": 582.7319
     },
     {
       "date": "2025-02",
@@ -6439,7 +5628,7 @@
       "date": "2025-02",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 77.9365
+      "price": 77.7052
     },
     {
       "date": "2025-02",
@@ -6463,76 +5652,63 @@
       "date": "2025-02",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 582.732,
-      "weight_pct": 11.1
-    },
-    {
-      "date": "2025-02",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 503.8897,
-      "weight_pct": 11.1
+      "price": 582.7319,
+      "weight_pct": 12.5
     },
     {
       "date": "2025-02",
       "action": "BUY",
       "ticker": "IWM",
       "price": 210.8327,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2025-02",
       "action": "BUY",
       "ticker": "EEM",
       "price": 41.9735,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2025-02",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 86.1596,
-      "weight_pct": 11.1
+      "price": 85.814,
+      "weight_pct": 12.5
     },
     {
       "date": "2025-02",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 77.9365,
-      "weight_pct": 11.1
+      "price": 77.7052,
+      "weight_pct": 12.5
     },
     {
       "date": "2025-02",
       "action": "BUY",
       "ticker": "GLD",
       "price": 263.27,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2025-02",
       "action": "BUY",
       "ticker": "DJP",
       "price": 33.91,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2025-02",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 84373.0078,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2025-03",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 550.2625
-    },
-    {
-      "date": "2025-03",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 465.6637
+      "price": 550.2626
     },
     {
       "date": "2025-03",
@@ -6550,13 +5726,13 @@
       "date": "2025-03",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 85.1217
+      "price": 84.7802
     },
     {
       "date": "2025-03",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 78.28
+      "price": 78.0477
     },
     {
       "date": "2025-03",
@@ -6580,69 +5756,56 @@
       "date": "2025-03",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 550.2625,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2025-03",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 465.6637,
-      "weight_pct": 12.5
+      "price": 550.2626,
+      "weight_pct": 14.3
     },
     {
       "date": "2025-03",
       "action": "BUY",
       "ticker": "EEM",
       "price": 42.4494,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2025-03",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 85.1217,
-      "weight_pct": 12.5
+      "price": 84.7802,
+      "weight_pct": 14.3
     },
     {
       "date": "2025-03",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 78.28,
-      "weight_pct": 12.5
+      "price": 78.0477,
+      "weight_pct": 14.3
     },
     {
       "date": "2025-03",
       "action": "BUY",
       "ticker": "GLD",
       "price": 288.14,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2025-03",
       "action": "BUY",
       "ticker": "DJP",
       "price": 35.31,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2025-03",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 82548.9141,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2025-04",
       "action": "SELL",
       "ticker": "SPY",
       "price": 545.4917
-    },
-    {
-      "date": "2025-04",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 472.1682
     },
     {
       "date": "2025-04",
@@ -6654,13 +5817,13 @@
       "date": "2025-04",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 83.9636
+      "price": 83.6268
     },
     {
       "date": "2025-04",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 78.9161
+      "price": 78.6819
     },
     {
       "date": "2025-04",
@@ -6691,14 +5854,14 @@
       "date": "2025-04",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 83.9636,
+      "price": 83.6268,
       "weight_pct": 16.7
     },
     {
       "date": "2025-04",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 78.9161,
+      "price": 78.6819,
       "weight_pct": 16.7
     },
     {
@@ -6732,13 +5895,13 @@
       "date": "2025-05",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 81.2679
+      "price": 80.9419
     },
     {
       "date": "2025-05",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 78.7152
+      "price": 78.4815
     },
     {
       "date": "2025-05",
@@ -6769,7 +5932,7 @@
       "date": "2025-05",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 78.7152,
+      "price": 78.4815,
       "weight_pct": 20.0
     },
     {
@@ -6803,7 +5966,7 @@
       "date": "2025-06",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 79.1757
+      "price": 78.9408
     },
     {
       "date": "2025-06",
@@ -6828,75 +5991,62 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 609.5654,
-      "weight_pct": 11.1
-    },
-    {
-      "date": "2025-06",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 548.4245,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2025-06",
       "action": "BUY",
       "ticker": "IWM",
       "price": 213.0154,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2025-06",
       "action": "BUY",
       "ticker": "EEM",
       "price": 47.3135,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2025-06",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 83.4329,
-      "weight_pct": 11.1
+      "price": 83.0982,
+      "weight_pct": 12.5
     },
     {
       "date": "2025-06",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 79.1757,
-      "weight_pct": 11.1
+      "price": 78.9408,
+      "weight_pct": 12.5
     },
     {
       "date": "2025-06",
       "action": "BUY",
       "ticker": "GLD",
       "price": 304.83,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2025-06",
       "action": "BUY",
       "ticker": "DJP",
       "price": 33.98,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2025-06",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 107135.3359,
-      "weight_pct": 11.1
+      "weight_pct": 12.5
     },
     {
       "date": "2025-11",
       "action": "SELL",
       "ticker": "SPY",
-      "price": 676.0959
-    },
-    {
-      "date": "2025-11",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 616.3541
+      "price": 676.0958
     },
     {
       "date": "2025-11",
@@ -6914,13 +6064,13 @@
       "date": "2025-11",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 86.871
+      "price": 86.5225
     },
     {
       "date": "2025-11",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 80.654
+      "price": 80.4147
     },
     {
       "date": "2025-11",
@@ -6944,153 +6094,49 @@
       "date": "2025-11",
       "action": "BUY",
       "ticker": "SPY",
-      "price": 676.0959,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2025-11",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 616.3541,
-      "weight_pct": 12.5
+      "price": 676.0958,
+      "weight_pct": 14.3
     },
     {
       "date": "2025-11",
       "action": "BUY",
       "ticker": "IWM",
       "price": 246.2481,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2025-11",
       "action": "BUY",
       "ticker": "EEM",
       "price": 53.2767,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2025-11",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 86.871,
-      "weight_pct": 12.5
+      "price": 86.5225,
+      "weight_pct": 14.3
     },
     {
       "date": "2025-11",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 80.654,
-      "weight_pct": 12.5
+      "price": 80.4147,
+      "weight_pct": 14.3
     },
     {
       "date": "2025-11",
       "action": "BUY",
       "ticker": "GLD",
       "price": 387.88,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2025-11",
       "action": "BUY",
       "ticker": "DJP",
       "price": 37.82,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2026-03",
-      "action": "SELL",
-      "ticker": "SPY",
-      "price": 647.0621
-    },
-    {
-      "date": "2026-03",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 575.9462
-    },
-    {
-      "date": "2026-03",
-      "action": "SELL",
-      "ticker": "IWM",
-      "price": 246.7671
-    },
-    {
-      "date": "2026-03",
-      "action": "SELL",
-      "ticker": "EEM",
-      "price": 56.4963
-    },
-    {
-      "date": "2026-03",
-      "action": "SELL",
-      "ticker": "TLT",
-      "price": 84.7078
-    },
-    {
-      "date": "2026-03",
-      "action": "SELL",
-      "ticker": "SHY",
-      "price": 81.1087
-    },
-    {
-      "date": "2026-03",
-      "action": "SELL",
-      "ticker": "GLD",
-      "price": 430.29
-    },
-    {
-      "date": "2026-03",
-      "action": "SELL",
-      "ticker": "DJP",
-      "price": 48.14
-    },
-    {
-      "date": "2026-03",
-      "action": "BUY",
-      "ticker": "SPY",
-      "price": 647.0621,
-      "weight_pct": 14.3
-    },
-    {
-      "date": "2026-03",
-      "action": "BUY",
-      "ticker": "IWM",
-      "price": 246.7671,
-      "weight_pct": 14.3
-    },
-    {
-      "date": "2026-03",
-      "action": "BUY",
-      "ticker": "EEM",
-      "price": 56.4963,
-      "weight_pct": 14.3
-    },
-    {
-      "date": "2026-03",
-      "action": "BUY",
-      "ticker": "TLT",
-      "price": 84.7078,
-      "weight_pct": 14.3
-    },
-    {
-      "date": "2026-03",
-      "action": "BUY",
-      "ticker": "SHY",
-      "price": 81.1087,
-      "weight_pct": 14.3
-    },
-    {
-      "date": "2026-03",
-      "action": "BUY",
-      "ticker": "GLD",
-      "price": 430.29,
-      "weight_pct": 14.3
-    },
-    {
-      "date": "2026-03",
-      "action": "BUY",
-      "ticker": "DJP",
-      "price": 48.14,
       "weight_pct": 14.3
     },
     {
@@ -7115,13 +6161,13 @@
       "date": "2026-04",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 83.9966
+      "price": 83.6597
     },
     {
       "date": "2026-04",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 81.2634
+      "price": 81.0222
     },
     {
       "date": "2026-04",
@@ -7140,61 +6186,48 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 715.0377,
-      "weight_pct": 14.3
-    },
-    {
-      "date": "2026-04",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 666.3126,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2026-04",
       "action": "BUY",
       "ticker": "IWM",
       "price": 276.5882,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2026-04",
       "action": "BUY",
       "ticker": "EEM",
       "price": 63.6591,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2026-04",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 81.2634,
-      "weight_pct": 14.3
+      "price": 81.0222,
+      "weight_pct": 16.7
     },
     {
       "date": "2026-04",
       "action": "BUY",
       "ticker": "GLD",
       "price": 423.66,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2026-04",
       "action": "BUY",
       "ticker": "DJP",
       "price": 50.43,
-      "weight_pct": 14.3
+      "weight_pct": 16.7
     },
     {
       "date": "2026-05",
       "action": "SELL",
       "ticker": "SPY",
       "price": 752.6671
-    },
-    {
-      "date": "2026-05",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 736.7318
     },
     {
       "date": "2026-05",
@@ -7212,7 +6245,7 @@
       "date": "2026-05",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 81.3257
+      "price": 81.0843
     },
     {
       "date": "2026-05",
@@ -7231,68 +6264,55 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 752.6671,
-      "weight_pct": 12.5
-    },
-    {
-      "date": "2026-05",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 736.7318,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2026-05",
       "action": "BUY",
       "ticker": "IWM",
       "price": 288.9862,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2026-05",
       "action": "BUY",
       "ticker": "EEM",
       "price": 68.2453,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2026-05",
       "action": "BUY",
       "ticker": "TLT",
-      "price": 84.4446,
-      "weight_pct": 12.5
+      "price": 84.1059,
+      "weight_pct": 14.3
     },
     {
       "date": "2026-05",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 81.3257,
-      "weight_pct": 12.5
+      "price": 81.0843,
+      "weight_pct": 14.3
     },
     {
       "date": "2026-05",
       "action": "BUY",
       "ticker": "GLD",
       "price": 417.12,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2026-05",
       "action": "BUY",
       "ticker": "DJP",
       "price": 48.39,
-      "weight_pct": 12.5
+      "weight_pct": 14.3
     },
     {
       "date": "2026-07",
       "action": "SELL",
       "ticker": "SPY",
       "price": 745.1796
-    },
-    {
-      "date": "2026-07",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 687.2739
     },
     {
       "date": "2026-07",
@@ -7310,13 +6330,13 @@
       "date": "2026-07",
       "action": "SELL",
       "ticker": "TLT",
-      "price": 81.6073
+      "price": 81.2799
     },
     {
       "date": "2026-07",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 81.5054
+      "price": 81.2635
     },
     {
       "date": "2026-07",
@@ -7335,54 +6355,41 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 745.1796,
-      "weight_pct": 16.7
-    },
-    {
-      "date": "2026-07",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 687.2739,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2026-07",
       "action": "BUY",
       "ticker": "IWM",
       "price": 290.4414,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2026-07",
       "action": "BUY",
       "ticker": "EEM",
       "price": 64.09,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2026-07",
       "action": "BUY",
       "ticker": "SHY",
-      "price": 81.5054,
-      "weight_pct": 16.7
+      "price": 81.2635,
+      "weight_pct": 20.0
     },
     {
       "date": "2026-07",
       "action": "BUY",
       "ticker": "DJP",
       "price": 47.38,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2026-09",
       "action": "SELL",
       "ticker": "SPY",
       "price": 762.63
-    },
-    {
-      "date": "2026-09",
-      "action": "SELL",
-      "ticker": "QQQ",
-      "price": 739.77
     },
     {
       "date": "2026-09",
@@ -7400,7 +6407,7 @@
       "date": "2026-09",
       "action": "SELL",
       "ticker": "SHY",
-      "price": 81.2
+      "price": 80.959
     },
     {
       "date": "2026-09",
@@ -7413,42 +6420,35 @@
       "action": "BUY",
       "ticker": "SPY",
       "price": 762.63,
-      "weight_pct": 16.7
-    },
-    {
-      "date": "2026-09",
-      "action": "BUY",
-      "ticker": "QQQ",
-      "price": 739.77,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2026-09",
       "action": "BUY",
       "ticker": "IWM",
       "price": 277.89,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2026-09",
       "action": "BUY",
       "ticker": "EEM",
       "price": 66.79,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2026-09",
       "action": "BUY",
       "ticker": "DJP",
       "price": 51.52,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     },
     {
       "date": "2026-09",
       "action": "BUY",
       "ticker": "BTC-USD",
       "price": 83553.8516,
-      "weight_pct": 16.7
+      "weight_pct": 20.0
     }
   ]
 }
