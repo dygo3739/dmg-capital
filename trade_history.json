@@ -1,12 +1,12 @@
 {
-  "generated": "2026-10-26T10:52:20.599714+00:00",
+  "generated": "2026-11-02T13:15:22.875381+00:00",
   "start_date": "2018-01-05",
   "starting_capital": 100000.0,
-  "final_value": 3060401.06,
-  "total_return_pct": 2960.4,
-  "total_fees": 324365.21,
+  "final_value": 2971339.35,
+  "total_return_pct": 2871.34,
+  "total_fees": 332172.01,
   "n_buys": 280,
-  "n_sells": 272,
+  "n_sells": 276,
   "n_holds": 268,
   "equity_curve": [
     {
@@ -6633,7 +6633,7 @@
     },
     {
       "date": "2026-10-23",
-      "value": 3060401.06,
+      "value": 3119939.37,
       "btc_signal": "BUY",
       "paxg_signal": "SELL",
       "defensive": null,
@@ -6644,7 +6644,17 @@
         "BCH"
       ],
       "n_universe": 10,
-      "cash_pct": -0.0
+      "cash_pct": 0.0
+    },
+    {
+      "date": "2026-10-30",
+      "value": 2971339.35,
+      "btc_signal": "SELL",
+      "paxg_signal": "SELL",
+      "defensive": null,
+      "buy_tickers": [],
+      "n_universe": 10,
+      "cash_pct": 100.0
     }
   ],
   "trades": [
@@ -13475,45 +13485,81 @@
       "date": "2026-10-23",
       "action": "SELL",
       "ticker": "ETH",
-      "price": 2329.05,
-      "value": 340836.14,
-      "fee": 886.17,
+      "price": 2357.22,
+      "value": 344958.57,
+      "fee": 896.89,
       "reason": "Signal \u2192 SELL"
     },
     {
       "date": "2026-10-23",
       "action": "SELL",
       "ticker": "SOL",
-      "price": 101.45,
-      "value": 343335.09,
-      "fee": 892.67,
+      "price": 102.33,
+      "value": 346313.25,
+      "fee": 900.41,
       "reason": "Signal \u2192 SELL"
     },
     {
       "date": "2026-10-23",
       "action": "SELL",
       "ticker": "DOGE",
-      "price": 0.0771,
-      "value": 340527.26,
-      "fee": 885.37,
+      "price": 0.0796,
+      "value": 351573.32,
+      "fee": 914.09,
       "reason": "Signal \u2192 SELL"
     },
     {
       "date": "2026-10-23",
       "action": "SELL",
       "ticker": "ADA",
-      "price": 0.2042,
-      "value": 328218.88,
-      "fee": 853.37,
+      "price": 0.2056,
+      "value": 330528.79,
+      "fee": 859.37,
       "reason": "Signal \u2192 SELL"
     },
     {
       "date": "2026-10-23",
       "action": "SELL",
       "ticker": "LINK",
-      "price": 11.4345,
-      "value": 331288.21,
-      "fee": 861.35,
+      "price": 11.8081,
+      "value": 342111.78,
+      "fee": 889.49,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "SELL",
+      "ticker": "BTC",
+      "price": 77616.2,
+      "value": 744760.97,
+      "fee": 1936.38,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "SELL",
+      "ticker": "XRP",
+      "price": 1.2481,
+      "value": 734540.26,
+      "fee": 1909.8,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "SELL",
+      "ticker": "AVAX",
+      "price": 8.592,
+      "value": 744791.04,
+      "fee": 1936.46,
+      "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-10-30",
+      "action": "SELL",
+      "ticker": "BCH",
+      "price": 276.87,
+      "value": 747247.07,
+      "fee": 1942.84,
       "reason": "Signal \u2192 SELL"
     }
   ]
