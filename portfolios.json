@@ -6,14 +6,14 @@
       "description": "Top-10 crypto by market cap (yearly rebalanced universe). BTC gate: PAXG when BTC SELL + PAXG BUY, else USDT. Weekly 2-of-3 momentum signal.",
       "timeframe": "weekly",
       "starting_capital": 100000.0,
-      "total_return_pct": 2871.34,
-      "cagr_pct": 46.6,
-      "sharpe_ratio": 0.9,
+      "total_return_pct": 2646.44,
+      "cagr_pct": 45.19,
+      "sharpe_ratio": 0.89,
       "max_drawdown_pct": 64.68,
-      "final_value": 2971339.35,
-      "current_value": 2971339.35,
-      "total_return_dollar": 2871339.35,
-      "btc_bah_pct": 419.6,
+      "final_value": 2746443.76,
+      "current_value": 2746443.76,
+      "total_return_dollar": 2646443.76,
+      "btc_bah_pct": 399.34,
       "btc_equity_curve": [
         {
           "date": "2018-01-05",
@@ -1857,23 +1857,27 @@
         },
         {
           "date": "2026-10-30",
-          "value": 519602.88
+          "value": 538512.21
+        },
+        {
+          "date": "2026-11-06",
+          "value": 499337.91
         }
       ],
-      "n_weeks": 461,
-      "n_buy_stocks": 1,
+      "n_weeks": 462,
+      "n_buy_stocks": 0,
       "n_universe": 10,
-      "n_weeks_crypto": 245,
+      "n_weeks_crypto": 246,
       "n_weeks_paxg": 90,
       "n_weeks_usdt": 126,
-      "return_1y": 16.86,
-      "return_3y": 273.6,
-      "return_5y": 200.39,
+      "return_1y": 2.63,
+      "return_3y": 203.87,
+      "return_5y": 171.34,
       "return_10y": null,
-      "bah_return_1y": -25.3,
-      "bah_return_3y": 117.86,
-      "bah_return_5y": 23.31,
-      "bah_return_10y": 10644.21,
+      "bah_return_1y": -26.63,
+      "bah_return_3y": 96.82,
+      "bah_return_5y": 14.81,
+      "bah_return_10y": 9957.86,
       "equity_curve": [
         {
           "date": "2018-01-05",
@@ -8514,7 +8518,23 @@
         },
         {
           "date": "2026-10-30",
-          "value": 2971339.35,
+          "value": 3057474.33,
+          "btc_signal": "BUY",
+          "paxg_signal": "SELL",
+          "defensive": null,
+          "buy_tickers": [
+            "BTC",
+            "ETH",
+            "XRP",
+            "AVAX",
+            "BCH"
+          ],
+          "n_universe": 10,
+          "cash_pct": 0.0
+        },
+        {
+          "date": "2026-11-06",
+          "value": 2746443.76,
           "btc_signal": "SELL",
           "paxg_signal": "SELL",
           "defensive": null,
@@ -15394,38 +15414,58 @@
         },
         {
           "date": "2026-10-30",
+          "action": "BUY",
+          "ticker": "ETH",
+          "price": 2423.16,
+          "shares": 252.354309,
+          "value": 611494.87,
+          "fee": 1589.89,
+          "weight": 20.0,
+          "signal": "BUY"
+        },
+        {
+          "date": "2026-11-06",
           "action": "SELL",
           "ticker": "BTC",
-          "price": 77616.2,
-          "value": 744760.97,
-          "fee": 1936.38,
+          "price": 74589.1,
+          "value": 567011.41,
+          "fee": 1474.23,
           "reason": "Signal \u2192 SELL"
         },
         {
-          "date": "2026-10-30",
+          "date": "2026-11-06",
+          "action": "SELL",
+          "ticker": "ETH",
+          "price": 2116.52,
+          "value": 534112.94,
+          "fee": 1388.69,
+          "reason": "Signal \u2192 SELL"
+        },
+        {
+          "date": "2026-11-06",
           "action": "SELL",
           "ticker": "XRP",
-          "price": 1.2481,
-          "value": 734540.26,
-          "fee": 1909.8,
+          "price": 1.0931,
+          "value": 512569.89,
+          "fee": 1332.68,
           "reason": "Signal \u2192 SELL"
         },
         {
-          "date": "2026-10-30",
+          "date": "2026-11-06",
           "action": "SELL",
           "ticker": "AVAX",
-          "price": 8.592,
-          "value": 744791.04,
-          "fee": 1936.46,
+          "price": 8.686,
+          "value": 608412.88,
+          "fee": 1581.87,
           "reason": "Signal \u2192 SELL"
         },
         {
-          "date": "2026-10-30",
+          "date": "2026-11-06",
           "action": "SELL",
           "ticker": "BCH",
-          "price": 276.87,
-          "value": 747247.07,
-          "fee": 1942.84,
+          "price": 241.9,
+          "value": 524336.64,
+          "fee": 1363.28,
           "reason": "Signal \u2192 SELL"
         }
       ],
@@ -15439,11 +15479,11 @@
         "TRX": "SELL",
         "AVAX": "SELL",
         "LINK": "SELL",
-        "BCH": "BUY",
+        "BCH": "SELL",
         "PAXG": "SELL"
       },
       "current_holdings": []
     }
   ],
-  "generated": "2026-11-02T13:15:22.893274+00:00"
+  "generated": "2026-11-09T13:42:20.524001+00:00"
 }
