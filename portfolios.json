@@ -6,14 +6,14 @@
       "description": "Top-10 crypto by market cap (yearly rebalanced universe). BTC gate: PAXG when BTC SELL + PAXG BUY, else USDT. Weekly 2-of-3 momentum signal.",
       "timeframe": "weekly",
       "starting_capital": 100000.0,
-      "total_return_pct": 2646.44,
-      "cagr_pct": 45.19,
-      "sharpe_ratio": 0.89,
+      "total_return_pct": 2565.41,
+      "cagr_pct": 44.59,
+      "sharpe_ratio": 0.88,
       "max_drawdown_pct": 64.68,
-      "final_value": 2746443.76,
-      "current_value": 2746443.76,
-      "total_return_dollar": 2646443.76,
-      "btc_bah_pct": 399.34,
+      "final_value": 2665408.31,
+      "current_value": 2665408.31,
+      "total_return_dollar": 2565408.31,
+      "btc_bah_pct": 329.25,
       "btc_equity_curve": [
         {
           "date": "2018-01-05",
@@ -1861,23 +1861,27 @@
         },
         {
           "date": "2026-11-06",
-          "value": 499337.91
+          "value": 494914.85
+        },
+        {
+          "date": "2026-11-13",
+          "value": 429251.02
         }
       ],
-      "n_weeks": 462,
+      "n_weeks": 463,
       "n_buy_stocks": 0,
       "n_universe": 10,
       "n_weeks_crypto": 246,
       "n_weeks_paxg": 90,
-      "n_weeks_usdt": 126,
-      "return_1y": 2.63,
-      "return_3y": 203.87,
-      "return_5y": 171.34,
+      "n_weeks_usdt": 127,
+      "return_1y": 1.66,
+      "return_3y": 205.45,
+      "return_5y": 191.68,
       "return_10y": null,
-      "bah_return_1y": -26.63,
-      "bah_return_3y": 96.82,
-      "bah_return_5y": 14.81,
-      "bah_return_10y": 9957.86,
+      "bah_return_1y": -29.87,
+      "bah_return_3y": 71.31,
+      "bah_return_5y": 6.22,
+      "bah_return_10y": 8542.65,
       "equity_curve": [
         {
           "date": "2018-01-05",
@@ -8534,7 +8538,17 @@
         },
         {
           "date": "2026-11-06",
-          "value": 2746443.76,
+          "value": 2665408.31,
+          "btc_signal": "SELL",
+          "paxg_signal": "SELL",
+          "defensive": null,
+          "buy_tickers": [],
+          "n_universe": 10,
+          "cash_pct": 100.0
+        },
+        {
+          "date": "2026-11-13",
+          "value": 2665408.31,
           "btc_signal": "SELL",
           "paxg_signal": "SELL",
           "defensive": null,
@@ -15427,46 +15441,51 @@
           "date": "2026-11-06",
           "action": "SELL",
           "ticker": "BTC",
-          "price": 74589.1,
-          "value": 567011.41,
-          "fee": 1474.23,
+          "price": 73928.4,
+          "value": 561988.9,
+          "fee": 1461.17,
           "reason": "Signal \u2192 SELL"
         },
         {
           "date": "2026-11-06",
           "action": "SELL",
           "ticker": "ETH",
-          "price": 2116.52,
-          "value": 534112.94,
-          "fee": 1388.69,
+          "price": 2053.48,
+          "value": 518204.53,
+          "fee": 1347.33,
           "reason": "Signal \u2192 SELL"
         },
         {
           "date": "2026-11-06",
           "action": "SELL",
           "ticker": "XRP",
-          "price": 1.0931,
-          "value": 512569.89,
-          "fee": 1332.68,
+          "price": 1.051,
+          "value": 492838.35,
+          "fee": 1281.38,
           "reason": "Signal \u2192 SELL"
         },
         {
           "date": "2026-11-06",
           "action": "SELL",
           "ticker": "AVAX",
-          "price": 8.686,
-          "value": 608412.88,
-          "fee": 1581.87,
+          "price": 8.515,
+          "value": 596435.14,
+          "fee": 1550.73,
           "reason": "Signal \u2192 SELL"
         },
         {
           "date": "2026-11-06",
           "action": "SELL",
           "ticker": "BCH",
-          "price": 241.9,
-          "value": 524336.64,
-          "fee": 1363.28,
+          "price": 228.8,
+          "value": 495941.39,
+          "fee": 1289.45,
           "reason": "Signal \u2192 SELL"
+        },
+        {
+          "date": "2026-11-13",
+          "action": "HOLD",
+          "note": "No changes \u2014 100% USDT"
         }
       ],
       "current_signals": {
@@ -15485,5 +15504,5 @@
       "current_holdings": []
     }
   ],
-  "generated": "2026-11-09T13:42:20.524001+00:00"
+  "generated": "2026-11-16T13:26:42.612097+00:00"
 }

@@ -1,13 +1,13 @@
 {
-  "generated": "2026-11-09T13:42:20.505369+00:00",
+  "generated": "2026-11-16T13:26:42.594364+00:00",
   "start_date": "2018-01-05",
   "starting_capital": 100000.0,
-  "final_value": 2746443.76,
-  "total_return_pct": 2646.44,
-  "total_fees": 333177.17,
+  "final_value": 2665408.31,
+  "total_return_pct": 2565.41,
+  "total_fees": 332966.48,
   "n_buys": 281,
   "n_sells": 277,
-  "n_holds": 268,
+  "n_holds": 269,
   "equity_curve": [
     {
       "date": "2018-01-05",
@@ -6664,7 +6664,17 @@
     },
     {
       "date": "2026-11-06",
-      "value": 2746443.76,
+      "value": 2665408.31,
+      "btc_signal": "SELL",
+      "paxg_signal": "SELL",
+      "defensive": null,
+      "buy_tickers": [],
+      "n_universe": 10,
+      "cash_pct": 100.0
+    },
+    {
+      "date": "2026-11-13",
+      "value": 2665408.31,
       "btc_signal": "SELL",
       "paxg_signal": "SELL",
       "defensive": null,
@@ -13557,46 +13567,51 @@
       "date": "2026-11-06",
       "action": "SELL",
       "ticker": "BTC",
-      "price": 74589.1,
-      "value": 567011.41,
-      "fee": 1474.23,
+      "price": 73928.4,
+      "value": 561988.9,
+      "fee": 1461.17,
       "reason": "Signal \u2192 SELL"
     },
     {
       "date": "2026-11-06",
       "action": "SELL",
       "ticker": "ETH",
-      "price": 2116.52,
-      "value": 534112.94,
-      "fee": 1388.69,
+      "price": 2053.48,
+      "value": 518204.53,
+      "fee": 1347.33,
       "reason": "Signal \u2192 SELL"
     },
     {
       "date": "2026-11-06",
       "action": "SELL",
       "ticker": "XRP",
-      "price": 1.0931,
-      "value": 512569.89,
-      "fee": 1332.68,
+      "price": 1.051,
+      "value": 492838.35,
+      "fee": 1281.38,
       "reason": "Signal \u2192 SELL"
     },
     {
       "date": "2026-11-06",
       "action": "SELL",
       "ticker": "AVAX",
-      "price": 8.686,
-      "value": 608412.88,
-      "fee": 1581.87,
+      "price": 8.515,
+      "value": 596435.14,
+      "fee": 1550.73,
       "reason": "Signal \u2192 SELL"
     },
     {
       "date": "2026-11-06",
       "action": "SELL",
       "ticker": "BCH",
-      "price": 241.9,
-      "value": 524336.64,
-      "fee": 1363.28,
+      "price": 228.8,
+      "value": 495941.39,
+      "fee": 1289.45,
       "reason": "Signal \u2192 SELL"
+    },
+    {
+      "date": "2026-11-13",
+      "action": "HOLD",
+      "note": "No changes \u2014 100% USDT"
     }
   ]
 }
