@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16T13:26:42.594364+00:00",
+  "generated": "2026-11-23T15:46:38.411229+00:00",
   "start_date": "2018-01-05",
   "starting_capital": 100000.0,
   "final_value": 2665408.31,
@@ -7,7 +7,7 @@
   "total_fees": 332966.48,
   "n_buys": 281,
   "n_sells": 277,
-  "n_holds": 269,
+  "n_holds": 270,
   "equity_curve": [
     {
       "date": "2018-01-05",
@@ -6674,6 +6674,16 @@
     },
     {
       "date": "2026-11-13",
+      "value": 2665408.31,
+      "btc_signal": "SELL",
+      "paxg_signal": "SELL",
+      "defensive": null,
+      "buy_tickers": [],
+      "n_universe": 10,
+      "cash_pct": 100.0
+    },
+    {
+      "date": "2026-11-20",
       "value": 2665408.31,
       "btc_signal": "SELL",
       "paxg_signal": "SELL",
@@ -13610,6 +13620,11 @@
     },
     {
       "date": "2026-11-13",
+      "action": "HOLD",
+      "note": "No changes \u2014 100% USDT"
+    },
+    {
+      "date": "2026-11-20",
       "action": "HOLD",
       "note": "No changes \u2014 100% USDT"
     }

@@ -7,13 +7,13 @@
       "timeframe": "weekly",
       "starting_capital": 100000.0,
       "total_return_pct": 2565.41,
-      "cagr_pct": 44.59,
+      "cagr_pct": 44.47,
       "sharpe_ratio": 0.88,
       "max_drawdown_pct": 64.68,
       "final_value": 2665408.31,
       "current_value": 2665408.31,
       "total_return_dollar": 2565408.31,
-      "btc_bah_pct": 329.25,
+      "btc_bah_pct": 319.41,
       "btc_equity_curve": [
         {
           "date": "2018-01-05",
@@ -1865,23 +1865,27 @@
         },
         {
           "date": "2026-11-13",
-          "value": 429251.02
+          "value": 421651.4
+        },
+        {
+          "date": "2026-11-20",
+          "value": 419411.42
         }
       ],
-      "n_weeks": 463,
+      "n_weeks": 464,
       "n_buy_stocks": 0,
       "n_universe": 10,
       "n_weeks_crypto": 246,
       "n_weeks_paxg": 90,
-      "n_weeks_usdt": 127,
-      "return_1y": 1.66,
-      "return_3y": 205.45,
-      "return_5y": 191.68,
+      "n_weeks_usdt": 128,
+      "return_1y": -0.05,
+      "return_3y": 200.49,
+      "return_5y": 208.16,
       "return_10y": null,
-      "bah_return_1y": -29.87,
-      "bah_return_3y": 71.31,
-      "bah_return_5y": 6.22,
-      "bah_return_10y": 8542.65,
+      "bah_return_1y": -30.8,
+      "bah_return_3y": 65.43,
+      "bah_return_5y": 9.52,
+      "bah_return_10y": 8339.98,
       "equity_curve": [
         {
           "date": "2018-01-05",
@@ -8548,6 +8552,16 @@
         },
         {
           "date": "2026-11-13",
+          "value": 2665408.31,
+          "btc_signal": "SELL",
+          "paxg_signal": "SELL",
+          "defensive": null,
+          "buy_tickers": [],
+          "n_universe": 10,
+          "cash_pct": 100.0
+        },
+        {
+          "date": "2026-11-20",
           "value": 2665408.31,
           "btc_signal": "SELL",
           "paxg_signal": "SELL",
@@ -15486,6 +15500,11 @@
           "date": "2026-11-13",
           "action": "HOLD",
           "note": "No changes \u2014 100% USDT"
+        },
+        {
+          "date": "2026-11-20",
+          "action": "HOLD",
+          "note": "No changes \u2014 100% USDT"
         }
       ],
       "current_signals": {
@@ -15504,5 +15523,5 @@
       "current_holdings": []
     }
   ],
-  "generated": "2026-11-16T13:26:42.612097+00:00"
+  "generated": "2026-11-23T15:46:38.438132+00:00"
 }
